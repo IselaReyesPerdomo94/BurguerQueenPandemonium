@@ -2,6 +2,7 @@ import React from 'react';
 import logo from '../../img/pandmonium.png';
 import './style.css';
 
+//Creating logo component
 class Logo extends React.Component{
     render(){
       return (
