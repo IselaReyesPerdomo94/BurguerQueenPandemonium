@@ -19,8 +19,19 @@ function App() {
           Learn React
         </a>
       </header>
+      {
+        ["Sol","Leda","Mercedes","Isela","Churrumais"].map(nombre => <HolaAmigas>{nombre}</HolaAmigas>)
+      }
     </div>
   );
+}
+
+class HolaAmigas extends React.Component {
+  render(){
+    return <p style={{color: 'red'}}>
+      {this.props.children}
+    </p>
+  }
 }
 
 export default App;
