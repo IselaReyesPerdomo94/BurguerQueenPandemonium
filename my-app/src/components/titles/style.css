@@ -1,0 +1,15 @@
+    .header {
+        display: flex;
+        color: white;
+        align-items: center;
+        border-radius: 10px;
+    }
+    
+    .icon {
+        font-size: 10rem;
+        margin: 1rem;
+    }
+    
+    .tittleText {
+        font-size: 4rem;
+    }
