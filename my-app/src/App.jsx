@@ -12,7 +12,7 @@ function Home() {
         <i class="material-icons icons">attach_money</i>
           Corte de Caja
         </Link>
-        <Link to="/configuración" className="homeButtons settings">
+        <Link to="/configuracion" className="homeButtons settings">
         <i class="material-icons icons">settings_applications</i>
           Configuración
         </Link>

@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import Home from './App';
+import Settings from './views/settings'
 import * as serviceWorker from './serviceWorker';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
@@ -9,6 +10,7 @@ ReactDOM.render(
 <Router>
     <Switch>
         <Route exact path="/" render={props => <Home/>}></Route>
+        <Route exact path="/configuracion" render={props => <Settings/>}></Route>
     </Switch>
 </Router>, document.getElementById('root'));
 
