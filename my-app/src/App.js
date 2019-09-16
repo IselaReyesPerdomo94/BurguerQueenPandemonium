@@ -4,8 +4,7 @@ import './App.css';
 import Logo from './components/logo/index';
 
 function Home({firebase}) {
-  
-  console.log(firebase.auth().signInWithEmailAndPassword('evictorio92@gmail.com','123456'))
+  console.log('Se despliega home')
   return (
     <div className="App">
       <Logo/>
