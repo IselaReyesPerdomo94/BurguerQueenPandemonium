@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "002c5120bca22f44cbf71c20d09920e2",
+    "revision": "3e02c58da1a01ca17ff655456ba919bc",
     "url": "/BurguerQueenPandemonium/index.html"
   },
   {
-    "revision": "65fb0053e20978daf4df",
+    "revision": "4c8fb079af337ec865fb",
     "url": "/BurguerQueenPandemonium/static/css/main.8b321ad2.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/BurguerQueenPandemonium/static/js/2.1500520a.chunk.js"
   },
   {
-    "revision": "65fb0053e20978daf4df",
-    "url": "/BurguerQueenPandemonium/static/js/main.3e69c0f3.chunk.js"
+    "revision": "4c8fb079af337ec865fb",
+    "url": "/BurguerQueenPandemonium/static/js/main.f40ac04d.chunk.js"
   },
   {
     "revision": "fa4453b66e8dddac19b6",
