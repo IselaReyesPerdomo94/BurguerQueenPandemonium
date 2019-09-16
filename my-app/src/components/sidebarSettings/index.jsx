@@ -4,12 +4,12 @@ import './style.css'
 
 const Sidebar = () => {
     return(
-        <sidebar className="sidebarSettings">
+        <aside className="sidebarSettings">
             <Button text="Usuarios"/>
             <Button text="Menú"/>
             <Button text="Proveedores"/>
             <Button text="Cambiar PIN"/>
-        </sidebar>
+        </aside>
     )
 }
 
