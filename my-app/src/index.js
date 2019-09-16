@@ -15,7 +15,7 @@ ReactDOM.render(
     </Switch>
 </Router>, document.getElementById('root'));
 
-
+console.log('Este es el index donde esta la ruta')
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
