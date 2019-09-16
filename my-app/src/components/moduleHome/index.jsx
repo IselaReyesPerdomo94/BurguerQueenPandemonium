@@ -1,5 +1,4 @@
-import React from 'react';
-import './style.css';
+x
 import CardImg from './moduleImg/index.jsx';
 import Label from './label/index.jsx';
 
