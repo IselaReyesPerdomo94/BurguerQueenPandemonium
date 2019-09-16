@@ -15,10 +15,10 @@ const createFirebaseApp = () => {
     firebaseApp.initializeApp(config)
     firebaseApp.auth().onAuthStateChanged(user => {
         if (user) {
-            console.log('User bien prron')
+            console.log('User connected')
 
         } else {
-            console.log('No se pudo conectar el hdspm')
+            console.log('No user connected')
         }
     })
     return firebaseApp
