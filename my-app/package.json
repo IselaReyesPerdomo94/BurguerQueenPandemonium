@@ -2,7 +2,7 @@
     "name": "pandemonium-inventorium",
     "version": "0.1.0",
     "private": false,
-    "homepage": "http://IselaReyesPerdomo94.github.io/BurguerQueenPandemonium",
+    "homepage": ".",
     "dependencies": {
         "@material-ui/core": "^4.4.2",
         "firebase": "^6.6.1",
