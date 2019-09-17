@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/BurguerQueenPandemonium/static/css/main.8b321ad2.chunk.css",
-    "main.js": "/BurguerQueenPandemonium/static/js/main.15b7e73c.chunk.js",
-    "main.js.map": "/BurguerQueenPandemonium/static/js/main.15b7e73c.chunk.js.map",
-    "runtime~main.js": "/BurguerQueenPandemonium/static/js/runtime~main.28881ce3.js",
-    "runtime~main.js.map": "/BurguerQueenPandemonium/static/js/runtime~main.28881ce3.js.map",
-    "static/js/2.1500520a.chunk.js": "/BurguerQueenPandemonium/static/js/2.1500520a.chunk.js",
-    "static/js/2.1500520a.chunk.js.map": "/BurguerQueenPandemonium/static/js/2.1500520a.chunk.js.map",
-    "index.html": "/BurguerQueenPandemonium/index.html",
-    "precache-manifest.2b491c07402ba1ba19804c21f08a177e.js": "/BurguerQueenPandemonium/precache-manifest.2b491c07402ba1ba19804c21f08a177e.js",
-    "service-worker.js": "/BurguerQueenPandemonium/service-worker.js",
-    "static/css/main.8b321ad2.chunk.css.map": "/BurguerQueenPandemonium/static/css/main.8b321ad2.chunk.css.map",
-    "static/media/pandmonium.png": "/BurguerQueenPandemonium/static/media/pandmonium.399501f0.png"
+    "main.css": "./static/css/main.8b321ad2.chunk.css",
+    "main.js": "./static/js/main.00866313.chunk.js",
+    "main.js.map": "./static/js/main.00866313.chunk.js.map",
+    "runtime~main.js": "./static/js/runtime~main.af7868da.js",
+    "runtime~main.js.map": "./static/js/runtime~main.af7868da.js.map",
+    "static/js/2.1500520a.chunk.js": "./static/js/2.1500520a.chunk.js",
+    "static/js/2.1500520a.chunk.js.map": "./static/js/2.1500520a.chunk.js.map",
+    "index.html": "./index.html",
+    "precache-manifest.6754e2013ac871a363d3b457bac300d0.js": "./precache-manifest.6754e2013ac871a363d3b457bac300d0.js",
+    "service-worker.js": "./service-worker.js",
+    "static/css/main.8b321ad2.chunk.css.map": "./static/css/main.8b321ad2.chunk.css.map",
+    "static/media/pandmonium.png": "./static/media/pandmonium.399501f0.png"
   }
 }
