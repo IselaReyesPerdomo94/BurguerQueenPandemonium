@@ -6,6 +6,7 @@ import Settings from './views/settings'
 import * as serviceWorker from './serviceWorker';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import createFirebaseApp from './firebase'
+
 const firebaseApp = createFirebaseApp() 
 ReactDOM.render(
 <Router>
