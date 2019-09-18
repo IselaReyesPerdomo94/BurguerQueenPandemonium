@@ -1,8 +1,8 @@
 import React from 'react';
 import "./style.css";
 import { Link } from "react-router-dom";
-import TextField from '@material-ui/core/TextField';
-import Button from '@material-ui/core/Button';
+import PasswordInput from '../password/index.jsx';
+import EntryButton from '../Buttons/EntryButton';
 
 function Modal({ open, close }) {
   const classes = `overlay ${open ? "open" : "closed"}`
@@ -16,8 +16,8 @@ function Modal({ open, close }) {
           <h3>Introduce tu PIN</h3>
         </div>
         <div className="modal-input">
-          <TextField id="outlined-password-input" label="Contraseña" className={classes.textField} type="password" autoComplete="current-password" margin="normal" variant="outlined" />
-          <Button variant="contained" className={`${classes.button} button-modal`} onClick={close}>Entrar</Button>
+          <PasswordInput/>
+          <EntryButton onClick={close}/>
         </div>
       </div>
     </div>
