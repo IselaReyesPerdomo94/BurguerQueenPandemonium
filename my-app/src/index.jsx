@@ -4,6 +4,7 @@ import './index.css';
 import Home from './App';
 import Settings from './views/settings';
 import Login from './views/login/login';
+import Register from './views/register/index';
 import * as serviceWorker from './serviceWorker';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import createFirebaseApp from './firebase'
@@ -15,6 +16,8 @@ ReactDOM.render(
             <Route exact path = "/" render = { props => < Login firebase = { firebaseApp }/>}></Route >
             <Route exact path = "/Home" render = { props => < Home/>}></Route >
             <Route exact path = "/configuracion" render = { props => < Settings/> } ></Route> 
+            <Route exact path = "/registro" render = { props => < Register firebase = { firebaseApp }/>}></Route >
+
         </Switch>  
     </Router>, 
             document.getElementById('root'));
