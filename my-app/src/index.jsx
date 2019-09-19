@@ -2,15 +2,18 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import Home from './App';
-import Settings from './views/settings'
+import Settings from './views/settings';
+import Login from './views/login/login';
 import * as serviceWorker from './serviceWorker';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import createFirebaseApp from './firebase'
 const firebaseApp = createFirebaseApp()
+
 ReactDOM.render(
     < Router basename = { window.location.pathname || '' } >
         <Switch >
-            <Route exact path = "/" render = { props => < Home firebase = { firebaseApp }/>}></Route >
+            <Route exact path = "/" render = { props => < Login firebase = { firebaseApp }/>}></Route >
+            <Route exact path = "/Home" render = { props => < Home/>}></Route >
             <Route exact path = "/configuracion" render = { props => < Settings/> } ></Route> 
         </Switch>  
     </Router>, 
