@@ -18,8 +18,6 @@ const firebaseApp = firebase.initializeApp(config);
 class Login extends React.Component {
     render() {
         const { 
-            user,
-            signOut,
             signInWithGoogle,
           } = this.props;
         return (
@@ -29,13 +27,13 @@ class Login extends React.Component {
                     <div className="user-inputs">
                         <InputEmail/>
                         <InputPassword/>
-                        {
-                            user
-                            ? <EntryButton text="INICIAR SESIÓN" onClick = {(e) => {
-                                console.log('holi', e);
-                                signInWithGoogle()}}/>
-                                : <EntryButton text="CERRAR SESIÓN" onClick = {signOut}/>
-                        }
+                       <EntryButton text="INICIAR SESIÓN" onClick = {(user) => {
+                            console.log('holi', user);
+                            signInWithGoogle()
+                            firebaseAppAuth.onAuthStateChanged(user => {
+                                console.log('cute', user)
+                            })
+                            }}/>
                         <Link to = "/registro">
                         <FlatButton text="REGÍSTRATE"/>
                         </Link> 
@@ -49,7 +47,7 @@ class Login extends React.Component {
 const firebaseAppAuth = firebaseApp.auth();
 const providers = {
   googleProvider: new firebase.auth.GoogleAuthProvider(),
-};
+}
 
 export default withFirebaseAuth({
     providers,

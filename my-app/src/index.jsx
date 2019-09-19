@@ -17,7 +17,6 @@ ReactDOM.render(
             <Route exact path = "/Home" render = { props => < Home/>}></Route >
             <Route exact path = "/configuracion" render = { props => < Settings/> } ></Route> 
             <Route exact path = "/registro" render = { props => < Register/>}></Route>
-
         </Switch>  
     </Router>, 
             document.getElementById('root'));
