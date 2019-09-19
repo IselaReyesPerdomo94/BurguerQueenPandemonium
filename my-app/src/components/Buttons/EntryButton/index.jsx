@@ -4,7 +4,7 @@ import Button from '@material-ui/core/Button';
 
 const EntryButton = ({text}) => {
     return (
-        <Button variant="contained" className='button-modal'>{text}</Button>
+        <Button variant="contained" className='button-modal send-button'>{text}</Button>
     )
 }
 
