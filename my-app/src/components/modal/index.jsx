@@ -17,7 +17,7 @@ function Modal({ open, close }) {
         </div>
         <div className="modal-input">
           <PasswordInput/>
-          <EntryButton onClick={close}/>
+          <EntryButton onClick={close} text="Entrar"/>
         </div>
       </div>
     </div>

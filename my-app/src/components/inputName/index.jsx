@@ -4,7 +4,7 @@ import TextField from '@material-ui/core/TextField';
 
 const InputName = () => {
     return (
-        <TextField id="standard-name" label="Name" className={classes.textField} value={values.name} onChange={handleChange('name')}  margin="normal"/>
+        <TextField id="standard-name" label="Nombre" className={classes.textField} value={values.name} onChange={handleChange('name')}  margin="normal"/>
     )
 }
 
