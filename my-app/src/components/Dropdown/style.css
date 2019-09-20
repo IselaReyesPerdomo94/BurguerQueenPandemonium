@@ -1,0 +1,23 @@
+select {
+    margin-right: 4em;
+    background: transparent;
+    border: none;
+    font-size: 14px;
+    outline: none;
+    appearance:none;
+    width: 3rem;
+    font-size: 20px;
+   
+}
+select:hover{
+    border-bottom: 2px solid #007AFF;
+    padding-bottom: 5px;
+    transition: 0.3s;
+}
+
+.select-uno {
+    padding-top: 1em;
+    padding-left: 4em; 
+    
+}
+
