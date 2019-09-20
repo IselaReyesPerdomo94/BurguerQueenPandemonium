@@ -1,6 +1,5 @@
 import React, {Fragment} from 'react';
 import {Link} from 'react-router-dom'; 
-
 import withFirebaseAuth from 'react-with-firebase-auth'
 import * as firebase from 'firebase/app';
 import 'firebase/auth';
@@ -31,10 +30,11 @@ class Login extends React.Component {
                         <InputPassword/>
                         {
                             user
-                            ? <EntryButton text="INICIAR SESIÓN" onClick = {(e) => {
-                                console.log('holi', e);
-                                signInWithGoogle()}}/>
-                                : <EntryButton text="CERRAR SESIÓN" onClick = {signOut}/>
+                            ? <EntryButton text="CERRAR SESIÓN" onClick = {signOut}/>
+                                : 
+                                <EntryButton text="INICIAR SESIÓN" onClick = {(e) => {
+                                    console.log('holi', e);
+                                    signInWithGoogle()}}/>
                         }
                         <Link to = "/registro">
                         <FlatButton text="REGÍSTRATE"/>
