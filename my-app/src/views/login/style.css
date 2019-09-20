@@ -1,3 +1,7 @@
+html, body, #root {
+    height: 100%;
+}
+
 .user-inputs {
     display:flex;
     justify-content: center;
@@ -6,12 +10,12 @@
 }
 
 .login{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    display: table;   
+}
 
-    
-
-
+.contenedor{
+    display: table-cell;
+    vertical-align: middle;
 }

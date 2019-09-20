@@ -2,8 +2,9 @@ import React, { Fragment } from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import "react-tabs/style/react-tabs.css";
 import Tittle from '../../components/titles/index';
-import Modal from "../../components/modal"
-import './settings.css'
+import Modal from '../../components/modal';
+import './settings.css';
+import UserTabs from './settingsUser/index.jsx';
 
 class Settings extends React.Component {
     constructor() {
@@ -28,10 +29,10 @@ class Settings extends React.Component {
                 </TabList>
 
                 <TabPanel>
-                    <h2>Any content 1</h2>
+                    <UserTabs/>
                 </TabPanel>
                 <TabPanel>
-                    <h2>Any content 2</h2>
+                    <h2>No hay menú agregado aún</h2>
                 </TabPanel>
                 <TabPanel>
                     <h2>Ayuda en construcción</h2>
