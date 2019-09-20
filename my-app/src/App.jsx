@@ -2,6 +2,8 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import './App.css';
 import Logo from './components/logo/index';
+import Dropdown from "./components/Dropdown/index.jsx";
+
 
 function Home({firebase}) {
   console.log('Se despliega home')
@@ -25,6 +27,7 @@ function Home({firebase}) {
           Inventario
         </Link>
       </nav>
+      <Dropdown/>
     </div>
   );
 }
