@@ -13,10 +13,10 @@ function Modal({ open, close }) {
           <Link to="/">
             <input type="button" className="close-modal-button" value="X" onClick={close} />
           </Link>
-          <h3>Introduce tu PIN</h3>
+          <h3>Clave de seguridad</h3>
         </div>
         <div className="modal-input">
-          <PasswordInput/>
+          <PasswordInput labelText="Ingresa tu clave de seguridad"/>
           <EntryButton onClick={close} text="Entrar"/>
         </div>
       </div>
