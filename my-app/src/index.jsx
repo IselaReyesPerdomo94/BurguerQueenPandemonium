@@ -7,6 +7,8 @@ import Login from './views/login/login';
 import Register from './views/register/index';
 import * as serviceWorker from './serviceWorker';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import firebaseApp from './firebase/index'
+
 // import createFirebaseApp from './firebase'
 // const firebaseApp = createFirebaseApp()
 
