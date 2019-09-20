@@ -1,4 +1,4 @@
-import firebaseApp from 'firebase/app'
+// import firebaseApp from 'firebase/app'
 import 'firebase/auth'
 
 const config = {
@@ -11,18 +11,5 @@ const config = {
     appId: "1:472468721699:web:6c8dfa1b1e77d01f296196"
 }
 
-const createFirebaseApp = () => {
-    firebaseApp.initializeApp(config)
-    firebaseApp.auth().onAuthStateChanged(user => {
-        if (user) {
-            console.log('User connected')
 
-        } else {
-            console.log('No user connected')
-        }
-    })
-    return firebaseApp
-}
-
-
-export default createFirebaseApp
+export default config;
