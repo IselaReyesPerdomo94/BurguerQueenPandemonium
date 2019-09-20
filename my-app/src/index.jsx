@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import Home from './App';
-import Settings from './views/settings';
+import Settings from './views/settings/settings';
 import Login from './views/login/login';
 import Register from './views/register/index';
 import * as serviceWorker from './serviceWorker';
