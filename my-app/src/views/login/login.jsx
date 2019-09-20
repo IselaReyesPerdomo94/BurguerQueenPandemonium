@@ -13,15 +13,17 @@ class Login extends React.Component {
         return (
             <Fragment>
                 <main className = "login">
-                    <Logo/>
-                    <div className="user-inputs">
-                        <InputEmail/>
-                        <InputPassword/>
-                        <EntryButton text="INICIAR SESIÓN"/>
-                        <Link to = "/registro">
-                        <FlatButton text="REGÍSTRATE"/>
-                        </Link> 
-                        <p>¿Olvidaste tu contraseña?<FlatButton text="RECUPERAR"/></p>
+                    <div className="contenedor">
+                        <Logo/>
+                        <div className="user-inputs">
+                            <InputEmail/>
+                            <InputPassword/>
+                            <EntryButton text="INICIAR SESIÓN"/>
+                            <Link to = "/registro">
+                                <FlatButton text="REGÍSTRATE"/>
+                            </Link> 
+                            <p>¿Olvidaste tu contraseña?<FlatButton text="RECUPERAR"/></p>
+                        </div>
                     </div>
                 </main>
             </Fragment>

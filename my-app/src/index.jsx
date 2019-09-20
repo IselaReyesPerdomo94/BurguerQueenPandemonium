@@ -11,7 +11,7 @@ import createFirebaseApp from './firebase'
 const firebaseApp = createFirebaseApp()
 
 ReactDOM.render(
-    < Router basename = { window.location.pathname || '' } >
+    <Router basename = { window.location.pathname || '' } >
         <Switch >
             <Route exact path = "/" render = { props => < Login firebase = { firebaseApp }/>}></Route >
             <Route exact path = "/Home" render = { props => < Home/>}></Route >
