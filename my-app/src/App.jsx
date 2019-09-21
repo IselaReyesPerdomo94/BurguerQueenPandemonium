@@ -7,7 +7,7 @@ import FlatButton from './components/Buttons/flatButton/index.jsx'
 import withFirebaseAuth from 'react-with-firebase-auth';
 import * as firebase from 'firebase/app';
 import 'firebase/auth';
-import firebaseApp from './firebase/index'
+import {firebaseApp} from './firebase/index'
 
 
 class Home extends Component {

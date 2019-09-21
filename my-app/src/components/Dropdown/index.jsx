@@ -8,7 +8,7 @@ class Dropdown extends Component {
             <Fragment>
                 <div className="select-uno">
                     <select name="Usuarios">
-                        <option selected value="user">Usuario</option>
+                        <option defaultValue value="user">Usuario</option>
                         <option value="uno">Uno</option>
                         <option value="dos">Dos</option>
                     </select>

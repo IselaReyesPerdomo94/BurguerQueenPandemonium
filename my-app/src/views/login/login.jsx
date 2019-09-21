@@ -3,7 +3,7 @@ import {Link, Redirect} from 'react-router-dom';
 import withFirebaseAuth from 'react-with-firebase-auth'
 import * as firebase from 'firebase/app';
 import 'firebase/auth';
-import firebaseApp from '../../firebase/index';
+import {firebaseApp} from '../../firebase/index';
 import Logo from '../../components/logo/index.jsx';
 import InputEmail from '../../components/inputEmail/index.jsx';
 import InputPassword from '../../components/password/index.jsx';
