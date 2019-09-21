@@ -7,7 +7,7 @@ import withFirebaseAuth from 'react-with-firebase-auth';
 import * as firebase from 'firebase/app';
 import 'firebase/auth';
 import firebaseApp from './firebase/index'
-
+import Menu from './components/sidebar/index';
 
 class Home extends Component {
   constructor(props) {
@@ -23,6 +23,7 @@ class Home extends Component {
     return (
       <div className="App">
         <Logo/>
+        <Menu/>
         <nav>
           <Link to="/corte-de-caja" className="homeButtons cashOut">
           <i className="material-icons icons">attach_money</i>
