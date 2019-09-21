@@ -7,6 +7,7 @@
     box-sizing: border-box;
     justify-content: center;
     background-color: darkslategray;
+    z-index: 20;
 }
 
 .modal {
@@ -20,10 +21,9 @@
     font-size: 1.5rem;
     align-items: center;
 }
+
 .modal-title {
     display: flex;
-    justify-content: space-between;
-    flex-direction: row-reverse;
     align-items: center;
     padding: 0 0.5rem;
     width: 90%;
@@ -38,17 +38,23 @@
 }
 
 .close-modal-button {
-    color:black;
+    color: black;
     background-color: white;
     font-size: 24px;
     font-weight: bold;
     border: none;
- }
+}
 
- .modal-input {
-     display: flex;
-     flex-direction: column;
-     width: 60%;
-     justify-content: center;
- }
- 
+.modal-input {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    justify-content: center;
+}
+
+.modal-footer {
+    display: flex;
+    margin: 1rem;
+    justify-content: flex-end;
+    width: 90%;
+}
