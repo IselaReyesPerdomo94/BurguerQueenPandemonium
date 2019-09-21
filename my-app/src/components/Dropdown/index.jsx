@@ -1,22 +1,16 @@
 import React, { Component, Fragment } from 'react';
 import './style.css';
 
-
-
-
 class Dropdown extends Component {
-
+    
     render() {
         return (
             <Fragment>
                 <div className="select-uno">
-                    <select name="opciones">
+                    <select name="Usuarios">
+                        <option defaultValue value="user">Usuario</option>
                         <option value="uno">Uno</option>
                         <option value="dos">Dos</option>
-                    </select>
-                    <select name="opciones">
-                        <option value="tres">tres</option>
-                        <option value="cuatro">cuatro</option>
                     </select>
                 </div>
             </Fragment>
