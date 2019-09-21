@@ -9,8 +9,17 @@ import Menu from '../../components/sidebarNav/index'
 import SideDrawer from '../../components/sidebarNav/sideDrawer/sideDrawer';
 
 class Settings extends Component {
-
+    constructor(){
+        super()
+        this.state = {sideDrawerOpen:false}
+    }
     render() {
+        let sideDrawer;
+
+        if (this.state.sideDrawerOpen){
+            sideDrawer = <SideDrawer/>;
+        }
+
         const { modalOpen, closeModal } = this.props;
         const displayTabsSettings = (
             <Tabs>
@@ -37,7 +46,7 @@ class Settings extends Component {
                 <div className="wrapper">
                 <Modal open={modalOpen} close={closeModal} />
                 <Menu/>
-                <SideDrawer/>
+                {sideDrawer}
                 <main className="main">
                     <Tittle color="#303F9F" text="Configuración" icon={<i className="material-icons icon">settings_applications</i>} />
                     {displayTabsSettings}

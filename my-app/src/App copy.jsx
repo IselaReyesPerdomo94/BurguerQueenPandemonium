@@ -11,8 +11,8 @@ class App extends Component{
         super()
         this.state = { modalOpen: true }
         this.closeModal = this.closeModal.bind(this)
-        
-    }
+        this.state = {sideDrawerOpen: false}
+    };
 
     closeModal(){
         this.setState({modalOpen: false});

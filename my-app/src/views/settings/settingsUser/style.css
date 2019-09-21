@@ -1,0 +1,12 @@
+.wrapper {
+    display: flex;
+}
+
+.main {
+    display: flex;
+    /* margin-top: 12%; */
+    padding: 1 rem;
+    flex-direction: column;
+    width: 85%;
+    height: 100vh;
+}
