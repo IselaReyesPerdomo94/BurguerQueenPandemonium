@@ -8,8 +8,7 @@ class Dropdown extends Component {
             <Fragment>
                 <select name="Usuarios">
                     <option defaultValue value="user">{this.props.options}</option>
-                    <option><span></span></option>
-                    <span></span>
+
                 </select>
 
             </Fragment>
