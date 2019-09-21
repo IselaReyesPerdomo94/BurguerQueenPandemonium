@@ -7,19 +7,9 @@ import './settings.css';
 import UserTabs from './settingsUser/index.jsx';
 
 class Settings extends React.Component {
-    constructor() {
-        super();
-        this.state = { modalOpen: true }
-        this.closeModal = this.closeModal.bind(this)
-    }
-
-    closeModal() {
-        console.log("Closes")
-        this.setState({ modalOpen: false })
-    }
 
     render() {
-        const { modalOpen } = this.state;
+        const { modalOpen, closeModal } = this.props;
         const displayTabsSettings = (
             <Tabs>
                 <TabList>
@@ -39,10 +29,10 @@ class Settings extends React.Component {
                 </TabPanel>
             </Tabs>
         )
-
+        console.log(closeModal)
         return (
             <Fragment>
-                <Modal open={modalOpen} close={this.closeModal} />
+                <Modal open={modalOpen} close={closeModal} />
                 <main className="main">
                     <Tittle color="#303F9F" text="Configuración" icon={<i className="material-icons icon">settings_applications</i>} />
                     {displayTabsSettings}
