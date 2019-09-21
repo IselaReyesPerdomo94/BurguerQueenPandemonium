@@ -3,7 +3,7 @@ import {Link, Redirect} from 'react-router-dom';
 import withFirebaseAuth from 'react-with-firebase-auth'
 import * as firebase from 'firebase/app';
 import 'firebase/auth';
-import firebaseApp from '../../firebase/index';
+import {firebaseApp} from '../../firebase/index';
 import Logo from '../../components/logo/index.jsx';
 import InputEmail from '../../components/inputEmail/index.jsx';
 import InputPassword from '../../components/password/index.jsx';
@@ -39,6 +39,7 @@ class Login extends React.Component {
         return (
             <Fragment>
                 <main className = "login">
+             <div className="contenedor">
                     <Logo/>
                     <div className="user-inputs">
                         <InputEmail value={email} onChange={this.handleEmailChange}/>
@@ -54,6 +55,8 @@ class Login extends React.Component {
                         <FlatButton text="REGÍSTRATE"/>
                         </Link> 
                         <p>¿Olvidaste tu contraseña?<FlatButton text="RECUPERAR"/></p>
+                    </div>
+
                     </div>
                 </main>
             </Fragment>

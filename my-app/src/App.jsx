@@ -1,56 +1,36 @@
 import React, {Component} from 'react';
-import {Link} from 'react-router-dom';
-import './App.css';
-import Logo from './components/logo/index';
-import FlatButton from './components/Buttons/flatButton/index.jsx'
-import withFirebaseAuth from 'react-with-firebase-auth';
-import * as firebase from 'firebase/app';
-import 'firebase/auth';
-import firebaseApp from './firebase/index'
-import Menu from './components/sidebar/index';
+import Home from './views/home/App.jsx';
+import Settings from './views/settings/settings';
+import Login from './views/login/login';
+import Register from './views/register/index';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-class Home extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isLogged:true};
-    this.handleOnClick = this.handleOnClick.bind(this);
-  }
-  handleOnClick(e){
-    this.setState({isLogged:false});
-  }
-  render() {
-    return (
-      <div className="App">
-        <Logo/>
-        <Menu/>
-        <nav>
-          <Link to="/corte-de-caja" className="homeButtons cashOut">
-          <i className="material-icons icons">attach_money</i>
-            Corte de Caja
-          </Link>
-          <Link to="/configuracion" className="homeButtons settings">
-          <i className="material-icons icons">settings_applications</i>
-            Configuración
-          </Link>
-          <Link to="/comandas" className="homeButtons commands">
-          <i className="material-icons icons">restaurant</i>
-            Comandas</Link>
-          <Link to="/Inventario" className="homeButtons inventory">
-            <i className="material-icons icons">assignment</i>
-            Inventario
-          </Link>
-          <FlatButton text="CERRAR SESIÓN" onClick= {() => {
-            firebase.auth().signOut().then(() =>console.log('sesion cerrada')).catch(() => console.error)}}/> 
-        </nav>
-      </div>
-    );
-  }
+class App extends Component{
+    constructor(){
+        super()
+        this.state = { modalOpen: true }
+        this.closeModal = this.closeModal.bind(this)
+    }
+
+    closeModal(){
+        this.setState({modalOpen: false});
+    }
+
+    render(){
+        const {modalOpen} = this.state;
+
+        return(
+            <Router basename = { window.location.pathname || '' } >
+        <Switch >
+            <Route exact path = "/" render = { props => < Login/>}></Route>
+            <Route exact path = "/Home" render = { props => <Home />}></Route >
+            <Route exact path = "/configuracion" render = { props => < Settings modalOpen={modalOpen} closeModal={this.closeModal}/> } ></Route> 
+            <Route exact path = "/registro" render = { props => < Register/>}></Route>
+
+        </Switch>  
+    </Router>
+        )
+    }
 }
 
-const firebaseAppAuth = firebaseApp.auth();
-
-export default withFirebaseAuth({
-  firebaseAppAuth,
-})(Home);
-
+export default App;
