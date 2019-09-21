@@ -10,8 +10,7 @@ class App extends Component{
     constructor(){
         super()
         this.state = { modalOpen: true }
-        this.closeModal = this.closeModal.bind(this)
-        
+        this.closeModal = this.closeModal.bind(this)   
     }
 
     closeModal(){

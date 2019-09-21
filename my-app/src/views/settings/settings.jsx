@@ -9,8 +9,18 @@ import Menu from '../../components/sidebarNav/index'
 import SideDrawer from '../../components/sidebarNav/sideDrawer/sideDrawer';
 
 class Settings extends Component {
-
+    constructor(props){
+        super(props)
+        this.state = {sideDrawerOpen:false}
+        this.props = this.drawerClickHandler.bind(this)
+    }
     render() {
+        let sideDrawer;
+
+        if (this.state.sideDrawerOpen){
+            sideDrawer = <SideDrawer/>;
+        }
+
         const { modalOpen, closeModal } = this.props;
         const displayTabsSettings = (
             <Tabs>
@@ -31,13 +41,13 @@ class Settings extends Component {
                 </TabPanel>
             </Tabs>
         )
-        console.log(closeModal)
+        console.log("este es el drawerhandler-->", drawerClickHandler);
         return (
             <Fragment>
                 <div className="wrapper">
                 <Modal open={modalOpen} close={closeModal} />
-                <Menu/>
-                <SideDrawer/>
+                <Menu drawerClickHandler = {this.drawerToogleClickHandler}/>
+                {sideDrawer}
                 <main className="main">
                     <Tittle color="#303F9F" text="Configuración" icon={<i className="material-icons icon">settings_applications</i>} />
                     {displayTabsSettings}

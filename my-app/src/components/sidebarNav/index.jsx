@@ -2,38 +2,45 @@ import React, {Component} from 'react'
 import './style.css'
 import DrawerToogleButton from './sideDrawer/drawerToogleButton'
 
-const Menu = (props) => {
-return (
-   <aside className="toolbar aside">
-      <nav className="toolbar-navigation">
-         <div className="toolbar-icon">
-            <DrawerToogleButton/>
-         </div>
-         <div className="toolbar-navigation-items">
-            <ul>
-               <li>
-                  <i className="material-icons icons">attach_money</i>
-               </li>
-               <li>
-                  <i className="material-icons icons">attach_money</i>
-               </li>
-               <li>
-                  <i className="material-icons icons">attach_money</i>
-               </li>
-               <li>
-                  <i className="material-icons icons">attach_money</i>
-               </li>
-               <li>
-                  <i className="material-icons icons">attach_money</i> 
-               </li>
-               <li>
-                  <i className="material-icons icons">attach_money</i> 
-               </li>
-            </ul>
-         </div>
-      </nav>
-   </aside>
-);
+class Menu extends Component {
+   constructor(props) {
+      super(props)
+      this.props = this.click.bind(this)   
+      
+   }
+   render(){
+      return (
+         <aside className="toolbar aside">
+            <nav className="toolbar-navigation">
+               <div className="toolbar-icon">
+                  <DrawerToogleButton click ={props.drawerClickHandler}/>
+               </div>
+               <div className="toolbar-navigation-items">
+                  <ul>
+                     <li>
+                        <i className="material-icons icons">home</i>
+                     </li>
+                     <li>
+                        <i className="material-icons icons">restaurant</i>
+                     </li>
+                     <li>
+                        <i className="material-icons icons">assignment</i>
+                     </li>
+                     <li>
+                        <i className="material-icons icons">attach_money</i>
+                     </li>
+                     <li>
+                        <i className="material-icons icons">settings_applications</i> 
+                     </li>
+                     <li>
+                        <i className="material-icons icons">account_circle</i> 
+                     </li>
+                  </ul>
+               </div>
+            </nav>
+         </aside>
+      );
+      };
 }
 
 export default Menu; 
