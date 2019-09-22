@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
-import Tittle from '../../components/titles/index'
-import Userandbranch from '../comandas/UserComandas/index'
+import Tittle from '../../components/titles/index';
+import Userandbranch from './UserComandas/index.jsx';
 
 class Comandas extends Component {
 
