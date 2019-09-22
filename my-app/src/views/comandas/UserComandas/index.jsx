@@ -1,9 +1,10 @@
 import React, { Component, Fragment } from 'react';
 import Dropdown from '../../../components/Dropdown/index'
+import EntryButton from '../../../components/Buttons/EntryButton/index.jsx';
 import './style.css';
 
 
-class User extends Component {
+class Userandbranch extends Component {
     constructor() {
         super()
     }
@@ -15,6 +16,12 @@ class User extends Component {
                         <Dropdown options="USUARIO" />
                         <Dropdown options="SUCURSAL" />
                     </div>
+                    <div className="btn-add">
+                        <EntryButton text="AGREGAR" />
+                    </div>
+
+
+
                 </main>
             </Fragment>
         )
@@ -22,4 +29,4 @@ class User extends Component {
 }
 
 
-export default User;
+export default Userandbranch;

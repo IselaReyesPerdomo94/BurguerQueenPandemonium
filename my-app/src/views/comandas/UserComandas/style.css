@@ -5,3 +5,10 @@
     justify-content: flex-end;
     padding-right: 3rem;
 }
+
+.btn-add{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 90%;
+    margin-right: 2rem;
+}

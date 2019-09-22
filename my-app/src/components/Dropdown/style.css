@@ -5,6 +5,8 @@ select {
     outline: none;
     width: 7rem;
     font-size: 1rem; 
+    color:#007AFF;
+    
 }
 select:hover{
     border-bottom: 2px solid #007AFF;
