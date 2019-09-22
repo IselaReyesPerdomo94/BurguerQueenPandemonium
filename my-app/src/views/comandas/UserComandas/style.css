@@ -1,3 +1,6 @@
+main{
+    height: 100vh;
+}
 
 .options-select{
     display: flex;
@@ -9,6 +12,6 @@
 .btn-add{
     display: flex;
     justify-content: flex-end;
-    margin-top: 90%;
+    margin-top: 50%;
     margin-right: 2rem;
 }

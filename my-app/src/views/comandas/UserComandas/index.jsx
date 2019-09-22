@@ -19,9 +19,6 @@ class Userandbranch extends Component {
                     <div className="btn-add">
                         <EntryButton text="AGREGAR" />
                     </div>
-
-
-
                 </main>
             </Fragment>
         )
