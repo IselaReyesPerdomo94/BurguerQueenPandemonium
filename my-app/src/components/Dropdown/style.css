@@ -3,17 +3,14 @@ select {
     background: transparent;
     border: none;
     outline: none;
-    width: 6rem;
+    width: 7rem;
     font-size: 1rem; 
+    color:#007AFF;
+    
 }
 select:hover{
     border-bottom: 2px solid #007AFF;
     padding-bottom: 5px;
     transition: 0.3s;
-}
-
-.select-uno {
-    padding-top: 1em;
-    padding-left: 4em; 
 }
 
