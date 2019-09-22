@@ -33,10 +33,15 @@ class Settings extends React.Component {
         return (
             <Fragment>
                 <Modal open={modalOpen} close={closeModal} />
+                <div className="wrapper">
+                <aside className="aside">
+                    <p>Hola</p>
+                </aside>
                 <main className="main">
                     <Tittle color="#303F9F" text="Configuración" icon={<i className="material-icons icon">settings_applications</i>} />
                     {displayTabsSettings}
                 </main>
+                </div>
             </Fragment>
         )
     }
