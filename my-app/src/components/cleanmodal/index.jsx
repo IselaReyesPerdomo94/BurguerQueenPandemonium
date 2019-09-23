@@ -1,15 +1,29 @@
 import React, { Component } from 'react';
 import './style.css';
-import EntryButton from '../Buttons/EntryButton/index';
 import FlatButton from '../Buttons/flatButton/index';
-import { db, firebaseApp } from '../../firebase/index';
 
 class CleanModal extends Component {
-
+    
     render() {
+        const {modalOpen} = this.state;
+        const { open, close, content, title, footer } = this.props;
+        const classes = `full ${open ? "open" : "closed"}`
         return (
-            <div>
 
+            <div className={classes}>
+                <div className="modal">
+                    <div className="modal-title">
+                        <h3>{title}</h3>
+                    </div>
+                    <div className="modal-input">
+                        {content}
+                    </div>
+                    <div className="modal-footer">
+                        {footer}
+                        <FlatButton text = "CANCELAR" onClick = {close}/>
+        
+                    </div>
+                </div>
             </div>
         )
     }
