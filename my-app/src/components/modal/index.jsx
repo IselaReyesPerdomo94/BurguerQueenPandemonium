@@ -13,6 +13,7 @@ class Modal extends Component {
   this.state = {pin: "",textError:""}
   this.handlePinChange = this.handlePinChange.bind(this);
   this.handlePinFromFirebase = this.handlePinFromFirebase.bind(this);
+  this.state = {modalOpen: false};
   }
 
   handlePinChange(e) {
@@ -35,10 +36,8 @@ class Modal extends Component {
   }).catch(()=>{
     console.error('Clave es incorrecta');
     this.setState({textError: "Tu clave es incorrecta"})
-  })
-  ;
-
-  }
+  });
+}
 
 render(){
   const {pin, textError} = this.state;

@@ -5,6 +5,7 @@
     "homepage": ".",
     "dependencies": {
         "@material-ui/core": "^4.4.2",
+        "@trendmicro/react-sidenav": "^0.4.5",
         "firebase": "^6.6.1",
         "react": "^16.9.0",
         "react-dom": "^16.9.0",

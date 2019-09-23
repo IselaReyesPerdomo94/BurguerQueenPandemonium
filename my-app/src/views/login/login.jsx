@@ -66,7 +66,7 @@ class Login extends React.Component {
 const firebaseAppAuth = firebaseApp.auth();
 const providers = {
   googleProvider: new firebase.auth.GoogleAuthProvider(),
-};
+}
 
 export default withFirebaseAuth({
     providers,

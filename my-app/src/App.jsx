@@ -1,4 +1,6 @@
-import React, { Component } from 'react';
+
+import React, {Component} from 'react';
+import './index.css'
 import Home from './views/home/App.jsx';
 import Settings from './views/settings/settings';
 import Login from './views/login/login';
@@ -10,12 +12,13 @@ class App extends Component {
     constructor() {
         super()
         this.state = { modalOpen: true }
-        this.closeModal = this.closeModal.bind(this)
+        this.closeModal = this.closeModal.bind(this)   
     }
 
     closeModal() {
         this.setState({ modalOpen: false });
     }
+
 
     render() {
         const { modalOpen } = this.state;
