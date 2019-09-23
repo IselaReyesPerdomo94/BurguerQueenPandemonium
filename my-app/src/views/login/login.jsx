@@ -52,9 +52,7 @@ class Login extends React.Component {
                                     signInWithEmailAndPassword(email,password)}}/>
                         }
                         <Link to = "/registro">
-                        <FlatButton text="REGÍSTRATE"/>
                         </Link> 
-                        <p>¿Olvidaste tu contraseña?<FlatButton text="RECUPERAR"/></p>
                     </div>
 
                     </div>

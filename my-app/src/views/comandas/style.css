@@ -1,0 +1,10 @@
+.wrapper{
+    display: flex;
+}
+
+.main-comandas{
+    display: flex;
+    padding: 1rem;
+    flex-direction: column;
+    width: 89%;
+}
