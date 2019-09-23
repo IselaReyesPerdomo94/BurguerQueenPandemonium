@@ -41,7 +41,7 @@ class Home extends Component {
             Inventario
           </Link>
           <Link to="/">
-          <FlatButton text="CERRAR SESIÓN" onClick= {() => {
+          <FlatButton className="sign-out-button" text="CERRAR SESIÓN" onClick= {() => {
             firebase.auth().signOut()
             .then(() =>console.log('sesion cerrada')).catch(() => console.error)}}/>
             </Link>

@@ -49,8 +49,8 @@ class Menu extends Component {
                      <li onClick= {() => {
                         firebase.auth().signOut()
                         .then(() =>console.log('sesion cerrada')).catch(() => console.error)}}>
-                        <Link to="/">
-                           <i className="material-icons icons sign-out">account_circle</i>
+                        <Link to="/" className="link">
+                           <i className="material-icons icons">account_circle</i>
                         </Link>
                      </li>
                   </ul>

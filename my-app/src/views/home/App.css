@@ -29,6 +29,10 @@ nav {
     font-size: 1.5rem;
 }
 
+.sign-out-button{
+    text-decoration: none;
+}
+
 .cashOut {
     background-color: #0097A7;
 }
