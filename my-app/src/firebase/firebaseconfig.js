@@ -1,7 +1,5 @@
-// import firebaseApp from 'firebase/app'
+import firebaseApp from 'firebase/app';
 import 'firebase/auth';
-import firebase from 'firebase';
-
 const config = {
     apiKey: "AIzaSyC7FSK03JcEV7HtO20cXB03ncK_afcfSc4",
     authDomain: "pandemonium-5a001.firebaseapp.com",
@@ -12,7 +10,18 @@ const config = {
     appId: "1:472468721699:web:6c8dfa1b1e77d01f296196"
 }
 
-export const firebaseApp = firebase.initializeApp(config);
-export const db = firebase.firestore();
+const createFirebaseApp = () => {
+    firebaseApp.initializeApp(config)
+    firebaseApp.auth().onAuthStateChanged(user => {
+        if (user) {
+            console.log('User connected')
 
-//export default firebaseApp;
+        } else {
+            console.log('No user connected')
+        }
+    })
+    return firebaseApp
+}
+
+
+export default createFirebaseApp

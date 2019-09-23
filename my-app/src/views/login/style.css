@@ -1,0 +1,21 @@
+html, body, #root {
+    height: 100%;
+}
+
+.user-inputs {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.login{
+    height: 100%;
+    width: 100%;
+    display: table;   
+}
+
+.contenedor{
+    display: table-cell;
+    vertical-align: middle;
+}

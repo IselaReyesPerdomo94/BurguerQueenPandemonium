@@ -1,0 +1,42 @@
+.menu {
+    display: flex;
+    width: 8%;
+    background-color: #F3F3F3;
+    height: 100vh;
+    padding: .5rem;
+    margin-top: 1rem;
+    border-radius: 10px;
+}
+
+.toolbar-navigation {
+    display: flex;
+}
+
+.toolbar-icon {
+    display: flex;
+    align-items: center;
+    height: 13%;
+}
+
+.toolbar-icon i {
+    font-size: 4rem;
+}
+
+.toolbar-navigation-items {
+    height: 80%;
+}
+
+.toolbar-navigation-items ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 95%;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.toolbar-navigation-items li {
+    display: flex;
+    list-style: none;
+}

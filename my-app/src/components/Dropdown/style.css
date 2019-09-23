@@ -1,0 +1,16 @@
+select {
+    margin-right: 4em;
+    background: transparent;
+    border: none;
+    outline: none;
+    width: 7rem;
+    font-size: 1rem; 
+    color:#007AFF;
+    
+}
+select:hover{
+    border-bottom: 2px solid #007AFF;
+    padding-bottom: 5px;
+    transition: 0.3s;
+}
+
