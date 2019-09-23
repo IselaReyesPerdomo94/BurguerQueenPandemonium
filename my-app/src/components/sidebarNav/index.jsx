@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import './style.css'
 import DrawerToogleButton from './sideDrawer/drawerToogleButton'
+import {Link} from 'react-router-dom';
 
 class Menu extends Component {
    constructor(props) {
@@ -17,11 +18,13 @@ class Menu extends Component {
                </div>
                <div className="toolbar-navigation-items">
                   <ul>
-                     <li>
+                     <li><Link to="/Home" className="link">
                         <i className="material-icons icons">home</i>
+                        </Link> 
                      </li>
-                     <li>
+                     <li><Link to="/comandas" className="link">
                         <i className="material-icons icons">restaurant</i>
+                        </Link> 
                      </li>
                      <li>
                         <i className="material-icons icons">assignment</i>
@@ -29,8 +32,9 @@ class Menu extends Component {
                      <li>
                         <i className="material-icons icons">attach_money</i>
                      </li>
-                     <li>
-                        <i className="material-icons icons">settings_applications</i> 
+                     <li><Link to="/configuracion" className="link">
+                        <i className="material-icons icons">settings_applications</i>
+                        </Link>
                      </li>
                      <li>
                         <i className="material-icons icons">account_circle</i> 
