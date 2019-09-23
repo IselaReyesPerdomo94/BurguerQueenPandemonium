@@ -1,9 +1,16 @@
 import React, {Component} from 'react';
 
-const DrawerToogleButton = (props) => {
+const DrawerToogleButton = ({click, open}) => {
+    console.log('Open?', open)
     return(
-        <span className="toogle-button">
-            <i className="material-icons icons" onClick={props.click}>arrow_back_ios</i>
+        <span className="toogle-button" onClick={click}>
+            {
+                open ? 
+                    <i className="material-icons icons">chevron_left</i>
+                 : 
+                    <i className="material-icons icons">chevron_right</i>
+            }
+            
         </span>
 
     );
