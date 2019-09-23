@@ -1,8 +1,8 @@
 span {
     width: 7rem;
     text-align: left;
-    text-decoration: none;
-    font-size: 1.2rem;
+    text-decoration: none !important;
+    color: black;
 }
 
 .side-drawer {
@@ -55,7 +55,7 @@ span {
     list-style: none;
     justify-content: space-between;
     align-items: center;
-    text-decoration: none;
+    text-decoration: none !important;
     color: black;
 }
 
@@ -65,6 +65,15 @@ span {
 }
 
 .sign-out {
+    display: flex;
     flex-direction: column;
     height: 5rem !important;
+    text-decoration: none !important;
+    color: black;
+}
+
+.sign-out-text {
+    text-decoration: none !important;
+    color: black;
+    text-align: center !important;
 }

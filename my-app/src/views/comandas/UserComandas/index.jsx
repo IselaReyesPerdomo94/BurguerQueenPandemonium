@@ -11,7 +11,7 @@ class Userandbranch extends Component {
     render() {
         return (
             <Fragment>
-                <main>
+                <main className="user-comandas-main">
                     <div className="options-select">
                         <Dropdown options="USUARIO" />
                         <Dropdown options="SUCURSAL" />

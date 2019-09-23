@@ -19,7 +19,7 @@
 }
 
 .toolbar-icon i {
-    font-size: 4rem;
+    font-size: 5rem;
 }
 
 .toolbar-navigation-items {
@@ -39,4 +39,16 @@
 .toolbar-navigation-items li {
     display: flex;
     list-style: none;
+}
+
+.sign-out {
+    flex-direction: column;
+    height: 5rem !important;
+    text-decoration: none;
+    color: black;
+}
+
+span {
+    text-decoration: none;
+    color: black;
 }

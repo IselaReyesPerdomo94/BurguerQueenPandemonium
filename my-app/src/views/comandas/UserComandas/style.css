@@ -1,6 +1,3 @@
-main{
-    height: 100vh;
-}
 
 .options-select{
     display: flex;
@@ -12,6 +9,11 @@ main{
 .btn-add{
     display: flex;
     justify-content: flex-end;
-    margin-top: 50%;
+    height: 50%;
     margin-right: 2rem;
+    margin-top: 50%;
+}
+
+.user-comandas-main{
+    height: 100%;
 }

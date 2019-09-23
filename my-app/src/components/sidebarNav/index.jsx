@@ -1,12 +1,23 @@
 import React, {Component} from 'react'
-import './style.css'
 import DrawerToogleButton from './sideDrawer/drawerToogleButton'
+import {Link} from 'react-router-dom';
+import './style.css'
+
+import withFirebaseAuth from 'react-with-firebase-auth';
+import * as firebase from 'firebase/app';
+import 'firebase/auth';
+import {firebaseApp} from '../../firebase/index'
 
 class Menu extends Component {
    constructor(props) {
       super(props)
-      // this.props = this.click.bind(this)   
-   }
+      this.state = {
+         isLogged:true};
+       this.handleOnClick = this.handleOnClick.bind(this);
+     }
+     handleOnClick(e){
+       this.setState({isLogged:false});
+     }
    render(){
       const {handleSide, open} =this.props;
       return (
@@ -17,11 +28,13 @@ class Menu extends Component {
                </div>
                <div className="toolbar-navigation-items">
                   <ul>
-                     <li>
+                     <li><Link to="/Home" className="link">
                         <i className="material-icons icons">home</i>
+                        </Link> 
                      </li>
-                     <li>
+                     <li><Link to="/comandas" className="link">
                         <i className="material-icons icons">restaurant</i>
+                        </Link> 
                      </li>
                      <li>
                         <i className="material-icons icons">assignment</i>
@@ -29,11 +42,16 @@ class Menu extends Component {
                      <li>
                         <i className="material-icons icons">attach_money</i>
                      </li>
-                     <li>
-                        <i className="material-icons icons">settings_applications</i> 
+                     <li><Link to="/configuracion" className="link">
+                        <i className="material-icons icons">settings_applications</i>
+                        </Link>
                      </li>
-                     <li>
-                        <i className="material-icons icons">account_circle</i> 
+                     <li onClick= {() => {
+                        firebase.auth().signOut()
+                        .then(() =>console.log('sesion cerrada')).catch(() => console.error)}}>
+                        <Link to="/" className="link">
+                           <i className="material-icons icons">account_circle</i>
+                        </Link>
                      </li>
                   </ul>
                </div>
@@ -43,4 +61,8 @@ class Menu extends Component {
       };
 }
 
-export default Menu; 
+const firebaseAppAuth = firebaseApp.auth();
+
+export default withFirebaseAuth({
+  firebaseAppAuth,
+})(Menu);
