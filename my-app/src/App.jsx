@@ -6,31 +6,41 @@ import Settings from './views/settings/settings';
 import Login from './views/login/login';
 import Register from './views/register/index';
 import Comandas from './views/comandas/comandas';
+import SideDrawer from './components/sidebarNav/sideDrawer/sideDrawer';
+import Menu from './components/sidebarNav/index';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 class App extends Component {
     constructor() {
         super()
-        this.state = { modalOpen: true }
-        this.closeModal = this.closeModal.bind(this)   
+        this.state = {modalOpen: true, sideDrawerOpen: false};
+        this.closeModal = this.closeModal.bind(this);
+        this.drawerToogleClickHandler = this.drawerToogleClickHandler.bind(this);   
     }
 
     closeModal() {
         this.setState({ modalOpen: false });
     }
 
+    drawerToogleClickHandler(){
+        this.setState((prevState) => {
+            console.log('Prevstate:',prevState)
+            return {sideDrawerOpen: !prevState.sideDrawerOpen};
+        });
+    };
 
     render() {
-        const { modalOpen } = this.state;
-
+        const { modalOpen, sideDrawerOpen } = this.state;
+        console.log(sideDrawerOpen)
+        const menu = sideDrawerOpen ? <SideDrawer open={sideDrawerOpen} handleSide={this.drawerToogleClickHandler}/> : <Menu open={sideDrawerOpen} handleSide={this.drawerToogleClickHandler}/>
         return (
             <Router basename={window.location.pathname || ''} >
                 <Switch >
                     <Route exact path="/" render={props => < Login />}></Route>
                     <Route exact path="/Home" render={props => <Home />}></Route >
-                    <Route exact path="/configuracion" render={props => < Settings modalOpen={modalOpen} closeModal={this.closeModal} />} ></Route>
+                    <Route exact path="/configuracion" render={props => < Settings modalOpen={modalOpen} menu={menu} closeModal={this.closeModal} sideBar={sideDrawerOpen} handleSide={this.drawerToogleClickHandler}/>} ></Route>
                     <Route exact path="/registro" render={props => < Register />}></Route>
-                    <Route exact path="/comandas" render={props => < Comandas />}></Route>
+                    <Route exact path="/comandas" render={props => < Comandas sideBar={sideDrawerOpen} handleSide={this.drawerToogleClickHandler}/>}></Route>
 
                 </Switch>
             </Router>

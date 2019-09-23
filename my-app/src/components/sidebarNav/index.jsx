@@ -5,15 +5,15 @@ import DrawerToogleButton from './sideDrawer/drawerToogleButton'
 class Menu extends Component {
    constructor(props) {
       super(props)
-      this.props = this.click.bind(this)   
-      
+      // this.props = this.click.bind(this)   
    }
    render(){
+      const {handleSide, open} =this.props;
       return (
-         <aside className="toolbar aside">
+         <aside className="menu">
             <nav className="toolbar-navigation">
                <div className="toolbar-icon">
-                  <DrawerToogleButton click ={props.drawerClickHandler}/>
+                  <DrawerToogleButton open={open} click={handleSide}/>
                </div>
                <div className="toolbar-navigation-items">
                   <ul>
