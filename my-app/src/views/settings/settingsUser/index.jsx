@@ -5,32 +5,18 @@ import Dropdown from '../../../components/Dropdown/index.jsx';
 import Modal from '../../../components/cleanmodal/index';
 import './style.css';
 
-class UsersTab extends React.Component {
-    constructor (){
-        super ()
-        this.state = {modalOpen:false} 
-        this.closeModal = this.closeModal.bind(this)
-        this.openModal = this.openModal.bind(this)
-    }
-    closeModal (){
-        this.setState({modalOpen:false})
-    }
-    openModal (){
-        this.setState({modalOpen:true})
-    }
-    render() {
+const  UsersTab =({openModal}) => {
         return (
             <Fragment>
-                <Modal open = {this.state.modalOpen} close = {this.closeModal} title = "Crear usuario"/>
+                
                 <main>
                     <h2>No se han agregado usuarios</h2>
                     <div className="button-add">
-                        <EntryButton text="Agregar usuarios" className="button-settings" onClick= {this.openModal}/>
+                        <EntryButton text="Agregar usuarios" className="button-settings" onClick= {openModal}/>
                     </div>
                 </main>
             </Fragment>
         )
-    }
 }
 
 export default UsersTab;

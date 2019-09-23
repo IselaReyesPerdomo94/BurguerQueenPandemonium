@@ -5,8 +5,7 @@ import FlatButton from '../Buttons/flatButton/index';
 class CleanModal extends Component {
     
     render() {
-        const {modalOpen} = this.state;
-        const { open, close, content, title, footer } = this.props;
+        const { open, close, content, title, footer} = this.props;
         const classes = `full ${open ? "open" : "closed"}`
         return (
 

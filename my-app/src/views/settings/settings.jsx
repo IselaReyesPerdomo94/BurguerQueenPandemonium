@@ -1,15 +1,28 @@
 import React, { Fragment } from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import "react-tabs/style/react-tabs.css";
+import 'react-tabs/style/react-tabs.css';
 import Tittle from '../../components/titles/index';
 import Modal from '../../components/modal';
+import ModalClean from '../../components/cleanmodal/index';
 import './settings.css';
 import UserTabs from './settingsUser/index.jsx';
 
 class Settings extends React.Component {
-
+    constructor (){
+        super ()
+        this.state = {open:false} 
+        this.closeModal = this.closeModal.bind(this)
+        this.openModal = this.openModal.bind(this)
+    }
+    closeModal (){
+        this.setState({open:false})
+    }
+    openModal (){
+        this.setState({open:true})
+    }
     render() {
-        const { modalOpen, closeModal } = this.props;
+        const { open } = this.state;
+        const {modalOpen, closeModal} = this.props
         const displayTabsSettings = (
             <Tabs>
                 <TabList>
@@ -19,7 +32,7 @@ class Settings extends React.Component {
                 </TabList>
 
                 <TabPanel>
-                    <UserTabs/>
+                    <UserTabs openModal={this.openModal}/>
                 </TabPanel>
                 <TabPanel>
                     <h2>No hay menú agregado aún</h2>
@@ -29,10 +42,10 @@ class Settings extends React.Component {
                 </TabPanel>
             </Tabs>
         )
-        console.log(closeModal)
         return (
             <Fragment>
                 <Modal open={modalOpen} close={closeModal} />
+                <ModalClean open = {this.state.open} close = {this.closeModal} title = "Crear usuario"/>
                 <div className="wrapper">
                 <aside className="aside">
                     <p>Hola</p>
