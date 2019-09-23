@@ -1,3 +1,4 @@
+
 .wrapper {
     display: flex;
 }
@@ -9,4 +10,16 @@
     flex-direction: column;
     width: 85%;
     height: 100vh;
+}
+
+.button-settings {
+    background-color:  #00BCD4 !important;
+    color: white !important;
+}
+
+.button-add{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 50%;
+    margin-right: 2rem;
 }

@@ -1,0 +1,17 @@
+main{
+    height: 100vh;
+}
+
+.options-select{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding-right: 3rem;
+}
+
+.btn-add{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 50%;
+    margin-right: 2rem;
+}
