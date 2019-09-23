@@ -1,4 +1,5 @@
-.wrapper{
+
+.wrapper {
     display: flex;
 }
 
@@ -10,9 +11,9 @@
     height: 100vh;
 }
 
-.aside{
-    width: 10%;
-    background-color: cyan;
-    height: 100vh;
+.aside {
     display: flex;
+    width: 10%;
+    background-color: blue;
+    height: 100vh;
 }

@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
-import './App.css';
 import Logo from '../../components/logo/index';
+import './App.css';
 
 import FlatButton from '../../components/Buttons/flatButton/index.jsx'
 import withFirebaseAuth from 'react-with-firebase-auth';
@@ -40,8 +40,11 @@ class Home extends Component {
             <i className="material-icons icons">assignment</i>
             Inventario
           </Link>
-          <FlatButton text="CERRAR SESIÓN" onClick= {() => {
-            firebase.auth().signOut().then(() =>console.log('sesion cerrada')).catch(() => console.error)}}/> 
+          <Link to="/">
+          <FlatButton className="sign-out-button" text="CERRAR SESIÓN" onClick= {() => {
+            firebase.auth().signOut()
+            .then(() =>console.log('sesion cerrada')).catch(() => console.error)}}/>
+            </Link>
         </nav>
       </div>
     );

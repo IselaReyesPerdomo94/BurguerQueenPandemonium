@@ -52,9 +52,7 @@ class Login extends React.Component {
                                     signInWithEmailAndPassword(email,password)}}/>
                         }
                         <Link to = "/registro">
-                        <FlatButton text="REGÍSTRATE"/>
                         </Link> 
-                        <p>¿Olvidaste tu contraseña?<FlatButton text="RECUPERAR"/></p>
                     </div>
 
                     </div>
@@ -66,9 +64,11 @@ class Login extends React.Component {
 const firebaseAppAuth = firebaseApp.auth();
 const providers = {
   googleProvider: new firebase.auth.GoogleAuthProvider(),
-};
+}
 
 export default withFirebaseAuth({
     providers,
     firebaseAppAuth,
   })(Login);
+
+  

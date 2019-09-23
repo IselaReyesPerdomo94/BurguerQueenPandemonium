@@ -20,7 +20,7 @@
 }
 
 .send-button {
-    width: 10rem;
+    width: fit-content;
     color: white !important;
 }
 
