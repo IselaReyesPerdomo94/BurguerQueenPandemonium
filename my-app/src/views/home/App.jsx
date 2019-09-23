@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
-import './App.css';
 import Logo from '../../components/logo/index';
+import './App.css';
 
 import FlatButton from '../../components/Buttons/flatButton/index.jsx'
 import withFirebaseAuth from 'react-with-firebase-auth';

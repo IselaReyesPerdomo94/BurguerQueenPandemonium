@@ -2,7 +2,7 @@ span {
     width: 7rem;
     text-align: left;
     text-decoration: none;
-    font-size: 1.2rem;
+    color: black;
 }
 
 .side-drawer {
@@ -67,4 +67,11 @@ span {
 .sign-out {
     flex-direction: column;
     height: 5rem !important;
+    text-decoration: none;
+    color: black;
+}
+
+.sign-out-text {
+    text-decoration: none;
+    color: black;
 }

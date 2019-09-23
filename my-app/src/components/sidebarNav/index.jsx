@@ -1,13 +1,23 @@
 import React, {Component} from 'react'
-import './style.css'
 import DrawerToogleButton from './sideDrawer/drawerToogleButton'
 import {Link} from 'react-router-dom';
+import './style.css'
+
+import withFirebaseAuth from 'react-with-firebase-auth';
+import * as firebase from 'firebase/app';
+import 'firebase/auth';
+import {firebaseApp} from '../../firebase/index'
 
 class Menu extends Component {
    constructor(props) {
       super(props)
-      // this.props = this.click.bind(this)   
-   }
+      this.state = {
+         isLogged:true};
+       this.handleOnClick = this.handleOnClick.bind(this);
+     }
+     handleOnClick(e){
+       this.setState({isLogged:false});
+     }
    render(){
       const {handleSide, open} =this.props;
       return (
@@ -36,8 +46,12 @@ class Menu extends Component {
                         <i className="material-icons icons">settings_applications</i>
                         </Link>
                      </li>
-                     <li>
-                        <i className="material-icons icons">account_circle</i> 
+                     <li onClick= {() => {
+                        firebase.auth().signOut()
+                        .then(() =>console.log('sesion cerrada')).catch(() => console.error)}}>
+                        <Link to="/">
+                           <i className="material-icons icons sign-out">account_circle</i>
+                        </Link>
                      </li>
                   </ul>
                </div>
@@ -47,4 +61,8 @@ class Menu extends Component {
       };
 }
 
-export default Menu; 
+const firebaseAppAuth = firebaseApp.auth();
+
+export default withFirebaseAuth({
+  firebaseAppAuth,
+})(Menu);
