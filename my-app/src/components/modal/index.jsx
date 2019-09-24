@@ -43,7 +43,6 @@ render(){
   const {pin, textError} = this.state;
   const {open, close} = this.props;
   const classes = `overlay ${open ? "open" : "closed"}`;
-  console.log(pin);
   return (
     <div className={classes}>
       <div className="modal">
