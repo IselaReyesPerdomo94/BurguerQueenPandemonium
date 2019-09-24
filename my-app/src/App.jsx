@@ -15,11 +15,16 @@ class App extends Component {
         super()
         this.state = {modalOpen: true, sideDrawerOpen: false};
         this.closeModal = this.closeModal.bind(this);
+        this.setToOpen = this.setToOpen.bind(this);
         this.drawerToogleClickHandler = this.drawerToogleClickHandler.bind(this);   
     }
 
     closeModal() {
         this.setState({ modalOpen: false });
+    }
+
+    setToOpen() {
+        this.setState({modalOpen: true});
     }
 
     drawerToogleClickHandler(){
@@ -38,7 +43,7 @@ class App extends Component {
                 <Switch >
                     <Route exact path="/" render={props => < Login />}></Route>
                     <Route exact path="/Home" render={props => <Home />}></Route >
-                    <Route exact path="/configuracion" render={props => < Settings modalOpen={modalOpen} menu={menu} closeModal={this.closeModal} sideBar={sideDrawerOpen} handleSide={this.drawerToogleClickHandler}/>} ></Route>
+                    <Route exact path="/configuracion" render={props => < Settings modalOpen={modalOpen} menu={menu} closeModal={this.closeModal}  setToOpen={this.setToOpen} sideBar={sideDrawerOpen} handleSide={this.drawerToogleClickHandler}/>} ></Route>
                     <Route exact path="/registro" render={props => < Register />}></Route>
                     <Route exact path="/comandas" render={props => < Comandas menu={menu} sideBar={sideDrawerOpen} handleSide={this.drawerToogleClickHandler}/>}></Route>
 

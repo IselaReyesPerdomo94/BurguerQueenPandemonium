@@ -20,6 +20,11 @@ class Settings extends Component {
     openModal (){
         this.setState({open:true})
     }
+
+    componentWillUnmount(){
+        this.props.setToOpen();
+    }
+
     render() {
 
         const { open } = this.state;
