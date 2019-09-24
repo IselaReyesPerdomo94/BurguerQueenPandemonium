@@ -1,34 +1,15 @@
-import React, { Fragment, Component } from 'react';
+import React, { Fragment } from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import 'react-tabs/style/react-tabs.css';
+import "react-tabs/style/react-tabs.css";
 import Tittle from '../../components/titles/index';
 import Modal from '../../components/modal';
-import ModalClean from '../../components/cleanmodal/index';
 import './settings.css';
 import UserTabs from './settingsUser/index.jsx';
 
-class Settings extends Component {
-    constructor (){
-        super ()
-        this.state = {open:false} 
-        this.closeModal = this.closeModal.bind(this)
-        this.openModal = this.openModal.bind(this)
-    }
-    closeModal (){
-        this.setState({open:false})
-    }
-    openModal (){
-        this.setState({open:true})
-    }
-
-    componentWillUnmount(){
-        this.props.setToOpen();
-    }
+class Settings extends React.Component {
 
     render() {
-
-        const { open } = this.state;
-        const {modalOpen, closeModal, handleSide, menu} = this.props
+        const { modalOpen, closeModal } = this.props;
         const displayTabsSettings = (
             <Tabs>
                 <TabList>
@@ -38,7 +19,7 @@ class Settings extends Component {
                 </TabList>
 
                 <TabPanel>
-                    <UserTabs openModal={this.openModal}/>
+                    <UserTabs />
                 </TabPanel>
                 <TabPanel>
                     <h2>No hay menú agregado aún</h2>
@@ -48,12 +29,14 @@ class Settings extends Component {
                 </TabPanel>
             </Tabs>
         )
+        console.log(closeModal)
         return (
             <Fragment>
+                <Modal open={modalOpen} close={closeModal} />
                 <div className="wrapper">
-                    <Modal open={modalOpen} close={closeModal} />
-                    <ModalClean open = {this.state.open} close = {this.closeModal} title = "Crear usuario"/>
-                    {menu}
+                    <aside className="aside">
+                        <p>Hola</p>
+                    </aside>
                     <main className="main">
                         <Tittle color="#303F9F" text="Configuración" icon={<i className="material-icons icon">settings_applications</i>} />
                         {displayTabsSettings}
