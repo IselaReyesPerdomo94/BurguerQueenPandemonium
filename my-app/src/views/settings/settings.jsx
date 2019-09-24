@@ -6,6 +6,8 @@ import Modal from '../../components/modal';
 import ModalClean from '../../components/cleanmodal/index';
 import './settings.css';
 import UserTabs from './settingsUser/index.jsx';
+import EntryButton from '../../components/Buttons/EntryButton/index';
+import CreateUser from '../../components/CreateUser/createUser';
 
 class Settings extends Component {
     constructor (){
@@ -36,7 +38,6 @@ class Settings extends Component {
                     <Tab>Menú</Tab>
                     <Tab>Ayuda</Tab>
                 </TabList>
-
                 <TabPanel>
                     <UserTabs openModal={this.openModal}/>
                 </TabPanel>
@@ -52,7 +53,7 @@ class Settings extends Component {
             <Fragment>
                 <div className="wrapper">
                     <Modal open={modalOpen} close={closeModal} />
-                    <ModalClean open = {this.state.open} close = {this.closeModal} title = "Crear usuario"/>
+                    <ModalClean open = {this.state.open} close = {this.closeModal} title="Crear usuario" footer={<EntryButton text="Guardar"/>} content={<CreateUser/>}/>
                     {menu}
                     <main className="main">
                         <Tittle color="#303F9F" text="Configuración" icon={<i className="material-icons icon">settings_applications</i>} />

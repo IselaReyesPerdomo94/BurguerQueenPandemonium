@@ -46,7 +46,6 @@ class App extends Component {
                     <Route exact path="/configuracion" render={props => < Settings modalOpen={modalOpen} menu={menu} closeModal={this.closeModal}  setToOpen={this.setToOpen} sideBar={sideDrawerOpen} handleSide={this.drawerToogleClickHandler}/>} ></Route>
                     <Route exact path="/registro" render={props => < Register />}></Route>
                     <Route exact path="/comandas" render={props => < Comandas menu={menu} sideBar={sideDrawerOpen} handleSide={this.drawerToogleClickHandler}/>}></Route>
-
                 </Switch>
             </Router>
         )
