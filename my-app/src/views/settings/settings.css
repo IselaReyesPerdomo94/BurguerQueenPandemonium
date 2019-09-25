@@ -9,3 +9,11 @@
     width: 89%;
     height: 100vh;
 }
+
+.aside {
+    display: flex;
+    width: 10%;
+    background-color: blue;
+    height: 100vh;
+}
+

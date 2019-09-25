@@ -20,3 +20,4 @@ const  UsersTab =({openModal}) => {
 }
 
 export default UsersTab;
+
