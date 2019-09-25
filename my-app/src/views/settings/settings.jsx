@@ -6,6 +6,7 @@ import Modal from '../../components/modal';
 import ModalClean from '../../components/cleanmodal/index';
 import './settings.css';
 import UserTabs from './settingsUser/index.jsx';
+import Support from   './../../components/soporte/index';
 
 class Settings extends Component {
     constructor (){
@@ -44,7 +45,7 @@ class Settings extends Component {
                     <h2>No hay menú agregado aún</h2>
                 </TabPanel>
                 <TabPanel>
-                    <h2>Ayuda en construcción</h2>
+                    <Support/>
                 </TabPanel>
             </Tabs>
         )
