@@ -1,4 +1,4 @@
-import React, { Fragment, Component } from 'react';
+import React, { Fragment, useState, useEffect } from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import Tittle from '../../components/titles/index';
@@ -9,60 +9,65 @@ import UserTabs from './settingsUser/index.jsx';
 import EntryButton from '../../components/Buttons/EntryButton/index';
 import CreateUser from '../../components/CreateUser/createUser';
 
-class Settings extends Component {
-    constructor (){
-        super ()
-        this.state = {open:false} 
-        this.closeModal = this.closeModal.bind(this)
-        this.openModal = this.openModal.bind(this)
+const Settings = (props) => {
+    const [open, setOpen] = useState(false)
+
+    const closeModalClean = () => {
+        setOpen(false)
     }
-    closeModal (){
-        this.setState({open:false})
-    }
-    openModal (){
-        this.setState({open:true})
+    const openModal = () => {
+        setOpen(true)
     }
 
-    componentWillUnmount(){
-        this.props.setToOpen();
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [mobile, setMobile] = useState('');
+    const handleNameChange = (e) => {
+        setName(e.target.value)
+    }
+    const handleEmailChange = (e) => {
+        setEmail(e.target.value)
+    }
+    const handleMobileChange = (e) => {
+        setMobile(e.target.value)
     }
 
-    render() {
+    useEffect(() => {
+        props.setToOpen()
+    }, [])
 
-        const { open } = this.state;
-        const {modalOpen, closeModal, handleSide, menu} = this.props
-        const displayTabsSettings = (
-            <Tabs>
-                <TabList>
-                    <Tab>Usuarios</Tab>
-                    <Tab>Menú</Tab>
-                    <Tab>Ayuda</Tab>
-                </TabList>
-                <TabPanel>
-                    <UserTabs openModal={this.openModal}/>
-                </TabPanel>
-                <TabPanel>
-                    <h2>No hay menú agregado aún</h2>
-                </TabPanel>
-                <TabPanel>
-                    <h2>Ayuda en construcción</h2>
-                </TabPanel>
-            </Tabs>
-        )
-        return (
-            <Fragment>
-                <div className="wrapper">
-                    <Modal open={modalOpen} close={closeModal} />
-                    <ModalClean open = {this.state.open} close = {this.closeModal} title="Crear usuario" footer={<EntryButton text="Guardar"/>} content={<CreateUser/>}/>
-                    {menu}
-                    <main className="main">
-                        <Tittle color="#303F9F" text="Configuración" icon={<i className="material-icons icon">settings_applications</i>} />
-                        {displayTabsSettings}
-                    </main>
-                </div>
-            </Fragment>
-        )
-    }
+    const { modalOpen, closeModal, handleSide, menu } = props
+    const displayTabsSettings = (
+        <Tabs>
+            <TabList>
+                <Tab>Usuarios</Tab>
+                <Tab>Menú</Tab>
+                <Tab>Ayuda</Tab>
+            </TabList>
+            <TabPanel>
+                <UserTabs openModal={openModal} />
+            </TabPanel>
+            <TabPanel>
+                <h2>No hay menú agregado aún</h2>
+            </TabPanel>
+            <TabPanel>
+                <h2>Ayuda en construcción</h2>
+            </TabPanel>
+        </Tabs>
+    )
+    return (
+        <Fragment>
+            <div className="wrapper">
+                <Modal open={modalOpen} close={closeModal} />
+                <ModalClean open={open} close={closeModalClean} title="Crear usuario" footer={<EntryButton text="Guardar" />} content={<CreateUser handleEmailChange={handleEmailChange} handleNameChange={handleNameChange} handleMobileChange={handleMobileChange}/>} />
+                {menu}
+                <main className="main">
+                    <Tittle color="#303F9F" text="Configuración" icon={<i className="material-icons icon">settings_applications</i>} />
+                    {displayTabsSettings}
+                </main>
+            </div>
+        </Fragment>
+    )
 }
 
 export default Settings;
