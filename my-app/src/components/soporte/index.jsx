@@ -1,5 +1,4 @@
-import React, { Fragment, useState } from 'react';
-import * as firebase from 'firebase/app';
+import React from 'react';
 import EntryButton from './../Buttons/EntryButton/index.jsx';
 import './style.css';
 

@@ -79,17 +79,18 @@ const Settings = (props) => {
         if(!validateInputs()){
             return
         }
-        const userCollection = db.collection('users').doc();
-        userCollection.set({
+        setAlert('Creando usuario, espere un momento')
+        const userCollection = db.collection('users')
+        userCollection.add({
             nombre: name,
             correo: email,
             telefono: mobile
-        }).then(()=>{
+        })
+        .then(()=>{
+            console.log('Creado correctamente')
             setSuccess('Usuario creado correctamente')
-        }).then(()=> {
-            setTimeout(() => {
-                closeModalClean()
-            }, 1000);
+        }).then(()=>{
+            closeModalClean()
         })
         .catch(()=>{
             setError('Parece que hubo un error')
@@ -99,12 +100,7 @@ const Settings = (props) => {
     useEffect(() => {
         props.setToOpen()
     }, [])
- 
-
-    useEffect(()=>{
-        props.setToOpen()
-    },[]) 
-    
+     
     const { modalOpen, closeModal, handleSide, menu } = props
     
     const displayTabsSettings = (
