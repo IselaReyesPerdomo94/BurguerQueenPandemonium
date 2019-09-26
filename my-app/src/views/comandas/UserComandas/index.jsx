@@ -16,6 +16,9 @@ class Userandbranch extends Component {
                         <Dropdown options="USUARIO" />
                         <Dropdown options="SUCURSAL" />
                     </div>
+                    <div className="comandas-box">
+
+                    </div>
                     <div className="btn-add">
                         <EntryButton text="AGREGAR" />
                     </div>
