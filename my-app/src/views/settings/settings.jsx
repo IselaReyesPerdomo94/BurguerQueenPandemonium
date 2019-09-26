@@ -1,9 +1,8 @@
 import React, { Fragment, useState, useEffect } from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import 'react-tabs/style/react-tabs.css';
+import "react-tabs/style/react-tabs.css";
 import Tittle from '../../components/titles/index';
 import Modal from '../../components/modal';
-import ModalClean from '../../components/cleanmodal/index';
 import './settings.css';
 import UserTabs from './settingsUser/index.jsx';
 import Support from './../../components/soporte/index';
