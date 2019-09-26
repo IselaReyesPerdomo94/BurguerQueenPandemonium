@@ -9,8 +9,9 @@ import Support from './../../components/soporte/index';
 import EntryButton from './../../components/Buttons/EntryButton/index.jsx';
 import Input from './../../components/CleanInput/index.jsx';
 import CreateUser from '../../components/CreateUser/createUser';
+import ModalClean from '../../components/cleanmodal/index'
 import { db } from '../../firebase/index';
-import TextErrors from '../../components/textErrors/index'
+import TextErrors from '../../components/textErrors/index';
 
 
 const Settings = (props) => {
