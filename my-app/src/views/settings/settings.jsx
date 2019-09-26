@@ -40,7 +40,6 @@ const Settings = (props) => {
     }
      
     const closeModalClean = () => {
-        console.log('me ejecuto jeje')
         cleanModal()
         setOpen(false)
     }
@@ -63,14 +62,15 @@ const Settings = (props) => {
             setError('El campo de nombre no debe estar vacío')
             setTimeout(()=>{
                 setError('')
-            }, 2000)
+            }, 2500)
             return false;
         }
         if(email === '' || mobile === ''){
             setAlert('Se recomienda llenar teléfono y correo')
             setTimeout(()=>{
                 setAlert('')
-            }, 2000)
+            }, 2500)
+            return false;
         }
         return true
     }
@@ -109,7 +109,7 @@ const Settings = (props) => {
     
     const displayTabsSettings = (
         <Tabs>
-            <TabList>
+            <TabList className="tab-list">
                 <Tab>Usuarios</Tab>
                 <Tab>Menú</Tab>
                 <Tab>Soporte</Tab>
@@ -156,9 +156,8 @@ const Settings = (props) => {
         <Fragment>
             <div className="wrapper">
                 <Modal open={modalOpen} close={closeModal} />
-                <ModalClean open={openCodeSecurity} close={closeCodeSecurityModal} content={content} title="Cambiar clave" footer={<EntryButton text="Cambiar clave" />
-            } />
-              <ModalClean open={open} close={closeModalClean} title="Crear usuario" footer={<EntryButton text="Guardar" onClick={creatingUser}/>} content={<CreateUser handleEmailChange={handleEmailChange} handleNameChange={handleNameChange} handleMobileChange={handleMobileChange} alert={alert} error={error} success={success} email={email} mobile={mobile} name={name}/>} />
+                <ModalClean open={open} close={closeModalClean} title="Crear usuario" footer={<EntryButton text="Guardar" onClick={creatingUser} className="create-user-button"/>} content={<CreateUser handleEmailChange={handleEmailChange} handleNameChange={handleNameChange} handleMobileChange={handleMobileChange} alert={alert} error={error} success={success} email={email} mobile={mobile} name={name}/>} />
+                <ModalClean open={openCodeSecurity} close={closeCodeSecurityModal} content={content} title="Cambiar clave" footer={<EntryButton text="Cambiar clave" />} />
                 {menu}
                 <main className="main">
                     <Tittle color="#303F9F" text="Configuración" icon={<i className="material-icons icon">settings_applications</i>} />
