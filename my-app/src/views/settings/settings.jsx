@@ -1,4 +1,4 @@
-import React, { Fragment, useState, useEffect } from 'react';
+import React, { Fragment, useState,useEffect } from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import Tittle from '../../components/titles/index';
@@ -6,11 +6,15 @@ import Modal from '../../components/modal';
 import ModalClean from '../../components/cleanmodal/index';
 import './settings.css';
 import UserTabs from './settingsUser/index.jsx';
-import EntryButton from '../../components/Buttons/EntryButton/index';
+import Support from './../../components/soporte/index';
+import EntryButton from './../../components/Buttons/EntryButton/index.jsx';
+import Input from './../../components/CleanInput/index.jsx';
 import CreateUser from '../../components/CreateUser/createUser';
 import {db} from '../../firebase/index';
 
+
 const Settings = (props) => {
+    const [openCodeSecurity, setOpenCodeSecurity] = useState(false);
     const [open, setOpen] = useState(false)
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
@@ -18,7 +22,7 @@ const Settings = (props) => {
     const [error, setError] = useState('');
     const [alert, setAlert] = useState('');
     const [success, setSuccess] = useState('');
-
+  
     const cleanModal = () => {
         setName('')
         setEmail('')
@@ -28,6 +32,13 @@ const Settings = (props) => {
         setSuccess('')
     }
 
+    const closeCodeSecurityModal = () => {
+        setOpenCodeSecurity(false)
+    }
+     const openCodeSecurityModal = () => {
+        setOpenCodeSecurity(true)
+    }
+     
     const closeModalClean = () => {
         cleanModal()
         setOpen(false)
@@ -88,31 +99,65 @@ const Settings = (props) => {
     useEffect(() => {
         props.setToOpen()
     }, [])
+ 
 
+    useEffect(()=>{
+        props.setToOpen()
+    },[]) 
+    
     const { modalOpen, closeModal, handleSide, menu } = props
+    
     const displayTabsSettings = (
         <Tabs>
             <TabList className="tab-list">
                 <Tab>Usuarios</Tab>
                 <Tab>Menú</Tab>
-                <Tab>Ayuda</Tab>
+                <Tab>Soporte</Tab>
             </TabList>
+
             <TabPanel>
-                <UserTabs openModal={openModal} />
+                <UserTabs openModal={openModal}/>
             </TabPanel>
             <TabPanel>
                 <h2>No hay menú agregado aún</h2>
             </TabPanel>
             <TabPanel>
-                <h2>Ayuda en construcción</h2>
+                <Support openModal={openCodeSecurityModal}/>
             </TabPanel>
         </Tabs>
     )
+
+    const content = (
+        <Fragment>
+            <Input
+                id="nueva-clave"
+                label="Ingresa nueva clave"
+                type="password"
+                name="clave"
+                autoComplete="false"
+                margin="normal"
+                variant="outlined"
+                className="mobile-input"
+            />
+            <Input
+                id="confirmar-nueva-clave"
+                label="Confirmar nueva clave"
+                type="password"
+                name="nuevaClave"
+                autoComplete="false"
+                margin="normal"
+                variant="outlined"
+                className="mobile-input"
+            />
+        </Fragment>
+    );
+
     return (
         <Fragment>
             <div className="wrapper">
                 <Modal open={modalOpen} close={closeModal} />
                 <ModalClean open={open} close={closeModalClean} title="Crear usuario" footer={<EntryButton text="Guardar" onClick={creatingUser} className="create-user-button"/>} content={<CreateUser handleEmailChange={handleEmailChange} handleNameChange={handleNameChange} handleMobileChange={handleMobileChange} alert={alert} error={error} success={success} email={email} mobile={mobile} name={name}/>} />
+                <ModalClean open={openCodeSecurity} close={closeCodeSecurityModal} content={content} title="Cambiar clave" footer={<EntryButton text="Cambiar clave" />} />
                 {menu}
                 <main className="main">
                     <Tittle color="#303F9F" text="Configuración" icon={<i className="material-icons icon">settings_applications</i>} />
