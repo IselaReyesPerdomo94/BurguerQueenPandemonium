@@ -1,4 +1,4 @@
-import React, { Fragment, useState} from 'react';
+import React, { Fragment, useState, useEffect} from 'react';
 import {db} from '../../../firebase/index';
 import EntryButton from '../../../components/Buttons/EntryButton/index.jsx';
 import Button from '../../../components/Buttons/buttons';
@@ -18,14 +18,16 @@ const  UsersTab =({openModal}) => {
         })
     }
 
-    getUsers()
+    useEffect(() => getUsers(), [] )
 
         return (
             <Fragment>
                 
                 <main>
-                    <h2>No se han agregado usuarios</h2>
+                    <div className="users-wrapper">
+
                     {userButton.map(user => <Button text={user} />)}
+                    </div>
                     <div className="button-add">
                         <EntryButton text="Agregar usuarios" className="button-settings" onClick= {openModal}/>
                     </div>
