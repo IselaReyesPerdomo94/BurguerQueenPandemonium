@@ -90,7 +90,9 @@ const Settings = (props) => {
             console.log('Creado correctamente')
             setSuccess('Usuario creado correctamente')
         }).then(()=>{
-            closeModalClean()
+            setTimeout(()=> {
+                closeModalClean()
+            }, 1000)
         })
         .catch(()=>{
             setError('Parece que hubo un error')
