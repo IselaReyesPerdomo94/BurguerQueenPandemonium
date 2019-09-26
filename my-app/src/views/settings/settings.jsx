@@ -112,6 +112,7 @@ const Settings = (props) => {
                 setError('Parece que hubo un error')
             })
     }
+    
     const validateChangePin = () => {
         if (firstPin === secondPin) {
             return true
@@ -136,11 +137,9 @@ const Settings = (props) => {
             setTimeout(() => {
                 closeCodeSecurityModal()
             }, 1000)
-
         }).catch(() => {
             setError("Parece que hubo un error")
         })
-
     }
 
     useEffect(() => {

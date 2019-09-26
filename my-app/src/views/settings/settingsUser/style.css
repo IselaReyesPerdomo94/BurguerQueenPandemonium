@@ -19,6 +19,13 @@
 .button-add {
     display: flex;
     justify-content: flex-end;
-    margin-top: 10%;
+    margin-top: 5%;
     margin-right: 2rem;
+}
+
+.users-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    height: 500px;
+    overflow: scroll;
 }
