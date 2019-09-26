@@ -21,7 +21,7 @@
     font-size:2rem;
 }
 
-.create-user-button{
+.create-user-button, .change-pin-button{
     align-self: center;
     background-color:#00BCD4 !important;
 }
