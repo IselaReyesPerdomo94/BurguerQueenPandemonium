@@ -4,7 +4,7 @@ import TextField from '@material-ui/core/TextField';
 
 class Input extends Component {
     render(){
-        const {id, label, type, name, autoComplete, margin, variant, className} = this.props;
+        const {id, label, type, name, autoComplete, margin, variant, className,value,onChange} = this.props;
         return(
             <TextField
                 id={id}
@@ -15,6 +15,8 @@ class Input extends Component {
                 margin={margin}
                 variant={variant}
                 className={className}
+                value={value}
+                onChange={onChange}
             />
         )
     }
