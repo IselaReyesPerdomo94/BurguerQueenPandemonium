@@ -19,10 +19,9 @@ class CleanModal extends Component {
                     <div className="modal-input">
                         {content}
                     </div>
-                    <div className="modal-footer">
+                    <div className="modal-footer-clean">
                         {footer}
                         <FlatButton text = "CANCELAR" onClick = {close}/>
-        
                     </div>
                 </div>
             </div>

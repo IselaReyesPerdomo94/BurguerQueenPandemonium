@@ -2,11 +2,11 @@ import React from 'react';
 import './style.css';
 import TextField from '@material-ui/core/TextField';
 
-const InputMobile = ({value, onChange}) => {
+const InputEmpty = ({text, value, onChange}) => {
   return (
     <TextField
       id="outlined-name-input"
-      label="Número de teléfono"
+      label={text}
       type="number"
       name="mobile"
       autoComplete="mobile"
@@ -19,4 +19,4 @@ const InputMobile = ({value, onChange}) => {
   )
 }
 
-export default InputMobile;
+export default InputEmpty;
