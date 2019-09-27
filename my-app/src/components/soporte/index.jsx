@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import EntryButton from './../Buttons/EntryButton/index.jsx';
 import './style.css';
 

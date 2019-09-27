@@ -35,7 +35,6 @@ class App extends Component {
 
     render() {
         const { modalOpen, sideDrawerOpen } = this.state;
-        console.log(sideDrawerOpen)
         const menu = sideDrawerOpen ? <SideDrawer open={sideDrawerOpen} handleSide={this.drawerToogleClickHandler}/> : <Menu open={sideDrawerOpen} handleSide={this.drawerToogleClickHandler}/>
         return (
             <Router basename={window.location.pathname || ''} >

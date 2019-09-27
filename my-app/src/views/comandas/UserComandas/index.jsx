@@ -5,9 +5,7 @@ import './style.css';
 
 
 class Userandbranch extends Component {
-    constructor() {
-        super()
-    }
+
     render() {
         return (
             <Fragment>
