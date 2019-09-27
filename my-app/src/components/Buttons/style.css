@@ -10,3 +10,7 @@
     font-size: 1.5rem;
     font-weight: bold;
 }
+.comandas-box{
+    display: flex;
+    flex-direction: column;
+}
