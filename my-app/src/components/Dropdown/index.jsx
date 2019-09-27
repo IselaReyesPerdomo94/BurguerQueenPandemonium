@@ -1,19 +1,23 @@
-import React, { Component, Fragment } from 'react';
+import React, { Fragment, useState } from 'react';
 import './style.css';
 
-class Dropdown extends Component {
+const Dropdown = ({ userBranch, label, option, optionTwo }) => {
 
-    render() {
-        return (
-            <Fragment>
-                <select name="Usuarios">
-                    <option defaultValue value="user">{this.props.options}</option>
+    const [firstSelect, setFirstSelect] = ("");
 
+    return (
+        <Fragment>
+            <label htmlFor="usuarios-select" className="label">{label}</label>
+            <div className="caja">
+                <select name="usuarios-select">
+                    <option defaultValue value="user-branch">{userBranch}</option>
+                    <option value="option">{option}</option>
+                    <option value="option-two">{optionTwo}</option>
                 </select>
+            </div>
+        </Fragment>
+    );
 
-            </Fragment>
-        );
-    }
 }
 
 
