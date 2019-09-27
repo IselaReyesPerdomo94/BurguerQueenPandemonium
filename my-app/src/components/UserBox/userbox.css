@@ -28,7 +28,6 @@ p {
     display: flex;
     flex-direction: column;
     padding: 1rem;
-    margin: 0rem 0rem 1rem 0rem;
 }
 
 .name-user {
@@ -44,7 +43,10 @@ p {
 }
 
 .save-user-button {
-    margin-top: 3rem;
-    align-self: center;
     background-color: #00BCD4 !important;
+}
+
+.edit-options-buttons {
+    display: flex;
+    justify-content: space-between;
 }
