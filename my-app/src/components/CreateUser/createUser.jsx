@@ -1,4 +1,4 @@
-import React, {useState, Fragment} from 'react';
+import React, {Fragment} from 'react';
 import InputName from '../inputName/index';
 import InputEmail from '../inputEmail/index';
 import InputMobile from '../inputMobile/index';

@@ -7,7 +7,6 @@ import {firebaseApp} from '../../firebase/index';
 import Logo from '../../components/logo/index.jsx';
 import InputEmail from '../../components/inputEmail/index.jsx';
 import InputPassword from '../../components/password/index.jsx';
-import FlatButton from '../../components/Buttons/flatButton/index.jsx';
 import EntryButton from '../../components/Buttons/EntryButton/index.jsx';
 import './style.css'
 
