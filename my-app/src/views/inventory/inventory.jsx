@@ -1,8 +1,8 @@
 import React, { Component, Fragment } from 'react';
 import Tittle from '../../components/titles/index';
-import './cortedecajas.css';
+import './inventory.css'
 
-class CorteCaja extends Component {
+class Inventory extends Component {
 
     render() {
         const {menu}= this.props;
@@ -10,8 +10,8 @@ class CorteCaja extends Component {
             <Fragment>
                 <div className="wrapper">
                     {menu}
-                    <main className="main-corte-caja">
-                        <Tittle color="#0097A7" text="Corte de caja" />
+                    <main className="main-inventory">
+                        <Tittle color="#512DA8" text="Inventario" />
                     </main>
                 </div>
             </Fragment>
@@ -20,4 +20,4 @@ class CorteCaja extends Component {
 
 }
 
-export default CorteCaja;
+export default Inventory
