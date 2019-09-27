@@ -48,7 +48,8 @@ class Login extends React.Component {
                             ? <Redirect to="/Home"/>
                                 : 
                                 <EntryButton text="INICIAR SESIÓN" onClick = {(e) => {
-                                    signInWithEmailAndPassword(email,password)}}/>
+                                    signInWithEmailAndPassword(email,password)
+                                }}/>
                         }
                         <Link to = "/registro">
                         </Link> 

@@ -1,11 +1,12 @@
-p{
+p {
     display: flex;
     align-items: center;
     font-size: 1.5rem;
     margin: 0;
     justify-content: space-between;
 }
-.user-box{
+
+.user-box {
     height: 60%;
     width: 27%;
     background-color: lightgray;
@@ -16,20 +17,21 @@ p{
     border-radius: 10px;
 }
 
-.more-menu{
+.more-menu {
     margin: 0;
     width: 90%;
     display: flex;
     justify-content: flex-end;
 }
 
-.user-data{
+.user-data {
     display: flex;
     flex-direction: column;
     padding: 1rem;
+    margin: 0rem 0rem 1rem 0rem;
 }
 
-.name-user{ 
+.name-user {
     font-weight: bold;
     font-size: 2rem;
     display: flex;
@@ -37,6 +39,12 @@ p{
     margin: 0.5rem;
 }
 
-.icon-user-menu{
+.icon-user-menu {
     font-size: 2.5rem;
+}
+
+.save-user-button {
+    margin-top: 3rem;
+    align-self: center;
+    background-color: #00BCD4 !important;
 }
