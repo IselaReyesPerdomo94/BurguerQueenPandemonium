@@ -16,7 +16,7 @@ const CreateUser = () => {
     const handleMobileChange = (e) => {
         setMobile(e.target.value)
     }
-
+    
     return (
         <Fragment>
             <InputName onChange={handleNameChange}/>
