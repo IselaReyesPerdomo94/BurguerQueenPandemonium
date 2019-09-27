@@ -210,9 +210,19 @@ const Settings = (props) => {
         <Fragment>
             <div className="wrapper">
                 <Modal open={modalOpen} close={closeModal} />
-                <ModalClean open={open} close={closeModalClean} title="Crear usuario" footer={<EntryButton text="Guardar" onClick={creatingUser} className="create-user-button" />} content={<CreateUser handleEmailChange={handleEmailChange} handleNameChange={handleNameChange} handleMobileChange={handleMobileChange} alert={alert} error={error} success={success} email={email} mobile={mobile} name={name} />} />
-                <ModalClean open={openCodeSecurity} close={closeCodeSecurityModal} content={content} title="Cambiar clave" footer={<EntryButton text="Cambiar clave" className='change-pin-button' onClick={changePin} />} />
+
+                <ModalClean open={open} close={closeModalClean} title="Crear usuario" 
+                footer={<EntryButton text="Guardar" onClick={creatingUser} className="create-user-button" />} 
+                content={<CreateUser handleEmailChange={handleEmailChange} handleNameChange={handleNameChange} 
+                handleMobileChange={handleMobileChange} alert={alert} error={error} success={success} email={email} 
+                mobile={mobile} name={name} />} />
+
+                <ModalClean open={openCodeSecurity} close={closeCodeSecurityModal} content={content} 
+                title="Cambiar clave" footer={<EntryButton text="Cambiar clave" 
+                className='change-pin-button' onClick={changePin} />} />
+
                 {menu}
+                
                 <main className="main">
                     <Tittle color="#303F9F" text="Configuración" icon={<i className="material-icons icon">settings_applications</i>} />
                     {displayTabsSettings}
