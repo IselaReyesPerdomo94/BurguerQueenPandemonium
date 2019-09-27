@@ -51,7 +51,7 @@ render(){
         </div>
         <div className="modal-input">
           <PasswordInput labelText="Ingresa tu clave de seguridad" value={pin} onChange={this.handlePinChange}/>
-          <TextErrors text={textError}/>
+          <TextErrors text={textError} textColor="red"/>
         </div>
         <div className="modal-footer">
           <Link to="/">

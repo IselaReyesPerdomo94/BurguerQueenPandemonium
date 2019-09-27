@@ -1,4 +1,3 @@
-
 .wrapper {
     display: flex;
 }
@@ -13,13 +12,20 @@
 }
 
 .button-settings {
-    background-color:  #00BCD4 !important;
+    background-color: #00BCD4 !important;
     color: white !important;
 }
 
-.button-add{
+.button-add {
     display: flex;
     justify-content: flex-end;
-    margin-top: 50%;
+    margin-top: 5%;
     margin-right: 2rem;
+}
+
+.users-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    height: 500px;
+    overflow: scroll;
 }

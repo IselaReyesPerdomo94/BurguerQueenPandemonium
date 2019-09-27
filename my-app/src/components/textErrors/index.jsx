@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import './style.css';
 
-const TextErrors = ({text}) => {
+const TextErrors = ({text, textColor}) => {
     return(
-        <p className="text-errors">{text}</p>
+        <p className="text-errors" style={{color: textColor}}>{text}</p>
     )
 }
 

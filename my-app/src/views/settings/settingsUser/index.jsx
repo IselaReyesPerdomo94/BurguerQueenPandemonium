@@ -1,16 +1,33 @@
-import React, { Fragment } from 'react';
-import * as firebase from 'firebase/app';
+import React, { Fragment, useState, useEffect} from 'react';
+import {db} from '../../../firebase/index';
 import EntryButton from '../../../components/Buttons/EntryButton/index.jsx';
-import Dropdown from '../../../components/Dropdown/index.jsx';
-import Modal from '../../../components/cleanmodal/index';
+import Button from '../../../components/Buttons/buttons';
 import './style.css';
 
 const  UsersTab =({openModal}) => {
+    const [userButton, setUserButton] =useState([]);
+
+    const getUsers = () => {
+        db.collection('users').onSnapshot((querySnapshot)=> {
+            const usersInFirebase = []
+            querySnapshot.forEach((doc)=> {
+                const name = doc.data().nombre;
+                usersInFirebase.push(name)
+            })
+            setUserButton(usersInFirebase)
+        })
+    }
+
+    useEffect(() => getUsers(), [] )
+
         return (
             <Fragment>
                 
                 <main>
-                    <h2>No se han agregado usuarios</h2>
+                    <div className="users-wrapper">
+
+                    {userButton.map(user => <Button text={user} />)}
+                    </div>
                     <div className="button-add">
                         <EntryButton text="Agregar usuarios" className="button-settings" onClick= {openModal}/>
                     </div>
