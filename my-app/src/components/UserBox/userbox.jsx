@@ -25,7 +25,6 @@ const UserBox = ({name, email, cellphone, onClick, document, setDocumentToErase,
     const handleEditClick = () => {
         setSaveButton(true);
         closeMenuMore();
-        console.log('Editar este usuario');
     }
 
     const handleCancelButton = () => {
@@ -49,24 +48,28 @@ const UserBox = ({name, email, cellphone, onClick, document, setDocumentToErase,
             </menu> 
             <article className="user-data" 
                 document={document}>
-                <p className="name-user" contentEditable={saveButton} >
+                <p className="name-user" contentEditable={saveButton}>
                     {name}
                 </p>
+                <div className="edit-options-buttons">
                     <i className="material-icons">email</i> 
-                <p contentEditable={saveButton}>
-                    {email}
-                </p>
+                    <p contentEditable={saveButton}>
+                        {email}
+                    </p>
+                </div>
+                <div className="edit-options-buttons">
                 <i className="material-icons">local_phone</i> 
                 <p contentEditable={saveButton}>
                     {cellphone}
                 </p>
+                </div>
             </article>
-            {
+                {
                     saveButton&&
-                    <Fragment>
+                    <div className="edit-options-buttons">
                         <FlatButton color="blue" text="CANCELAR" onClick={handleCancelButton}/>
                         <EntryButton text="GUARDAR" className="save-user-button"/>
-                    </Fragment>
+                    </div>
                 }
 
         </div>
