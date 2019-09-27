@@ -29,14 +29,12 @@ class App extends Component {
 
     drawerToogleClickHandler(){
         this.setState((prevState) => {
-            console.log('Prevstate:',prevState)
             return {sideDrawerOpen: !prevState.sideDrawerOpen};
         });
     };
 
     render() {
         const { modalOpen, sideDrawerOpen } = this.state;
-        console.log(sideDrawerOpen)
         const menu = sideDrawerOpen ? <SideDrawer open={sideDrawerOpen} handleSide={this.drawerToogleClickHandler}/> : <Menu open={sideDrawerOpen} handleSide={this.drawerToogleClickHandler}/>
         return (
             <Router basename={window.location.pathname || ''} >

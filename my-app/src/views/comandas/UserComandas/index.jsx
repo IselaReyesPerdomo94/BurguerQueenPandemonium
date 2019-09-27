@@ -5,9 +5,7 @@ import './style.css';
 
 
 class Userandbranch extends Component {
-    constructor() {
-        super()
-    }
+
     render() {
         return (
             <Fragment>
@@ -15,6 +13,9 @@ class Userandbranch extends Component {
                     <div className="options-select">
                         <Dropdown options="USUARIO" />
                         <Dropdown options="SUCURSAL" />
+                    </div>
+                    <div className="comandas-box">
+
                     </div>
                     <div className="btn-add">
                         <EntryButton text="AGREGAR" />

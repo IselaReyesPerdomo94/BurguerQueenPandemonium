@@ -5,7 +5,7 @@ import PasswordInput from '../password/index';
 import EntryButton from '../Buttons/EntryButton';
 import FlatButton from '../Buttons/flatButton/index';
 import TextErrors from '../textErrors/index';
-import { db, firebaseApp } from '../../firebase/index';
+import { db} from '../../firebase/index';
 
 class Modal extends Component {
   constructor(props){

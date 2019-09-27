@@ -1,0 +1,17 @@
+.menu-more-box{
+    height: 5rem;
+    width: 12rem;
+    background-color: #F3F3F3;
+    border: 1px solid darkgray;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    align-items: space-between;
+    margin: 2rem 0rem;
+}
+
+.menu-more-box label{
+    margin: 0.2rem;
+    font-size: 1.5rem;
+}

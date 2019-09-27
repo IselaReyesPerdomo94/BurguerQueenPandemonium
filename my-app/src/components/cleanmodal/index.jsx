@@ -3,12 +3,10 @@ import './style.css';
 import FlatButton from '../Buttons/flatButton/index';
 
 class CleanModal extends Component {
-    
     render() {
         const { open, close, content, title, footer} = this.props;
         const classes = `full ${open ? "open" : "closed"}`
         return (
-
             <div className={classes}>
                 <div className="modal">
                     <div className="modal-title">
