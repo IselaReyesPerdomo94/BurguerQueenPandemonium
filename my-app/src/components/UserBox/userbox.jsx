@@ -1,23 +1,35 @@
-import React, {useState} from 'react';
+import React, {useState, Fragment} from 'react';
 import './userbox.css';
 import MenuMore from '../MenuMore/menumore.jsx';
+import EntryButton from '../Buttons/EntryButton/index';
+import FlatButton from '../Buttons/flatButton/index';
 
 const UserBox = ({name, email, cellphone, onClick, document, setDocumentToErase, setUserToErase,openModalToEraseDoc}) => {
     const [openMenuMore, setOpenMenuMore] = useState(false);
-    const [editName, setEditName] = useState(name)
+    const [saveButton, setSaveButton] = useState(false);
+   
+    const closeMenuMore = () => {
+        setOpenMenuMore(false);
+    }
 
     const handleClickMenuMore = () => {
-        setOpenMenuMore(!openMenuMore)
+        setOpenMenuMore(!openMenuMore);
     }
 
     const handleEliminateClick = () => {
-        setUserToErase(name)
-        setDocumentToErase(document)
-        openModalToEraseDoc()
+        setUserToErase(name);
+        setDocumentToErase(document);
+        openModalToEraseDoc();
     }
 
     const handleEditClick = () => {
-        console.log('Editar este usuario')
+        setSaveButton(true);
+        closeMenuMore();
+        console.log('Editar este usuario');
+    }
+
+    const handleCancelButton = () => {
+        setSaveButton(false)
     }
 
     return(
@@ -37,18 +49,25 @@ const UserBox = ({name, email, cellphone, onClick, document, setDocumentToErase,
             </menu> 
             <article className="user-data" 
                 document={document}>
-                <p className="name-user">
+                <p className="name-user" contentEditable={saveButton} >
                     {name}
                 </p>
-                <p>
                     <i className="material-icons">email</i> 
+                <p contentEditable={saveButton}>
                     {email}
                 </p>
-                <p>
                 <i className="material-icons">local_phone</i> 
+                <p contentEditable={saveButton}>
                     {cellphone}
                 </p>
             </article>
+            {
+                    saveButton&&
+                    <Fragment>
+                        <FlatButton color="blue" text="CANCELAR" onClick={handleCancelButton}/>
+                        <EntryButton text="GUARDAR" className="save-user-button"/>
+                    </Fragment>
+                }
 
         </div>
     )

@@ -66,12 +66,10 @@ const Settings = (props) => {
     }
 
     const handleFirstPinChange = (e) => {
-        console.log(e.target.value)
         setFirstPin(e.target.value)
     }
 
     const handleSecondPinChange = (e) => {
-        console.log(e.target.value)
         setSecondPin(e.target.value)
     }
     const validateInputs = () => {
@@ -209,17 +207,44 @@ const Settings = (props) => {
     return (
         <Fragment>
             <div className="wrapper">
-                <Modal open={modalOpen} close={closeModal} />
+                <Modal 
+                    open={modalOpen} 
+                    close={closeModal} 
+                />
 
-                <ModalClean open={open} close={closeModalClean} title="Crear usuario" 
-                footer={<EntryButton text="Guardar" onClick={creatingUser} className="create-user-button" />} 
-                content={<CreateUser handleEmailChange={handleEmailChange} handleNameChange={handleNameChange} 
-                handleMobileChange={handleMobileChange} alert={alert} error={error} success={success} email={email} 
-                mobile={mobile} name={name} />} />
+                <ModalClean 
+                    open={open} 
+                    close={closeModalClean} 
+                    title="Crear usuario" 
+                    footer={
+                        <EntryButton 
+                        text="Guardar" 
+                        onClick={creatingUser} 
+                        className="create-user-button" 
+                        />} 
+                    content={
+                        <CreateUser 
+                        handleEmailChange={handleEmailChange} 
+                        handleNameChange={handleNameChange} 
+                        handleMobileChange={handleMobileChange} 
+                        alert={alert} 
+                        error={error} 
+                        success={success} 
+                        email={email} 
+                        mobile={mobile} 
+                        name={name} />} />
 
-                <ModalClean open={openCodeSecurity} close={closeCodeSecurityModal} content={content} 
-                title="Cambiar clave" footer={<EntryButton text="Cambiar clave" 
-                className='change-pin-button' onClick={changePin} />} />
+                <ModalClean 
+                    open={openCodeSecurity} 
+                    close={closeCodeSecurityModal} 
+                    content={content} 
+                    title="Cambiar clave" 
+                    footer={
+                        <EntryButton 
+                        text="Cambiar clave" 
+                        className='change-pin-button' 
+                        onClick={changePin} 
+                        />} />
 
                 {menu}
                 
