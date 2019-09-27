@@ -29,7 +29,6 @@ class App extends Component {
 
     drawerToogleClickHandler(){
         this.setState((prevState) => {
-            console.log('Prevstate:',prevState)
             return {sideDrawerOpen: !prevState.sideDrawerOpen};
         });
     };
