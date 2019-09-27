@@ -1,0 +1,42 @@
+p{
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    margin: 0;
+    justify-content: space-between;
+}
+.user-box{
+    height: 60%;
+    width: 27%;
+    background-color: lightgray;
+    display: flex;
+    margin: 0.5rem;
+    flex-direction: column;
+    padding: 0.5rem 1.5rem;
+    border-radius: 10px;
+}
+
+.more-menu{
+    margin: 0;
+    width: 90%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.user-data{
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+.name-user{ 
+    font-weight: bold;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    margin: 0.5rem;
+}
+
+.icon-user-menu{
+    font-size: 2.5rem;
+}
