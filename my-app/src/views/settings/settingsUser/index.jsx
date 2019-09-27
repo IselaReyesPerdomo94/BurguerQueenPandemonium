@@ -1,7 +1,7 @@
 import React, { Fragment, useState, useEffect} from 'react';
 import {db} from '../../../firebase/index';
 import EntryButton from '../../../components/Buttons/EntryButton/index.jsx';
-import Button from '../../../components/Buttons/buttons';
+import UserBox from '../../../components/UserBox/userbox.jsx';
 import './style.css';
 
 const  UsersTab =({openModal}) => {
@@ -11,8 +11,10 @@ const  UsersTab =({openModal}) => {
         db.collection('users').onSnapshot((querySnapshot)=> {
             const usersInFirebase = []
             querySnapshot.forEach((doc)=> {
-                const name = doc.data().nombre;
-                usersInFirebase.push(name)
+                const userName = doc.data().nombre;
+                const email = doc.data().correo;
+                const cellphone = doc.data().telefono;
+                usersInFirebase.push({userName, email, cellphone})
             })
             setUserButton(usersInFirebase)
         })
@@ -26,7 +28,7 @@ const  UsersTab =({openModal}) => {
                 <main>
                     <div className="users-wrapper">
 
-                    {userButton.map(user => <Button text={user} />)}
+                    {userButton.map(user => <UserBox name={user.userName} cellphone={user.cellphone} email={user.email} />)}
                     </div>
                     <div className="button-add">
                         <EntryButton text="Agregar usuarios" className="button-settings" onClick= {openModal}/>
