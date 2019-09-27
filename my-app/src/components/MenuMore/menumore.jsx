@@ -1,14 +1,14 @@
 import React from 'react';
 import './menumore.css';
 
-const MenuMore = ()=> {
+const MenuMore = ({handleEditClick, handleEliminateClick})=> {
     return(
         <menu className="menu-more-box">
-            <label>
+            <label onClick={handleEditClick}>
                 <i className="material-icons">create</i>
                 Editar
             </label>
-            <label>
+            <label onClick={handleEliminateClick}>
                 <i className="material-icons">delete</i>
                 Eliminar
             </label>
