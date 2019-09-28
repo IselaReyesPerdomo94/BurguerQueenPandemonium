@@ -1,4 +1,4 @@
-import React, {useState, Fragment} from 'react';
+import React, {useState} from 'react';
 import './userbox.css';
 import MenuMore from '../MenuMore/menumore.jsx';
 import EntryButton from '../Buttons/EntryButton/index';
@@ -48,18 +48,30 @@ const UserBox = ({name, email, cellphone, onClick, document, setDocumentToErase,
             </menu> 
             <article className="user-data" 
                 document={document}>
-                <p className="name-user" contentEditable={saveButton}>
+                <p className="name-user" contentEditable={saveButton} ref={saveButton ? p => p && p.focus() : p => {
+                    if(p){
+                        p.disabled = true
+                    }
+                }} >
                     {name}
                 </p>
                 <div className="edit-options-buttons">
                     <i className="material-icons">email</i> 
-                    <p contentEditable={saveButton}>
+                    <p className="user-info" contentEditable={saveButton} ref={saveButton ? p => p && p.focus() : p => {
+                    if(p){
+                        p.disabled = true
+                    }
+                }}>
                         {email}
                     </p>
                 </div>
                 <div className="edit-options-buttons">
                 <i className="material-icons">local_phone</i> 
-                <p contentEditable={saveButton}>
+                <p className="user-info" contentEditable={saveButton} ref={saveButton ? p => p && p.focus() : p => {
+                    if(p){
+                        p.disabled = true
+                    }
+                }}>
                     {cellphone}
                 </p>
                 </div>

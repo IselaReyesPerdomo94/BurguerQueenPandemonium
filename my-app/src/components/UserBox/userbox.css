@@ -50,3 +50,11 @@ p {
     display: flex;
     justify-content: space-between;
 }
+
+.name-user:focus, 
+.user-info:focus {
+    outline: none;
+    border: 4px solid #00BCD4;
+    border-radius: 10px;
+    background-color: white;
+}
