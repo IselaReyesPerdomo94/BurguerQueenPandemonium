@@ -38,7 +38,7 @@ const Userandbranch = () => {
                     } optionDefault="USUARIO" />
                     <Dropdown titulo="SUCURSAL" optionDefault="SUCURSAL" />
                 </div>
-                <div className="comandas-box">
+                <div className="table-box">
                     <Button onClick={() =>{
                             changeVisibility(true);
                         }    
