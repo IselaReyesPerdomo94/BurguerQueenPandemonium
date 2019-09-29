@@ -37,6 +37,7 @@ const  UsersTab =({openModal}) => {
         db.collection('users').doc(documentToErase).delete()
         .then(()=> {
             console.log('Usuario borrado correctamente')
+            closeModalToEraseDoc()
         })
     }
 
@@ -65,7 +66,9 @@ const  UsersTab =({openModal}) => {
                     cellphone={user.telefono} 
                     email={user.correo} 
                     document={user.document} 
-                    setDocumentToErase={setDocumentToErase} setUserToErase={setUserToErase} openModalToEraseDoc={openModalToEraseDoc}
+                    setDocumentToErase={setDocumentToErase} 
+                    setUserToErase={setUserToErase} 
+                    openModalToEraseDoc={openModalToEraseDoc}
                     />)}
 
                     </div>

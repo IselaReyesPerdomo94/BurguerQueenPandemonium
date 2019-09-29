@@ -18,3 +18,4 @@ const CreateUser = ({handleEmailChange, handleMobileChange, handleNameChange, al
 }
 
 export default CreateUser;
+

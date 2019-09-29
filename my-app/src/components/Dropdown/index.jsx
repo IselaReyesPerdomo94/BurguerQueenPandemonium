@@ -1,26 +1,20 @@
-import React, { Fragment, useState } from 'react';
+import React, { Component, Fragment, useState } from 'react';
 import './style.css';
 
-const Dropdown = ({ userBranch, label, option, optionTwo }) => {
-
-    const [firstSelect, setFirstSelect] = ("");
-
+const Dropdown = ({ options, optionDefault, titulo }) => {
     return (
         <Fragment>
-            <label htmlFor="usuarios-select" className="label">{label}</label>
+            <label className="label">{titulo}</label>
             <div className="caja">
-                <select name="usuarios-select">
-                    <option defaultValue value="user-branch">{userBranch}</option>
-                    <option value="option">{option}</option>
-                    <option value="option-two">{optionTwo}</option>
+                <select name="Usuarios">
+                    <option defaultValue value="user">{optionDefault}</option>
+                    {
+                        options
+                    }
                 </select>
             </div>
         </Fragment>
     );
-
 }
-
-
-
 
 export default Dropdown;
