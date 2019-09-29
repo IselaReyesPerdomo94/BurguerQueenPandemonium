@@ -27,6 +27,8 @@ const Userandbranch = () => {
         getUserCollectionForDropdown();
     }, []);
 
+    const sucursalOptions = ["Sucursal", "Evento", "Local"];
+
     return (
         <Fragment>
             <main className={`user-comandas-main ${!visible ? 'visible' : 'no-visible'}`}>
@@ -36,9 +38,11 @@ const Userandbranch = () => {
                             <option key={item.telefono} value={item.nombre}>{item.nombre}</option>
                         )
                     } optionDefault="USUARIO" />
-                    <Dropdown titulo="SUCURSAL" optionDefault="SUCURSAL" />
+                    <Dropdown titulo="SUCURSAL" optionDefault="SUCURSAL" options={
+                        sucursalOptions.map(opt => <option key={opt} value={opt}>{opt}</option>)
+                    }/>
                 </div>
-                <div className="comandas-box">
+                <div className="table-box">
                     <Button onClick={() =>{
                             changeVisibility(true);
                         }    
