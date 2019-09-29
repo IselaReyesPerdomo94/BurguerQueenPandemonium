@@ -8,11 +8,20 @@
 .btn-add{
     display: flex;
     justify-content: flex-end;
-    height: 50%;
     margin-right: 2rem;
-    margin-top: 50%;
 }
 
 .user-comandas-main{
     height: 100%;
+}
+
+.visible{
+    display: block;
+}
+.no-visible{
+    display: none;
+}
+
+.table-box{
+    height: 75%;
 }
