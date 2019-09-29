@@ -48,7 +48,7 @@ class App extends Component {
                     <Route exact path="/registro" render={props => < Register />}></Route>
                     <Route exact path="/comandas" render={props => < Comandas menu={menu} sideBar={sideDrawerOpen} handleSide={this.drawerToogleClickHandler}/>}></Route>
                     <Route exact path="/corte-de-caja" render={props => < CorteCaja menu={menu} sideBar={sideDrawerOpen}/>}></Route>
-                    <Route exact path="/Inventario" render={props => <Inventory menu={menu} sideBar={sideDrawerOpen}/>}></Route>
+                    <Route exact path="/inventario" render={props => <Inventory menu={menu} sideBar={sideDrawerOpen}/>}></Route>
                 </Switch>
             </Router>
         )

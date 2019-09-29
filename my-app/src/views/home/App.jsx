@@ -36,7 +36,7 @@ class Home extends Component {
           <Link to="/comandas" className="homeButtons commands">
           <i className="material-icons icons">restaurant</i>
             Comandas</Link>
-          <Link to="/Inventario" className="homeButtons inventory">
+          <Link to="/inventario" className="homeButtons inventory">
             <i className="material-icons icons">assignment</i>
             Inventario
           </Link>
