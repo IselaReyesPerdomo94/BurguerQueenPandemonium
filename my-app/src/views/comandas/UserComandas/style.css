@@ -16,3 +16,10 @@
 .user-comandas-main{
     height: 100%;
 }
+
+.visible{
+    display: block;
+}
+.no-visible{
+    display: none;
+}
