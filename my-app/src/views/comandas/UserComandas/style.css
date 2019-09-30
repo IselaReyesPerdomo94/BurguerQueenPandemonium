@@ -25,3 +25,10 @@
 .table-box{
     height: 75%;
 }
+
+.table-text{
+    margin : 1rem 20rem 0rem 0rem;
+    width: 10rem;
+    font-weight: bold;
+    font-size: 2rem;
+}
