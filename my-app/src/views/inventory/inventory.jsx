@@ -1,12 +1,13 @@
 import React, { Component, Fragment } from 'react';
 import Tittle from '../../components/titles/index';
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import "react-tabs/style/react-tabs.css";
+
 import './inventory.css'
 
-class Inventory extends Component {
-
-    render() {
-        const {menu}= this.props;
-        return (
+const Inventory = () => { 
+    const {menu}= this.props;
+    return (
             <Fragment>
                 <div className="wrapper">
                     {menu}
@@ -16,7 +17,7 @@ class Inventory extends Component {
                 </div>
             </Fragment>
         )
-    }
+
 
 }
 
