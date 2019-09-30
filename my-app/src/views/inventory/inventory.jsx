@@ -6,7 +6,6 @@ import {db} from '../../firebase/index';
 import './inventory.css'
 
 const Inventory = (props) =>  {
-
     const [users, setUsers] = useState([]);
     const [visible, setVisible] = useState(false);
 

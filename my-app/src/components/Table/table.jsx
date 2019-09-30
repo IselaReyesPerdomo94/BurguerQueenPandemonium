@@ -1,6 +1,6 @@
 import React, { Component} from 'react';
-import ReactTable from 'react-table'
-import 'react-table/react-table.css'
+import ReactTable from 'react-table';
+import 'react-table/react-table.css';
 import './table.css'
 import color from '@material-ui/core/colors/deepOrange';
 
