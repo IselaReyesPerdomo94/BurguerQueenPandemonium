@@ -48,7 +48,7 @@ const UserBox = ({name, email, cellphone, onClick, document, setDocumentToErase,
             console.log('Se cambio el documento')
         }).then(()=> {
             setSaveButton(false)
-        }) .catch(()=> {
+        }).catch(()=> {
             console.log('Parece que hubo un error')
         })
     }
