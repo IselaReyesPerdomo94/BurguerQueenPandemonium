@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import Tittle from '../../components/titles/index';
 import './cortedecajas.css';
+import TableView from '../../components/Table/table';
 
 class CorteCaja extends Component {
 
@@ -17,7 +18,8 @@ class CorteCaja extends Component {
             </Fragment>
         )
     }
-
 }
+
+
 
 export default CorteCaja;
