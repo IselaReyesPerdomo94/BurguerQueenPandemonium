@@ -1,4 +1,3 @@
-
 .options-select{
     display: flex;
     flex-direction: row;
@@ -9,11 +8,27 @@
 .btn-add{
     display: flex;
     justify-content: flex-end;
-    height: 50%;
     margin-right: 2rem;
-    margin-top: 50%;
 }
 
 .user-comandas-main{
     height: 100%;
+}
+
+.table-box{
+    height: 75%;
+}
+
+.table-text{
+    margin : 1rem 20rem 0rem 0rem;
+    width: 10rem;
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+.visible{
+    display: block;
+}
+.no-visible{
+    display: none;
 }

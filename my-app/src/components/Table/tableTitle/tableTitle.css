@@ -1,0 +1,11 @@
+.header-tab{
+    width: 100%;
+    border-radius: 25px 25px 10px 10px;
+    -moz-border-radius: 25px 25px 10px 10px;
+    -webkit-border-radius: 25px 25px 10px 10px;
+    height: auto;
+}
+
+.title-header{
+    font-size: 2rem;
+}

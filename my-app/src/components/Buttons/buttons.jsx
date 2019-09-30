@@ -1,9 +1,12 @@
 import React from 'react';
 import './style.css';
 
-const Button = ({text}) => {
+const Button = ({text, client, onClick, className}) => {
     return(
-        <input type="button" value={text} className="button"/>
+        <button className={`button comandas-box ${className}`} onClick={onClick}>
+            <p>{text}</p>
+            <p>{client}</p>
+        </button>
     )
 }
 

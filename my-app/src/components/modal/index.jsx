@@ -5,7 +5,7 @@ import PasswordInput from '../password/index';
 import EntryButton from '../Buttons/EntryButton';
 import FlatButton from '../Buttons/flatButton/index';
 import TextErrors from '../textErrors/index';
-import { db, firebaseApp } from '../../firebase/index';
+import { db} from '../../firebase/index';
 
 class Modal extends Component {
   constructor(props){
@@ -43,7 +43,6 @@ render(){
   const {pin, textError} = this.state;
   const {open, close} = this.props;
   const classes = `overlay ${open ? "open" : "closed"}`;
-  console.log(pin);
   return (
     <div className={classes}>
       <div className="modal">
@@ -52,7 +51,7 @@ render(){
         </div>
         <div className="modal-input">
           <PasswordInput labelText="Ingresa tu clave de seguridad" value={pin} onChange={this.handlePinChange}/>
-          <TextErrors text={textError}/>
+          <TextErrors text={textError} textColor="red"/>
         </div>
         <div className="modal-footer">
           <Link to="/">

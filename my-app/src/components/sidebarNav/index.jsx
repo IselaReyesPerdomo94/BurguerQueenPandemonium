@@ -36,11 +36,13 @@ class Menu extends Component {
                         <i className="material-icons icons">restaurant</i>
                         </Link> 
                      </li>
-                     <li>
+                     <li><Link to ="/inventario" className="link">
                         <i className="material-icons icons">assignment</i>
+                        </Link>
                      </li>
-                     <li>
+                     <li><Link to="/corte-de-caja" className="link">
                         <i className="material-icons icons">attach_money</i>
+                        </Link>
                      </li>
                      <li><Link to="/configuracion" className="link">
                         <i className="material-icons icons">settings_applications</i>

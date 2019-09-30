@@ -1,0 +1,16 @@
+.wrapper{
+    display: flex;
+}
+
+.main-inventory{
+    display: flex;
+    padding: 1rem;
+    flex-direction: column;
+    width: 89%;
+}
+
+.first-table-view{
+    width: 100%;
+    justify-content: center;
+    display: flex;
+}
