@@ -102,7 +102,6 @@ const Settings = (props) => {
             telefono: mobile
         })
             .then(() => {
-                console.log('Creado correctamente')
                 setSuccess('Usuario creado correctamente')
             }).then(() => {
                 closeModalClean()
@@ -125,7 +124,6 @@ const Settings = (props) => {
 
     const changePin = () => {
         if (!validateChangePin()) {
-            console.log("validando")
             return
         }
         db.collection("clave").doc('7zSrA5mnA7kqA32wuyxx').update({
