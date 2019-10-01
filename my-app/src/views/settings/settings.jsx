@@ -145,7 +145,7 @@ const Settings = (props) => {
         props.setToOpen()
     }, [])
 
-    const { modalOpen, closeModal, handleSide, menu } = props
+    const { modalOpen, closeModal, menu } = props
 
     const displayTabsSettings = (
         <Tabs>
