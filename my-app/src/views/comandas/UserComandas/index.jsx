@@ -47,7 +47,6 @@ const Userandbranch = (props) => {
         </Tabs>
     )
 
-    console.log("visible?", visible)
     return (
         <Fragment> 
                 <Button onClick={() =>{
