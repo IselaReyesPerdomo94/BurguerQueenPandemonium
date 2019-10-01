@@ -1,7 +1,9 @@
 import React, { Fragment, useState, useEffect } from 'react';
+import { Tab, Tabs, TabList,TabPanel } from 'react-tabs';
 import Tittle from '../../components/titles/index';
 import Dropdown from '../../components/Dropdown/index';
 import TableView from '../../components/Table/table';
+import FlatButton from '../../components/Buttons/flatButton/index'
 import {db} from '../../firebase/index';
 import './inventory.css'
 
@@ -23,7 +25,7 @@ const Inventory = (props) =>  {
     }, []);
 
  
-        const {menu}= props;
+    const {menu}= props;
         return (
             <Fragment>
                 <div className="wrapper">
@@ -37,10 +39,38 @@ const Inventory = (props) =>  {
                                 )
                             } optionDefault="USUARIO" />
                         </div>
-                        <div className="first-table-view"> 
+                        <Tabs>
+            <TabList className="tab-list">
+                <Tab>Local</Tab>
+                <Tab>Puesto</Tab>
+                <Tab>Evento</Tab>
+            </TabList>
+            <TabPanel className="tab-panel">
+                <div className="first-table-view"> 
+                    <div className="column-view">
                         <TableView headerText="Insumos por agotarse"/>
+                        <FlatButton className="detail-button" text="VER DETALLE"/>                       
+                    </div>
+                    <div className="column-view">
                         <TableView headerText="Compras por agotarse"/>
-                        </div>
+                        <FlatButton className="detail-button" text="VER DETALLE"/>
+                    </div>
+                </div>
+            </TabPanel>
+            <TabPanel className="tab-panel">
+                <div className="first-table-view"> 
+                    <TableView headerText="Insumos por agotarse"/>
+                    <TableView headerText="Compras por agotarse"/>
+                </div>
+            </TabPanel>
+            <TabPanel className="tab-panel">
+                <div className="first-table-view"> 
+                    <TableView headerText="Insumos por agotarse"/>
+                    <TableView headerText="Compras por agotarse"/>
+                </div>
+            </TabPanel>
+           
+        </Tabs>
                     </main>
                 </div>
             </Fragment>
