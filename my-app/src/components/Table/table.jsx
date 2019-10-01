@@ -1,23 +1,22 @@
 import React, { Component} from 'react';
-import ReactTable from 'react-table'
-import 'react-table/react-table.css'
+import ReactTable from 'react-table';
+import 'react-table/react-table.css';
 import './table.css'
-import color from '@material-ui/core/colors/deepOrange';
+// import color from '@material-ui/core/colors/deepOrange';
 
 class TableView extends Component {
-    constructor() {
-        super();
-    }
+    
     render() {
+      const {headerText} = this.props 
         return (
             <div className="table-products">
         <ReactTable
-          defaultPageSize={5}
+          defaultPageSize={10}
           showPagination={false}
           noDataText={false}
           columns={[
             {
-              Header: "Insumos por agotarse",
+              Header: headerText,
               headerClassName:"header-tab",
               columns: [
                 {

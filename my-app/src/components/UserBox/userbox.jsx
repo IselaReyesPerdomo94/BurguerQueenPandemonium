@@ -39,16 +39,13 @@ const UserBox = ({name, email, cellphone, onClick, document, setDocumentToErase,
     }
 
     const updateUserInfoInFirebase = () => {
-        console.log(document, boxName, boxEmail, boxCellphone)
         db.collection('users').doc(document).update({
             nombre: boxName,
             correo: boxEmail,
             telefono: boxCellphone
-        }).then(()=>{
-            console.log('Se cambio el documento')
         }).then(()=> {
             setSaveButton(false)
-        }) .catch(()=> {
+        }).catch(()=> {
             console.log('Parece que hubo un error')
         })
     }
