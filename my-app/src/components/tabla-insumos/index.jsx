@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ReactTable from 'react-table';
+import './style.css';
 
 const TablaInsumos = () => {
     return (
@@ -10,7 +11,7 @@ const TablaInsumos = () => {
             columns={[
                 {
                     Header: 'Detalles de insumos',
-                    headerClassName: "header-tab",
+                    headerClassName: "header-tab2",
                     columns: [
                         {
                             Header: "Producción",
