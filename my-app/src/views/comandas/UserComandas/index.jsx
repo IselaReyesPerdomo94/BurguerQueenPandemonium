@@ -1,5 +1,4 @@
 import React, { Fragment } from 'react';
-import Hamburguers from '../Pedido/hamburguers/hamburguers';
 import Table from './Table';
 
 import "react-tabs/style/react-tabs.css";
@@ -23,10 +22,6 @@ const Userandbranch = (props) => {
                 }
                 )
             }
-            {/* <main className={`${visible ? 'visible' : 'no-visible'}`}>
-                <label className="table-text">{`Mesa ${numberTable}/ ${nameTable}`}</label>
-                {displayTabsMenu}
-            </main> */}
         </Fragment>
     )
 }
