@@ -4,7 +4,6 @@ import Userandbranch from './UserComandas/index.jsx';
 import Input from '../../components/CleanInput/index';
 import CleanModal from '../../components/cleanmodal/index';
 import EntryButton from '../../components/Buttons/EntryButton/index';
-import Hamburguer from './Pedido/hamburguers/hamburguers';
 import Pedido from './Pedido/Index';
 import Dropdown from '../../components/Dropdown/index';
 import { db } from '../../firebase/index';
@@ -52,7 +51,6 @@ const Comandas = (props) => {
     }
 
     const getDataTable = (algo) => {
-        console.log(algo.id);
         const tableSelect = table.filter((item, index) => {
             if (index == algo.id) {
 
@@ -61,7 +59,6 @@ const Comandas = (props) => {
         })
 
         setTableSelect(tableSelect[0])
-        // console.log(tableSelect);
     }
 
     const sucursalOptions = ["Sucursal", "Evento", "Local"];
@@ -120,13 +117,14 @@ const Comandas = (props) => {
                             sucursalOptions.map(opt => <option key={opt} value={opt}>{opt}</option>)
                         } />
                     </div>
-                    <div className="table-box">
-                        <Userandbranch tables={table} visible={visible} getDataTable={getDataTable} changeVisibility={changeVisibility} />
+                    <div className= {`table-box ${visible ? "no-visible": "visible"}`}>
+                        <div className="table-box">
+                            <Userandbranch tables={table} visible={visible} getDataTable={getDataTable} changeVisibility={changeVisibility} />
+                        </div>
                     </div>
 
                     <Pedido tableSelect={tableSelect} visible={visible} changeVisibility={changeVisibility} />
 
-                    {/* <Hamburguer visible={visible} changeVisibility={changeVisibility} /> */}
                     <div className={`btn-add ${visible ? "no-visible" : "visible"}`}>
                         <EntryButton text="AGREGAR" onClick={() => handlingTableModal(true)} />
                     </div>

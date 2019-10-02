@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 
 import Hamburguers from './hamburguers/hamburguers';
@@ -7,8 +7,6 @@ import '../style.css';
 
 const Pedido = (props) => {
     const { changeVisibility, visible, tableSelect } = props;
-    console.log(tableSelect);
-
 
     const displayTabsMenu = (
         <Tabs>
