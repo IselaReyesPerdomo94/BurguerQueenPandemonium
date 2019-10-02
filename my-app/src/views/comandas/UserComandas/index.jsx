@@ -8,7 +8,6 @@ import './style.css';
 const Userandbranch = (props) => {
     const { tables, visible, changeVisibility, getDataTable } = props;
 
-    // console.log("visible?", visible)
     return (
         <Fragment>
             {

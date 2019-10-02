@@ -1,4 +1,4 @@
-import React, { Component, Fragment, useState } from 'react';
+import React, { Fragment} from 'react';
 import './style.css';
 
 const Dropdown = ({ options, optionDefault, titulo }) => {
