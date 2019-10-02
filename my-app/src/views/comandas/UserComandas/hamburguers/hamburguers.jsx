@@ -1,10 +1,12 @@
-import React, {Fragment} from 'react';
+import React, {Fragment, useState} from 'react';
 import './hamburguers.css';
 import Button from '../../../../components/Buttons/buttons';
 import EntryButton from '../../../../components/Buttons/EntryButton/index';
 import FlatButton from '../../../../components/Buttons/flatButton/index';
 
+
 const Hamburguers = ({changeVisibility}) => {
+    const [print, setPrint] = useState([])
     const menuHamburguer = ['Malicia Sencilla',
                              'Malicia Combo', 
                              'Soberbia sencilla', 
@@ -13,18 +15,26 @@ const Hamburguers = ({changeVisibility}) => {
                              'Gula Combo', 
                              'Alma en pena Sencilla', 
                              'Alma en pena Combo']
+
+    const handleClickMenuItem = (e) => {
+        const btnText= e.target.value
+        console.log(btnText)
+    }
     return(
         <Fragment>
             <main className="hamburguer-main">
             
                 <div className="hamburguers-menu">
                     {
-                        menuHamburguer.map(hamburguer => <Button text={hamburguer}/>)
+                        menuHamburguer.map(hamburguer => <Button text={hamburguer} onClick={handleClickMenuItem} value={hamburguer}/>)
                     }
                 </div>
                 <div className="count">
                     <div className="bill">
                         <h2>Cuenta</h2>
+                        <div className="foodAccount">
+                            {print}
+                        </div>
                         <div className="total">
                             <p>Total: <span>$</span></p>
                         </div>
