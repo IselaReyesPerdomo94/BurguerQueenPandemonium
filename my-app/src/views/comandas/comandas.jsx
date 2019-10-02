@@ -4,6 +4,8 @@ import Userandbranch from './UserComandas/index.jsx';
 import Input from '../../components/CleanInput/index';
 import CleanModal from '../../components/cleanmodal/index';
 import EntryButton from '../../components/Buttons/EntryButton/index';
+import Hamburguer from './Pedido/hamburguers/hamburguers';
+import Pedido from './Pedido/Index';
 import Dropdown from '../../components/Dropdown/index';
 import { db } from '../../firebase/index';
 import './style.css';
@@ -15,6 +17,7 @@ const Comandas = (props) => {
     const [numberTable, setNumberTable] = useState('');
     const [nameTable, setNameTable] = useState('');
     const [table, setTable] = useState([]);
+    const [tableSelect, setTableSelect] = useState({});
 
     const changeVisibility = (visibility) => {
         setVisible(visibility);
@@ -46,6 +49,19 @@ const Comandas = (props) => {
             });
             setUsers(elements);
         });
+    }
+
+    const getDataTable = (algo) => {
+        console.log(algo.id);
+        const tableSelect = table.filter((item, index) => {
+            if (index == algo.id) {
+
+                return item;
+            }
+        })
+
+        setTableSelect(tableSelect[0])
+        // console.log(tableSelect);
     }
 
     const sucursalOptions = ["Sucursal", "Evento", "Local"];
@@ -105,18 +121,12 @@ const Comandas = (props) => {
                         } />
                     </div>
                     <div className="table-box">
-                        {
-                            table.map(client => <Userandbranch
-                                numberTable={client.number}
-                                nameTable={client.name}
-                                changeVisibility={changeVisibility}
-                                visible={visible}
-                                key={client.name}
-                            />
-                            )
-                        }
-
+                        <Userandbranch tables={table} visible={visible} getDataTable={getDataTable} changeVisibility={changeVisibility} />
                     </div>
+
+                    <Pedido tableSelect={tableSelect} visible={visible} changeVisibility={changeVisibility} />
+
+                    {/* <Hamburguer visible={visible} changeVisibility={changeVisibility} /> */}
                     <div className={`btn-add ${visible ? "no-visible" : "visible"}`}>
                         <EntryButton text="AGREGAR" onClick={() => handlingTableModal(true)} />
                     </div>

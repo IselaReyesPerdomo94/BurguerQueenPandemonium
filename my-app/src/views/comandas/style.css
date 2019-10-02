@@ -52,3 +52,10 @@
     align-self: center;
     background-color: #00BCD4 !important
 }
+
+.visible{
+    display: block;
+}
+.no-visible{
+    display: none;
+}
