@@ -7,8 +7,6 @@ import '../style.css';
 
 const Pedido = (props) => {
     const { changeVisibility, visible, tableSelect } = props;
-    console.log(tableSelect);
-
 
     const displayTabsMenu = (
         <Tabs>
