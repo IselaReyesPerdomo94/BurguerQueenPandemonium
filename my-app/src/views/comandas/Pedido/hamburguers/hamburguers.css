@@ -52,6 +52,9 @@
 
 .foodAccount {
     display: flex;
-    height: 50%;
+    height: 60%;
+    width: 90%;
     flex-direction: column;
+    /* justify-content: space-between; */
+    overflow-y: auto;
 }

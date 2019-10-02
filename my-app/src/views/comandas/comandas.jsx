@@ -61,10 +61,11 @@ const Comandas = (props) => {
     }
 
     const addItemToBill = (e, hamburguer) => {
-        const newBill = bill.concat([hamburguer.name, hamburguer.priceClassic])
+        const newBill = bill.concat([{hamburguerName: hamburguer.name, price: hamburguer.priceClassic}])
         setBill(newBill)
     }
 
+    console.log(bill)
     const sucursalOptions = ["Sucursal", "Evento", "Local"];
 
     useEffect(() => {

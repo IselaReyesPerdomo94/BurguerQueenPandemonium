@@ -4,8 +4,7 @@ import Button from '../../../../components/Buttons/buttons';
 import EntryButton from '../../../../components/Buttons/EntryButton/index';
 import FlatButton from '../../../../components/Buttons/flatButton/index';
 import data from '../../../../Data/data.json';
-
-
+import ProductList from '../ProductList/ProductList';
 
 const Hamburguers = ({ changeVisibility, visible, bill, addItemToBill}) => {
     
@@ -32,7 +31,15 @@ const Hamburguers = ({ changeVisibility, visible, bill, addItemToBill}) => {
                     <div className="bill">
                         <h2>Cuenta</h2>
                         <div className="foodAccount">
-                        {bill}
+                        {
+                            bill.map((product)=> {
+                                return <ProductList 
+                                amount={1}
+                                itemName={product.hamburguerName}
+                                itemPrice={product.price}
+                                />
+                            })
+                        }
                         </div>
                         <div className="total">
                             <p>Total: <span>$</span></p>
