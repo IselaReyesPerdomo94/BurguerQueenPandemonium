@@ -1,8 +1,9 @@
 [   
             {
+                "id": "1",
                 "name": "Gula",
                 "type": "hamburguesas",
-                "price-classic": "$50",
+                "priceClassic": "$50",
                 "price-combo" : "$65",
                 "description" : "Medallón base de soya, cebolla, ajo y perejil marinados en especias picantes, topping de cebollita caramelizada y champiñones, lechuga italiana, jitomate y pepinillos.",
                 "optional-ingredients": {
@@ -11,10 +12,10 @@
                     "ingredient-3": "Pepinillos"
                 }
             },
-            {
+            {   "id": "2",
                 "name": "Malicia",
                 "type": "hamburguesas",
-                "price-classic": "$50",
+                "priceClassic": "$50",
                 "price-combo" : "$65",
                 "description" : "Mezcla de vegetales con avena y Garam Masala (especias indúes), lechuga, jitomate, germinado de alfalfa y pepinillos.",
                 "optional-ingredients": {
@@ -23,10 +24,10 @@
                     "ingredient-3": "Pepinillos"
                 }
             },
-            {
+            {   "id": "3",
                 "name": "Soberbia",
                 "type": "hamburguesas",
-                "price-classic": "$50",
+                "priceClassic": "$50",
                 "price-combo" : "$65",
                 "description" : "Medallón de seitán (proteína vegetal de trigo), pimientos y perejil, topping de espinaca y pepita, mix de lechugas, jitomate y pepinillos.",
                 "optional-ingredients": {
@@ -35,10 +36,10 @@
                     "ingredient-3": "Pepinillos"
                 } 
             },
-            {
+            {   "id": "4",
                 "name": "Alma en Pena",
                 "type": "hamburguesas",
-                "price-classic": "$65",
+                "priceClassic": "$65",
                 "price-combo" : "$80",
                 "description" : "Medallón de espinaca, betabel y arroz, en cama de lechuga, con queso tipo americano, jitomate, pepinillo y cebolla al grill.",
                 "optional-ingredients": {
@@ -47,10 +48,10 @@
                     "ingredient-3": "Pepinillos"
                 } 
             },
-            {
+            {   "id": "5",
                 "name": "Encarnación",
                 "type": "hamburguesas",
-                "price-classic": "$65",
+                "priceClassic": "$65",
                 "price-combo" : "$80",
                 "description" : "Chorizo de PODEROSA en cama de lechuga, acompañado de salsa pico de gallo y chimichurri con veganesa extra.",
                 "optional-ingredients": {
@@ -59,10 +60,10 @@
                     "ingredient-3": "Pepinillos"
                 } 
             },
-            {
+            {   "id": "6",
                 "name": "Banana Limbo",
                 "type": "hamburguesas",
-                "price-classic": "$65",
+                "priceClassic": "$65",
                 "price-combo" : "$80",
                 "description" : "Croqueta de plátano macho empanizado con Panko, en cama de lechuga, queso americano, bañada con salsas de frijol y chile pasilla.",
                 "optional-ingredients": {
@@ -74,7 +75,7 @@
             {
                 "name": "Jochoslaw",
                 "type": "hotdogs",
-                "price-classic": "$50",
+                "priceClassic": "$50",
                 "price-combo" : "$65",
                 "description" : "Salchicha de maíz y trigo en pan artesanal, ensalada coleslaw, jitomate, pepinillos y cebolla caramelizada.",
                 "optional-ingredients": {
@@ -85,7 +86,7 @@
             {
                 "name": "Xoloescuintle",
                 "type": "hotdogs",
-                "price-classic": "$65",
+                "priceClassic": "$65",
                 "price-combo" : "$80",
                 "description" : "Salchicha de maíz y trigo en pan artesanal, cama de frijoles, pico de gallo, juliana de tortilla y flor de jamaica crocante.",
                 "optional-ingredients": {
@@ -96,7 +97,7 @@
             {
                 "name": "Pit Bull",
                 "type": "hotdogs",
-                "price-classic": "$65",
+                "priceClassic": "$65",
                 "price-combo" : "$80",
                 "description" : "Salchicha de maíz y trigo barnizada con salsa BBQ en pan artesanal, cama de frijoles, guacamole. jitomate, pepinillos",
                 "optional-ingredients": {
@@ -106,7 +107,7 @@
             },
             {
                 "name": "Hachiko (Akita Inu)",
-                "price-classic": "$70",
+                "priceClassic": "$70",
                 "type": "hotdogs",
                 "price-combo" : "$85",
                 "description" : "Salchicha de tofu, espinaca y hongos cremini a la plancha, alga nori, salsa agridulce y ajonjolí.",
@@ -118,7 +119,7 @@
             {
                 "name": "Pastor Aleman",
                 "type": "hotdogs",
-                "price-classic": "$80",
+                "priceClassic": "$80",
                 "price-combo" : "$95",
                 "description" : "Salchicha tipo alemana en pan artesanal, chucrut, cebolla asada, crema ácida y pepinillos.",
                 "optional-ingredients": {
@@ -126,7 +127,7 @@
                     "ingredient-2": "Cebolla caramelizada"
                 } 
             }
-,
+            ,
             {
                 "name": "Chaneque",
                 "type": "pizzas",

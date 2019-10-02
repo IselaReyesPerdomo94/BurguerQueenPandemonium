@@ -17,6 +17,7 @@ const Comandas = (props) => {
     const [nameTable, setNameTable] = useState('');
     const [table, setTable] = useState([]);
     const [tableSelect, setTableSelect] = useState({});
+    const [bill, setBill] = useState([])
 
     const changeVisibility = (visibility) => {
         setVisible(visibility);
@@ -53,12 +54,15 @@ const Comandas = (props) => {
     const getDataTable = (algo) => {
         const tableSelect = table.filter((item, index) => {
             if (index == algo.id) {
-
                 return item;
             }
         })
-
         setTableSelect(tableSelect[0])
+    }
+
+    const addItemToBill = (e, hamburguer) => {
+        const newBill = bill.concat([hamburguer.name, hamburguer.priceClassic])
+        setBill(newBill)
     }
 
     const sucursalOptions = ["Sucursal", "Evento", "Local"];
@@ -119,11 +123,17 @@ const Comandas = (props) => {
                     </div>
                     <div className= {`table-box ${visible ? "no-visible": "visible"}`}>
                         <div className="table-box">
-                            <Userandbranch tables={table} visible={visible} getDataTable={getDataTable} changeVisibility={changeVisibility} />
+                            <Userandbranch tables={table} visible={visible} getDataTable={getDataTable} changeVisibility={changeVisibility}/>
                         </div>
                     </div>
 
-                    <Pedido tableSelect={tableSelect} visible={visible} changeVisibility={changeVisibility} />
+                    <Pedido 
+                        tableSelect={tableSelect} 
+                        visible={visible} 
+                        changeVisibility={changeVisibility} 
+                        bill={bill}
+                        addItemToBill={addItemToBill}
+                        />
 
                     <div className={`btn-add ${visible ? "no-visible" : "visible"}`}>
                         <EntryButton text="AGREGAR" onClick={() => handlingTableModal(true)} />
