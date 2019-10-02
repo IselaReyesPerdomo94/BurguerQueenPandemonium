@@ -3,6 +3,7 @@ import { Tab, Tabs, TabList,TabPanel } from 'react-tabs';
 import Tittle from '../../components/titles/index';
 import Dropdown from '../../components/Dropdown/index';
 import {db} from '../../firebase/index';
+import TablaInsumos from '../../components/tabla-insumos/';
 import './equipment.css'
 
 const Equipment = (props) =>  {
@@ -34,13 +35,16 @@ const Equipment = (props) =>  {
         <TabPanel>
             <div className="main-equipment">
                 <h2>Local</h2>
+                <TablaInsumos />
             </div>
         </TabPanel>
         <TabPanel>
             <h2>Puesto</h2>
+            <TablaInsumos />
         </TabPanel>
         <TabPanel>
             <h2>Evento</h2>
+            <TablaInsumos />
         </TabPanel>
     
     </Tabs>

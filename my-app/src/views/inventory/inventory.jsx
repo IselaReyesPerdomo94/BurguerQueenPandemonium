@@ -1,11 +1,11 @@
 import React, { Fragment, useState, useEffect } from 'react';
 import { Tab, Tabs, TabList,TabPanel } from 'react-tabs';
-import Tittle from '../../components/titles/index';
+import {Link} from 'react-router-dom';
+import FlatButton from '../../components/Buttons/flatButton/index'
 import Dropdown from '../../components/Dropdown/index';
 import TableView from '../../components/Table/table';
-import FlatButton from '../../components/Buttons/flatButton/index'
+import Tittle from '../../components/titles/index';
 import {db} from '../../firebase/index';
-import TablaInsumos from '../../components/tabla-insumos/index';
 import './inventory.css'
 
 const Inventory = (props) =>  {
@@ -50,11 +50,15 @@ const Inventory = (props) =>  {
                                 <div className="first-table-view"> 
                                     <div className="column-view">
                                         <TableView headerText="Insumos por agotarse"/>
-                                        <FlatButton className="detail-button" text="VER DETALLE"/>                       
+                                        <Link to="/insumos">
+                                            <FlatButton className="detail-button" text="VER DETALLE"/>    
+                                        </Link>                   
                                     </div>
                                     <div className="column-view">
                                         <TableView headerText="Compras por agotarse"/>
-                                        <FlatButton className="detail-button" text="VER DETALLE"/>
+                                        <Link to="/compras">
+                                            <FlatButton className="detail-button" text="VER DETALLE"/>
+                                        </Link>
                                     </div>
                                 </div>
                             </TabPanel>
