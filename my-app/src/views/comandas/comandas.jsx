@@ -101,14 +101,15 @@ const Comandas = (props) => {
                     </div>
                     <div className="table-box">
                             {
-                                table.map(client => <Userandbranch 
+                               table.map(client => <Userandbranch 
                                         numberTable={client.number}
                                         nameTable={client.name}
                                         changeVisibility={changeVisibility}
                                         visible={visible}
                                         key={client.name}
                                         />
-                                    )
+                               )
+
                             }
                        
                     </div>
