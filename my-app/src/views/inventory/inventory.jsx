@@ -5,6 +5,7 @@ import Dropdown from '../../components/Dropdown/index';
 import TableView from '../../components/Table/table';
 import FlatButton from '../../components/Buttons/flatButton/index'
 import {db} from '../../firebase/index';
+import TablaInsumos from '../../components/tabla-insumos/index';
 import './inventory.css'
 
 const Inventory = (props) =>  {
