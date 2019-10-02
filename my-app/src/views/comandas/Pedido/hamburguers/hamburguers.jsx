@@ -1,19 +1,15 @@
-import React, { Fragment } from 'react';
-
+import React, { Fragment, useState } from 'react';
 import './hamburguers.css';
 import Button from '../../../../components/Buttons/buttons';
 import EntryButton from '../../../../components/Buttons/EntryButton/index';
 import FlatButton from '../../../../components/Buttons/flatButton/index';
+import data from '../../../../Data/data.json';
 
-const Hamburguers = ({ changeVisibility, visible }) => {
-    const menuHamburguer = ['Malicia Sencilla',
-        'Malicia Combo',
-        'Soberbia sencilla',
-        'Soberbia Combo',
-        'Gula Sencilla',
-        'Gula Combo',
-        'Alma en pena Sencilla',
-        'Alma en pena Combo']
+
+
+const Hamburguers = ({ changeVisibility, visible, bill, addItemToBill}) => {
+    
+    const menuHamburguer = data.filter(dish => dish.type === "hamburguesas");
 
     return (
         <Fragment >
@@ -21,13 +17,22 @@ const Hamburguers = ({ changeVisibility, visible }) => {
 
                 <div className="hamburguers-menu">
                     {
-                        menuHamburguer.map(hamburguer => <Button text={hamburguer} />)
+                        menuHamburguer.map((hamburguer, index) => {
+
+                            return <Button
+                        id={index} 
+                        text={hamburguer.name} 
+                        price={hamburguer.priceClassic}
+                        onClick={(e)=> addItemToBill(e.target,hamburguer)}
+                        />
+                        })
                     }
                 </div>
                 <div className="count">
                     <div className="bill">
                         <h2>Cuenta</h2>
                         <div className="foodAccount">
+                        {bill}
                         </div>
                         <div className="total">
                             <p>Total: <span>$</span></p>
