@@ -37,9 +37,17 @@ class SideDrawer extends Component{
                                     <i className="material-icons icons">restaurant</i><span>Comandas</span>
                                     </Link>
                                 </li>
-                                <li><Link to="/inventario" className="link">
+                                <li className="wrapper-childs"><Link to="/inventario" className="link">
                                     <i className="material-icons icons">assignment</i><span>Inventario</span>
                                     </Link>
+                                <ul className="wrapper-childs">
+                                    <li className="childs">
+                                        <Link to="/insumos" className="link-child">Insumos</Link>
+                                    </li>
+                                    <li className="childs">
+                                        <Link to="/compras" className="link-child">Compras</Link>
+                                    </li>
+                                </ul>
                                 </li>
                                 <li><Link to="/corte-de-caja" className="link">
                                     <i className="material-icons icons">attach_money</i><span>Corte de caja</span>

@@ -13,13 +13,6 @@
     font-size: 2rem;
 }
 
-.tab-panel {
-    margin-right: 0;
-    margin-left: 5%;
-    width: 90%;
-    height: 80%;
-}
-
 .column-view {
     display: flex;
     flex-direction: column;
