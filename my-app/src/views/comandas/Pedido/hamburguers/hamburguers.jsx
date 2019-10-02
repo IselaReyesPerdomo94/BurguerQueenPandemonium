@@ -15,8 +15,6 @@ const Hamburguers = ({ changeVisibility, visible }) => {
         'Alma en pena Sencilla',
         'Alma en pena Combo']
 
-
-
     return (
         <Fragment >
             <main className={`hamburguer-main`} >
@@ -29,6 +27,8 @@ const Hamburguers = ({ changeVisibility, visible }) => {
                 <div className="count">
                     <div className="bill">
                         <h2>Cuenta</h2>
+                        <div className="foodAccount">
+                        </div>
                         <div className="total">
                             <p>Total: <span>$</span></p>
                         </div>
