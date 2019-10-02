@@ -25,10 +25,3 @@
     font-weight: bold;
     font-size: 2rem;
 }
-
-.visible{
-    display: block;
-}
-.no-visible{
-    display: none;
-}
