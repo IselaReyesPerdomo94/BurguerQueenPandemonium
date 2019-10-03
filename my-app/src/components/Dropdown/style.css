@@ -5,22 +5,29 @@ select {
     border: none;
     font-size: .9em;
     height: 2rem;
-    width: 12rem;
+    width: 7rem;
     outline: none;
     padding-left: .5em;
     color: #797474;
     font-weight: bold;
 }
 
+.drop-box {
+    height: 3rem;
+    display: flex;
+    width: fit-content;
+    justify-content: flex-end;
+    align-items: center;
+}
+
 .caja {
     border: 1px solid #d9d9d9;
     height: 2rem;
-    width: 10rem;
+    width: 8.5rem;
     overflow: hidden;
     position: relative;
     background: #dadada;
     border-radius: 3.5px;
-    margin-top: 1em;
 }
 
 .caja::after {
@@ -39,8 +46,10 @@ select {
 }
 
 .label {
+    height: 3rem;
+    display: flex;
+    align-items: center;
     font-size: 1rem;
     margin-left: 1em;
     margin-right: 1em;
-    margin-top: 1.5em;
 }

@@ -5,6 +5,7 @@ const Dropdown = ({ options, optionDefault, titulo, onChange }) => {
     return (
         <Fragment>
             <label className="label">{titulo}</label>
+            <div className="drop-box">
             <div className="caja">
                 <select name="Usuarios" onChange={onChange}>
                     <option defaultValue value="user">{optionDefault}</option>
@@ -12,6 +13,7 @@ const Dropdown = ({ options, optionDefault, titulo, onChange }) => {
                         options
                     }
                 </select>
+            </div>
             </div>
         </Fragment>
     );

@@ -94,7 +94,7 @@ const InputInventory = (props) => {
             } onChange={handleChangeMeasureWeekly}/>
 
             <span onClick={addNewInventoryItem}>
-                <i className="material-icons icons">done</i>
+                <i className="material-icons done">done</i>
             </span>
         </div>
     )

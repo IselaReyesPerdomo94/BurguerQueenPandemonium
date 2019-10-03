@@ -1,10 +1,20 @@
+h2 {
+    margin: 0;
+}
+
 .wrapper {
     display: flex;
 }
 
-.main-inventory {
+.main-equipment {
     display: flex;
     padding: 1rem;
     flex-direction: column;
-    width: 89%;
+    width: 98%;
+    height: 500px;
+    justify-content: space-between;
+}
+
+.equipment-table {
+    padding: 0.5rem;
 }
