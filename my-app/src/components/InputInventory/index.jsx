@@ -67,7 +67,7 @@ const InputInventory = (props) => {
             <InputEmpty 
                 text="Cantidad diaria" 
                 className="input-box-empty" 
-                handleChangeTodayAmount={handleChangeTodayAmount}
+                onChange={handleChangeTodayAmount}
                 />
             <Dropdown 
                 optionDefault="Medida" 
