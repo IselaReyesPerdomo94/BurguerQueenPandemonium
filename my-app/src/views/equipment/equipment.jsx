@@ -22,7 +22,6 @@ const Equipment = (props) =>  {
     const handleChangeCategory = (e) => {
        setCategory(e.target.value)
     }
-
     const handleChangeNameProduct = (e) => {
         setNameProduct(e.target.value);
     }
