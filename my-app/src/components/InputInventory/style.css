@@ -1,20 +1,28 @@
 .inventory-inputs {
     width: 100%;
     display: flex;
-    height: 2rem;
-    margin-bottom: 3rem;
+    height: 5rem;
+    align-items: baseline;
+    justify-content: space-between;
+    /* flex-wrap: wrap; */
 }
 
 .input-box,
 .input-box-empty {
     height: 1rem !important;
-    display: flex;
     width: 15rem;
-    display: flex;
     align-items: center;
-    margin: auto 0.5rem !important;
 }
 
-.drop {
-    margin-left: 0px;
+.label {
+    margin: 5px;
+}
+
+span {
+    height: fit-content;
+}
+
+.done {
+    color: lightgreen;
+    font-size: 3rem;
 }

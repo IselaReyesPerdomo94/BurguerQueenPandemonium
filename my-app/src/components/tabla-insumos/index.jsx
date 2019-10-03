@@ -9,7 +9,7 @@ const TablaInsumos = (props) => {
     
     return (
         <ReactTable
-            defaultPageSize={10}
+            defaultPageSize={8}
             showPagination={false}
             data={info}
             resolveData={data => data.map(row => row)}
@@ -31,13 +31,25 @@ const TablaInsumos = (props) => {
                             accessor: "disponible"
                         },
                         {
+                            Header: "Medida",
+                            accesor: "medidaDisponible"
+                        },
+                        {
                             Header: "Necesario por día",
                             accessor: "necesario"
                         },
                         {
+                            Header: "Medida",
+                            accessor: "medidaDelDia"
+                        },
+                        {
                             Header: "Necesidad semanal",
                             accessor: "semanal"
-                        }
+                        },
+                        {
+                            Header: "Medida",
+                            accessor: "medidaSemanal"
+                        },
                     ]
                 }
             ]}

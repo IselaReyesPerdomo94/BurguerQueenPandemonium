@@ -51,9 +51,12 @@ const Equipment = (props) =>  {
         const newItem = info.concat({
             categoria: category,
             nombre: nameProduct,
-            disponible: `${currentAmount} ${measureActual}`,
-            necesario: `${todayAmount} ${measureToday}`,
-            semanal: `${weeklyAmount} ${measureWeekly}`
+            disponible: currentAmount,
+            medidaDisponible: measureActual,
+            necesario: todayAmount,
+            medidaDelDia: measureToday,
+            semanal: weeklyAmount,
+            medidaSemanal: measureWeekly
         })
         setInfo(newItem)
     }
@@ -84,17 +87,19 @@ const Equipment = (props) =>  {
             <div className="main-equipment">
                 <h2>Local</h2>
                 <InputInventory 
-                handleChangeMeasureActual = {handleChangeMeasureActual} 
-                handleChangeNameProduct={handleChangeNameProduct} 
-                handleChangeCategory={handleChangeCategory} 
-                handleChangeCurrentAmount={handleChangeCurrentAmount}
-                handleChangeMeasureToday={handleChangeMeasureToday}
-                handleChangeTodayAmount={handleChangeTodayAmount}
-                handleChangeWeeklyAmount={handleChangeWeeklyAmount}
-                handleChangeMeasureWeekly={handleChangeMeasureWeekly}
-                addNewInventoryItem={addNewInventoryItem}
+                    handleChangeMeasureActual = {handleChangeMeasureActual} 
+                    handleChangeNameProduct={handleChangeNameProduct} 
+                    handleChangeCategory={handleChangeCategory} 
+                    handleChangeCurrentAmount={handleChangeCurrentAmount}
+                    handleChangeMeasureToday={handleChangeMeasureToday}
+                    handleChangeTodayAmount={handleChangeTodayAmount}
+                    handleChangeWeeklyAmount={handleChangeWeeklyAmount}
+                    handleChangeMeasureWeekly={handleChangeMeasureWeekly}
+                    addNewInventoryItem={addNewInventoryItem}
                 />
+                <div className="equipment-table">
                 <TablaInsumos info={info}/>
+                </div>
             </div>
         </TabPanel>
         <TabPanel>
