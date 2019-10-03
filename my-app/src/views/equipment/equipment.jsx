@@ -13,10 +13,8 @@ const Equipment = (props) =>  {
     const [nameProduct, setNameProduct] = useState(''); 
     const [measureActual, setMeasureActual] = useState('');//dropdown
     const [currentAmount, setCurrentAmount] = useState('');//input
-    const [measureToday, setMeasureToday] = useState('')//dropdown of "cantidad diaria"
     const [todayAmount, setTodayAmount] = useState(''); //input of "cantidad diaria"
     const [weeklyAmount, setWeeklyAmount] = useState('')//input of "cantidad semanal"
-    const [measureWeekly, setMeasureWeekly] = useState(''); //dropdown of "cantidad semanal"
     const [info, setInfo] = useState([]);
 
     const handleChangeCategory = (e) => {
@@ -35,28 +33,22 @@ const Equipment = (props) =>  {
         setTodayAmount(e.target.value)
     }
 
-    const handleChangeMeasureToday = (e) => {
-        setMeasureToday(e.target.value)
-    }
-
     const handleChangeWeeklyAmount = (e) => {
         setWeeklyAmount(e.target.value)
     }
 
-    const handleChangeMeasureWeekly = (e) => {
-        setMeasureWeekly(e.target.value);
-    }
+   
 
     const addNewInventoryItem = () => {
         const newItem = info.concat({
             categoria: category,
             nombre: nameProduct,
             disponible: currentAmount,
-            medidaDisponible: measureActual,
+            medida: measureActual,
             necesario: todayAmount,
-            medidaDelDia: measureToday,
+            medidaDelDia:measureActual,
             semanal: weeklyAmount,
-            medidaSemanal: measureWeekly
+            medidaSemanal: measureActual
         })
         setInfo(newItem)
     }
@@ -91,10 +83,8 @@ const Equipment = (props) =>  {
                     handleChangeNameProduct={handleChangeNameProduct} 
                     handleChangeCategory={handleChangeCategory} 
                     handleChangeCurrentAmount={handleChangeCurrentAmount}
-                    handleChangeMeasureToday={handleChangeMeasureToday}
                     handleChangeTodayAmount={handleChangeTodayAmount}
                     handleChangeWeeklyAmount={handleChangeWeeklyAmount}
-                    handleChangeMeasureWeekly={handleChangeMeasureWeekly}
                     addNewInventoryItem={addNewInventoryItem}
                 />
                 <div className="equipment-table">

@@ -4,7 +4,6 @@
     height: 5rem;
     align-items: baseline;
     justify-content: space-between;
-    /* flex-wrap: wrap; */
 }
 
 .input-box,
@@ -12,6 +11,7 @@
     height: 1rem !important;
     width: 15rem;
     align-items: center;
+    margin: 0.5rem;
 }
 
 .label {
@@ -25,4 +25,5 @@ span {
 .done {
     color: lightgreen;
     font-size: 3rem;
+    margin: 0.5rem;
 }
