@@ -23,10 +23,8 @@ const InputInventory = (props) => {
             handleChangeNameProduct, 
             handleChangeCurrentAmount, 
             handleChangeMeasureActual,
-            handleChangeMeasureToday,
             handleChangeTodayAmount,
             handleChangeWeeklyAmount,
-            handleChangeMeasureWeekly,
             addNewInventoryItem} = props;
 
 
@@ -54,30 +52,10 @@ const InputInventory = (props) => {
                 className="input-box-empty" 
                 onChange={handleChangeCurrentAmount}
                 />
-            <Dropdown 
-                optionDefault="Medida" 
-                className="drop" 
-                options={
-                quantity.map(opt =>
-                    <option key={opt} value={opt}>{opt}</option>
-                    )
-                } 
-                onChange= {handleChangeMeasureActual}
-                />
             <InputEmpty 
                 text="Cantidad diaria" 
                 className="input-box-empty" 
                 onChange={handleChangeTodayAmount}
-                />
-            <Dropdown 
-                optionDefault="Medida" 
-                className="drop" 
-                options={
-                quantity.map(opt =>
-                    <option key={opt} value={opt}>{opt}</option>
-                    )
-                } 
-                onChange={handleChangeMeasureToday}
                 />
             <InputEmpty 
                 text="Cantidad semanal" 
@@ -91,7 +69,7 @@ const InputInventory = (props) => {
                 quantity.map(opt =>
                     <option key={opt} value={opt}>{opt}</option>
                     )
-            } onChange={handleChangeMeasureWeekly}/>
+            } onChange={ handleChangeMeasureActual}/>
 
             <span onClick={addNewInventoryItem}>
                 <i className="material-icons done">done</i>

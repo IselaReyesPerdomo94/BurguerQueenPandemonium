@@ -32,7 +32,7 @@ const TablaInsumos = (props) => {
                         },
                         {
                             Header: "Medida",
-                            accesor: "medidaDisponible"
+                            accessor: "medida"
                         },
                         {
                             Header: "Necesario por día",
@@ -43,7 +43,7 @@ const TablaInsumos = (props) => {
                             accessor: "medidaDelDia"
                         },
                         {
-                            Header: "Necesidad semanal",
+                            Header: "Necesidad por semana",
                             accessor: "semanal"
                         },
                         {
