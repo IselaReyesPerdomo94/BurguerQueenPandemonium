@@ -6,70 +6,70 @@ import './style.css';
 
 const InputInventory = (props) => {
     const categories = [
-                        "Producción", 
-                        "Aderezos", 
-                        "Desechables", 
-                        "Proveedores"
-                        ]
+        "Producción",
+        "Aderezos",
+        "Desechables",
+        "Proveedores"
+    ]
     const quantity = [
-                        "kg",
-                        "gramos",
-                        "litros", 
-                        "mamila",
-                        "piezas"
-                    ]
+        "kg",
+        "gramos",
+        "litros",
+        "mamila",
+        "piezas"
+    ]
 
-    const {handleChangeCategory, 
-            handleChangeNameProduct, 
-            handleChangeCurrentAmount, 
-            handleChangeMeasureActual,
-            handleChangeTodayAmount,
-            handleChangeWeeklyAmount,
-            addNewInventoryItem} = props;
+    const { handleChangeCategory,
+        handleChangeNameProduct,
+        handleChangeCurrentAmount,
+        handleChangeMeasureActual,
+        handleChangeTodayAmount,
+        handleChangeWeeklyAmount,
+        addNewInventoryItem } = props;
 
 
     return (
         <div className="inventory-inputs">
-            <Dropdown 
-                optionDefault="Categoria" 
-                className="drop" 
+            <Dropdown
+                optionDefault="Categoria"
+                className="drop"
                 options={
-                categories.map(opt =>
-                    <option key={opt} value={opt}>{opt}</option>
+                    categories.map(opt =>
+                        <option key={opt} value={opt}>{opt}</option>
                     )
-                } 
+                }
                 onChange={handleChangeCategory}
-                />
-            <CleanInput 
-                onChange={handleChangeNameProduct} 
-                label="Nombre" 
-                type="text" 
-                className="input-box" 
+            />
+            <CleanInput
+                onChange={handleChangeNameProduct}
+                label="Nombre"
+                type="text"
+                className="input-box"
                 variant="outlined"
-                />
-            <InputEmpty 
-                text="Cantidad actual" 
-                className="input-box-empty" 
+            />
+            <InputEmpty
+                text="Cantidad actual"
+                className="input-box-empty"
                 onChange={handleChangeCurrentAmount}
-                />
-            <InputEmpty 
-                text="Cantidad diaria" 
-                className="input-box-empty" 
+            />
+            <InputEmpty
+                text="Cantidad diaria"
+                className="input-box-empty"
                 onChange={handleChangeTodayAmount}
-                />
-            <InputEmpty 
-                text="Cantidad semanal" 
-                className="input-box-empty" 
+            />
+            <InputEmpty
+                text="Cantidad semanal"
+                className="input-box-empty"
                 onChange={handleChangeWeeklyAmount}
-                />
-            <Dropdown 
-                optionDefault="Medida" 
-                className="drop" 
+            />
+            <Dropdown
+                optionDefault="Medida"
+                className="drop"
                 options={
-                quantity.map(opt =>
-                    <option key={opt} value={opt}>{opt}</option>
+                    quantity.map(opt =>
+                        <option key={opt} value={opt}>{opt}</option>
                     )
-            } onChange={ handleChangeMeasureActual}/>
+                } onChange={handleChangeMeasureActual} />
 
             <span onClick={addNewInventoryItem}>
                 <i className="material-icons done">done</i>
