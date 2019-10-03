@@ -6,6 +6,9 @@ import Dropdown from '../../components/Dropdown/index';
 import TableView from '../../components/Table/table';
 import Tittle from '../../components/titles/index';
 import { db } from '../../firebase/index';
+import CleanModal from '../../components/cleanmodal/index'
+import EntryButton from '../../components/Buttons/EntryButton/index'
+import Add from '../../components/Add/index'
 import './inventory.css'
 
 const Inventory = (props) => {
@@ -21,6 +24,7 @@ const Inventory = (props) => {
         });
     }
 
+
     useEffect(() => {
         getUserCollectionForDropdown();
     }, []);
@@ -29,6 +33,8 @@ const Inventory = (props) => {
     const { menu } = props;
     return (
         <Fragment>
+
+
             <div className="wrapper">
                 {menu}
                 <main className="main-inventory">

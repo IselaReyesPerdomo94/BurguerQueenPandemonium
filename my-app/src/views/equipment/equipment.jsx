@@ -4,8 +4,11 @@ import Tittle from '../../components/titles/index';
 import Dropdown from '../../components/Dropdown/index';
 import { db } from '../../firebase/index';
 import TablaInsumos from '../../components/tabla-insumos/';
-import './equipment.css'
+import Add from '../../components/Add/index';
+import './equipment.css';
 import InputInventory from '../../components/InputInventory/index'
+import CleanModal from '../../components/cleanmodal/index';
+import EntryButton from '../../components/Buttons/EntryButton/index'
 
 const Equipment = (props) => {
     const [users, setUsers] = useState([]);
@@ -16,6 +19,7 @@ const Equipment = (props) => {
     const [todayAmount, setTodayAmount] = useState(''); //input of "cantidad diaria"
     const [weeklyAmount, setWeeklyAmount] = useState('')//input of "cantidad semanal"
     const [info, setInfo] = useState([]);
+    const [showModal, setShowModal] = useState(false);
 
     const handleChangeCategory = (e) => {
         setCategory(e.target.value)
@@ -36,7 +40,15 @@ const Equipment = (props) => {
     const handleChangeWeeklyAmount = (e) => {
         setWeeklyAmount(e.target.value)
     }
-
+    const showModalAdd = () => {
+        setShowModal(true);
+    }
+    const hideModalAdd = () => {
+        setShowModal(false);
+    }
+    const addElement = () => {
+        console.log("hola")
+    }
 
 
     const addNewInventoryItem = () => {
@@ -78,7 +90,7 @@ const Equipment = (props) => {
             <TabPanel>
                 <div className="main-equipment">
                     <div className="add">
-                        <button className="button-add">
+                        <button className="button-add" onClick={showModalAdd}>
                             +
                         </button>
                     </div>
@@ -111,6 +123,26 @@ const Equipment = (props) => {
     )
     return (
         <Fragment>
+            <CleanModal
+                title="Agregar categoria y medida"
+                open={showModal}
+                close={hideModalAdd}
+                content={
+                    <Add
+                        name="add-item"
+                        value1="Categoria"
+                        value2="Medida"
+                        label="Agregar categoria o medida" />
+                }
+                footer={
+                    <EntryButton
+                        text="Agregar"
+                        onClick={addElement}
+                        className="btn-add" />
+                }
+
+            />
+
             <div className="wrapper">
                 {menu}
                 <main className="main-inventory">
