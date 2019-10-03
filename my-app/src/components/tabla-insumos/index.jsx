@@ -12,6 +12,7 @@ const TablaInsumos = (props) => {
             defaultPageSize={10}
             showPagination={false}
             data={info}
+            resolveData={data => data.map(row => row)}
             columns={[
                 {
                     Header: 'Detalles de insumos',
