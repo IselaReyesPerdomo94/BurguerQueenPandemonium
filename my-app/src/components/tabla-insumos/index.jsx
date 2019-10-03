@@ -1,37 +1,41 @@
 import React, { Component } from 'react';
 import ReactTable from 'react-table';
+import 'react-table/react-table.css';
+
 import './style.css';
 
-const TablaInsumos = () => {
+const TablaInsumos = (props) => {
+    const {info} = props; 
+    
     return (
         <ReactTable
             defaultPageSize={10}
             showPagination={false}
-            noDataText={false}
+            data={info}
             columns={[
                 {
                     Header: 'Detalles de insumos',
                     headerClassName: "header-tab2",
                     columns: [
                         {
-                            Header: "Producción",
-                            accessor: ""
+                            Header: "Categoría",
+                            accessor: "categoria"
                         },
                         {
                             Header: "Nombre",
-                            accessor: ""
+                            accessor: "nombre"
                         },
                         {
                             Header: "Disponible",
-                            accessor: ""
+                            accessor: "disponible"
                         },
                         {
-                            Header: "Necesario",
-                            accessor: ""
+                            Header: "Necesario por día",
+                            accessor: "necesario"
                         },
                         {
                             Header: "Necesidad semanal",
-                            accessor: ""
+                            accessor: "semanal"
                         }
                     ]
                 }

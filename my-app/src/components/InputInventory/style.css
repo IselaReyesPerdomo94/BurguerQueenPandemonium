@@ -1,0 +1,20 @@
+.inventory-inputs {
+    width: 100%;
+    display: flex;
+    height: 2rem;
+    margin-bottom: 3rem;
+}
+
+.input-box,
+.input-box-empty {
+    height: 1rem !important;
+    display: flex;
+    width: 15rem;
+    display: flex;
+    align-items: center;
+    margin: auto 0.5rem !important;
+}
+
+.drop {
+    margin-left: 0px;
+}

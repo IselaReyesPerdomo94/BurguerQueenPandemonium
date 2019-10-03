@@ -5,6 +5,7 @@ import Dropdown from '../../components/Dropdown/index';
 import {db} from '../../firebase/index';
 import TablaInsumos from '../../components/tabla-insumos/';
 import './equipment.css'
+import InputInventory from '../../components/InputInventory/index'
 
 const Equipment = (props) =>  {
     const [users, setUsers] = useState([]);
@@ -23,7 +24,16 @@ const Equipment = (props) =>  {
         getUserCollectionForDropdown();
     }, []);
 
- 
+    const info = [
+        {
+            categoria: "Producción",
+            nombre: "carnita de res",
+            disponible: "1 kg",
+            necesario: "2 kg",
+            semanal: "5 kg"
+        }
+    ]
+
     const {menu}= props;
     const displayTabsEquipment = (
         <Tabs>
@@ -35,7 +45,8 @@ const Equipment = (props) =>  {
         <TabPanel>
             <div className="main-equipment">
                 <h2>Local</h2>
-                <TablaInsumos />
+                <InputInventory/>
+                <TablaInsumos info={info}/>
             </div>
         </TabPanel>
         <TabPanel>
