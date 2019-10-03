@@ -45,7 +45,7 @@ const Equipment = (props) =>  {
         <TabPanel>
             <div className="main-equipment">
                 <h2>Local</h2>
-                <InputInventory/>
+                <InputInventory />
                 <TablaInsumos info={info}/>
             </div>
         </TabPanel>
