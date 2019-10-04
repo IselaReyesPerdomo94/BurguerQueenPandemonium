@@ -33,6 +33,7 @@ const Equipment = (props) => {
 
     const handleChangeInputModal = (e) => {
         setInputModal(e.target.value)
+        console.log(e.target.value)
     }
 
     const cleanInputModal = () => {

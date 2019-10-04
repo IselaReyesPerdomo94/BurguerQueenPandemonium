@@ -4,6 +4,7 @@ import Tittle from '../../components/titles/index';
 import Dropdown from '../../components/Dropdown/index';
 import {db} from '../../firebase/index';
 import TableShopping from '../../components/table-shopping/index.jsx';
+import InputInventory from '../../components/InputInventory/index';
 import './shopping.css'
 
 const Shopping = (props) =>  {
@@ -35,6 +36,8 @@ const Shopping = (props) =>  {
         <TabPanel>
             <div className="main-equipment">
                 <h2>Compras</h2>
+                <InputInventory/>
+                <TableShopping/>
             </div>
         </TabPanel>
         <TabPanel>
@@ -60,7 +63,7 @@ const Shopping = (props) =>  {
                             } optionDefault="USUARIO" />
                         </div>
                         {displayTabsEquipment}
-                        <TableShopping/>
+                        
                     </main>
                 </div>
             </Fragment>
