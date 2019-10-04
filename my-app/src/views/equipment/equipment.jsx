@@ -20,7 +20,7 @@ const Equipment = (props) => {
     const [weeklyAmount, setWeeklyAmount] = useState('')//input of "cantidad semanal"
     const [info, setInfo] = useState([]);
     const [showModal, setShowModal] = useState(false);//modal to add category or measure
-    const [inputModal, setInputModal] =useState('');
+    const [inputModal, setInputModal] = useState('');
     const [newThing, setNewThing] = useState('');
 
     const catchRadioButton = (e) => {
@@ -65,6 +65,9 @@ const Equipment = (props) => {
         setShowModal(false);
     }
 
+
+    //    = "categories" ? "categories" : quantity;
+
     const addNewInventoryItem = () => {
         const newItem = info.concat({
             categoria: category,
@@ -89,7 +92,7 @@ const Equipment = (props) => {
         });
     }
 
-   
+
 
     useEffect(() => {
         getUserCollectionForDropdown();
@@ -105,11 +108,7 @@ const Equipment = (props) => {
             </TabList>
             <TabPanel>
                 <div className="main-equipment">
-                    <div className="add">
-                        <button className="button-add" onClick={showModalAdd}>
-                            +
-                        </button>
-                    </div>
+
                     <h2>Local</h2>
 
                     <InputInventory
@@ -124,6 +123,11 @@ const Equipment = (props) => {
                     />
                     <div className="equipment-table">
                         <TablaInsumos info={info} />
+                    </div>
+                    <div className="add">
+                        <button className="button-add" onClick={showModalAdd}>
+                            Agregar
+                        </button>
                     </div>
                 </div>
             </TabPanel>
@@ -143,7 +147,7 @@ const Equipment = (props) => {
             <CleanModal
                 title="Agregar categoria y medida"
                 open={showModal}
-                close={()=> {
+                close={() => {
                     hideModalAdd()
                     cleanInputModal()
                 }}
@@ -155,13 +159,13 @@ const Equipment = (props) => {
                         value={inputModal}
                         onChange={handleChangeInputModal}
                         label="Agregar categoria o medida"
-                        onSubmit={(e)=> {
+                        onSubmit={(e) => {
                             catchRadioButton(e)
                             hideModalAdd()
                             cleanInputModal()
-                            }
+                        }
                         } />
-                    }
+                }
             />
 
             <div className="wrapper">
