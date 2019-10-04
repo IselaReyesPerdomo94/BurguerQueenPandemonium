@@ -20,11 +20,21 @@ const Equipment = (props) => {
     const [weeklyAmount, setWeeklyAmount] = useState('')//input of "cantidad semanal"
     const [info, setInfo] = useState([]);
     const [showModal, setShowModal] = useState(false);//modal to add category or measure
+    const [inputModal, setInputModal] =useState('');
 
     const catchRadioButton = (e) => {
         e.preventDefault();
         const formInfo = new FormData(e.target)
         console.log(formInfo.get('name'), formInfo.get("add-item"))
+    }
+
+    const handleChangeInputModal = (e) => {
+        setInputModal(e.target.value)
+        console.log(inputModal)
+    }
+
+    const cleanInputModal = () => {
+        setInputModal('');
     }
 
     const handleChangeCategory = (e) => {
@@ -130,15 +140,25 @@ const Equipment = (props) => {
             <CleanModal
                 title="Agregar categoria y medida"
                 open={showModal}
-                close={hideModalAdd}
+                close={()=> {
+                    hideModalAdd()
+                    cleanInputModal()
+                }}
                 content={
                     <Add
                         name="add-item"
                         value1="Categoria"
                         value2="Medida"
+                        value={inputModal}
+                        onChange={handleChangeInputModal}
                         label="Agregar categoria o medida"
-                        onSubmit={(e)=> catchRadioButton(e)} />
-                }
+                        onSubmit={(e)=> {
+                            catchRadioButton(e)
+                            hideModalAdd()
+                            cleanInputModal()
+                            }
+                        } />
+                    }
             />
 
             <div className="wrapper">
