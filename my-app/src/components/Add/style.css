@@ -1,0 +1,20 @@
+.radios{
+    display: flex;
+    margin-top: 1rem;
+    height: 2rem;
+    justify-content: space-between;
+}
+
+.add-box {
+    display: flex;
+    flex-direction: column;
+    height: 8rem;
+    justify-content: space-between;
+}
+
+.btn-add {
+ display: flex;
+ align-self: center;   
+ width: 8rem;
+ background-color:#2EC8DC !important;
+}
