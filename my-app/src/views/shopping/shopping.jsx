@@ -3,6 +3,7 @@ import { Tab, Tabs, TabList,TabPanel } from 'react-tabs';
 import Tittle from '../../components/titles/index';
 import Dropdown from '../../components/Dropdown/index';
 import {db} from '../../firebase/index';
+import TableShopping from '../../components/table-shopping/index.jsx';
 import './shopping.css'
 
 const Shopping = (props) =>  {
@@ -33,7 +34,7 @@ const Shopping = (props) =>  {
         </TabList>
         <TabPanel>
             <div className="main-equipment">
-                <h2>Local</h2>
+                <h2>Compras</h2>
             </div>
         </TabPanel>
         <TabPanel>
@@ -59,6 +60,7 @@ const Shopping = (props) =>  {
                             } optionDefault="USUARIO" />
                         </div>
                         {displayTabsEquipment}
+                        <TableShopping/>
                     </main>
                 </div>
             </Fragment>
