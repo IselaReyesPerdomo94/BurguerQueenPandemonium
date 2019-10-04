@@ -1,23 +1,28 @@
-import React from 'react';
+import React, {useState} from 'react';
 import InputEmpty from '../inputEmpty/index';
 import CleanInput from '../CleanInput/index';
 import Dropdown from '../Dropdown/index';
 import './style.css';
 
 const InputInventory = (props) => {
-    const categories = [
+    const categories2 = [
         "Producción",
         "Aderezos",
         "Desechables",
         "Proveedores"
     ]
-    const quantity = [
+
+    const quantity2 = [
         "kg",
         "gramos",
         "litros",
         "mamila",
         "piezas"
     ]
+
+    const [categories, setCategories] = useState(categories2);
+    const [quantity, setQuantity] = useState(quantity2);
+        
 
     const { handleChangeCategory,
         handleChangeNameProduct,

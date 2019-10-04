@@ -19,7 +19,13 @@ const Equipment = (props) => {
     const [todayAmount, setTodayAmount] = useState(''); //input of "cantidad diaria"
     const [weeklyAmount, setWeeklyAmount] = useState('')//input of "cantidad semanal"
     const [info, setInfo] = useState([]);
-    const [showModal, setShowModal] = useState(false);
+    const [showModal, setShowModal] = useState(false);//modal to add category or measure
+
+    const catchRadioButton = (e) => {
+        e.preventDefault();
+        const formInfo = new FormData(e.target)
+        console.log(formInfo.get('name'), formInfo.get("add-item"))
+    }
 
     const handleChangeCategory = (e) => {
         setCategory(e.target.value)
@@ -46,10 +52,6 @@ const Equipment = (props) => {
     const hideModalAdd = () => {
         setShowModal(false);
     }
-    const addElement = () => {
-        console.log("hola")
-    }
-
 
     const addNewInventoryItem = () => {
         const newItem = info.concat({
@@ -74,6 +76,8 @@ const Equipment = (props) => {
             setUsers(elements);
         });
     }
+
+   
 
     useEffect(() => {
         getUserCollectionForDropdown();
@@ -132,15 +136,9 @@ const Equipment = (props) => {
                         name="add-item"
                         value1="Categoria"
                         value2="Medida"
-                        label="Agregar categoria o medida" />
+                        label="Agregar categoria o medida"
+                        onSubmit={(e)=> catchRadioButton(e)} />
                 }
-                footer={
-                    <EntryButton
-                        text="Agregar"
-                        onClick={addElement}
-                        className="btn-add" />
-                }
-
             />
 
             <div className="wrapper">
