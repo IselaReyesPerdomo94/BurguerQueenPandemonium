@@ -15,8 +15,8 @@ const TableShopping = (props) => {
                     headerClassName: "header-tab2",
                     columns: [
                         {
-                            Header: "Vegetales frescos",
-                            accessor: "Vegetales frescos"
+                            Header: "Categoría",
+                            accessor: "categoria"
                         },
                         {
                             Header: "Nombre",
