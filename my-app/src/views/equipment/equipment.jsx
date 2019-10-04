@@ -23,12 +23,17 @@ const Equipment = (props) => {
     const [inputModal, setInputModal] = useState('');
     const [newThing, setNewThing] = useState('');
 
+
+
     const catchRadioButton = (e) => {
         e.preventDefault();
         const formInfo = new FormData(e.target)
         const newName = formInfo.get('name');
         const newAdd = formInfo.get('add-item')
-        setNewThing(`${newName}, ${newAdd}`);
+        const word = `${newName} ${newAdd}`;
+        addNewThing(word);
+        console.log(word)
+        setNewThing(word);
     }
 
     const handleChangeInputModal = (e) => {
@@ -66,9 +71,6 @@ const Equipment = (props) => {
         setShowModal(false);
     }
 
-
-    //    = "categories" ? "categories" : quantity;
-
     const addNewInventoryItem = () => {
         const newItem = info.concat({
             categoria: category,
@@ -93,6 +95,58 @@ const Equipment = (props) => {
         });
     }
 
+      const categories2 = [
+        "Producción",
+        "Aderezos",
+        "Desechables",
+        "Proveedores"
+    ]
+
+    const quantity2 = [
+        "kg",
+        "gramos",
+        "litros",
+        "mamila",
+        "piezas"
+    ]
+    //localstorage of categories
+    localStorage.setItem('categories', categories2.toString())
+    const categoriesInLocal = localStorage.getItem('categories');
+    const arrayCategories = categoriesInLocal.split(',')
+
+    //localstorage of quantity
+    localStorage.setItem('quantity', quantity2.toString())
+    const quantityInLocal = localStorage.getItem('quantity');
+    const arrayQuantity = quantityInLocal.split(',')
+
+
+    const [categories, setCategories] = useState(arrayCategories);
+    const [quantity, setQuantity] = useState(arrayQuantity);
+
+    function addNewThing (word)  {
+        console.log(word);
+        console.log(typeof word);
+        const selection = word.split(' ')
+        console.log(selection)
+        if(selection [1]==='Categoria'){
+            console.log(selection[0])
+            arrayCategories.push(selection[0])
+            console.log(arrayCategories)
+            localStorage.setItem('categories', arrayCategories.toString())
+            const categoriesLocal = localStorage.getItem('categories').split(',')
+            setCategories(categoriesLocal)
+            console.log(categoriesLocal)
+        }
+        else {
+            arrayQuantity.push(selection[0])
+            console.log(arrayQuantity)
+            localStorage.setItem('quantity', arrayQuantity.toString())
+            const quantityLocal = localStorage.getItem('quantity').split(',')
+            setQuantity(quantityLocal)
+            console.log(quantityLocal)
+        }
+        
+    }
 
 
     useEffect(() => {
@@ -121,6 +175,8 @@ const Equipment = (props) => {
                         handleChangeTodayAmount={handleChangeTodayAmount}
                         handleChangeWeeklyAmount={handleChangeWeeklyAmount}
                         addNewInventoryItem={addNewInventoryItem}
+                        quantity={quantity}
+                        categories={categories}
                     />
                     <div className="equipment-table">
                         <TablaInsumos info={info} />
