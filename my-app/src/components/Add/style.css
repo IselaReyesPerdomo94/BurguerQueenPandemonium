@@ -5,6 +5,10 @@
     justify-content: space-between;
 }
 
+.input-add{
+    width: 100%;
+}
+
 .add-box {
     display: flex;
     flex-direction: column;
