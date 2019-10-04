@@ -5,34 +5,6 @@ import Dropdown from '../Dropdown/index';
 import './style.css';
 
 const InputInventory = (props) => {
-    const categories2 = [
-        "Producción",
-        "Aderezos",
-        "Desechables",
-        "Proveedores"
-    ]
-
-    const quantity2 = [
-        "kg",
-        "gramos",
-        "litros",
-        "mamila",
-        "piezas"
-    ]
-    //localstorage of categories
-    localStorage.setItem('categories', categories2.toString())
-    const categoriesInLocal = localStorage.getItem('categories');
-    const arrayCategories = categoriesInLocal.split(',')
-
-    //localstorage of quantity
-    localStorage.setItem('quantity', quantity2.toString())
-    const quantityInLocal = localStorage.getItem('quantity');
-    const arrayQuantity = quantityInLocal.split(',')
-
-
-    const [categories, setCategories] = useState(arrayCategories);
-    const [quantity, setQuantity] = useState(arrayQuantity);
-
 
     const { handleChangeCategory,
         handleChangeNameProduct,
@@ -41,12 +13,8 @@ const InputInventory = (props) => {
         handleChangeTodayAmount,
         handleChangeWeeklyAmount,
         addNewInventoryItem,
-        newThing } = props;
-    console.log(newThing)
-
-    const addNewThing = () => {
-        categories.push(newThing)
-    }
+        categories,
+        quantity} = props;
 
     return (
         <div className="inventory-inputs">
