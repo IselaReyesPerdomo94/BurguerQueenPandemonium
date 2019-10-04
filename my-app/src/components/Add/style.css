@@ -22,3 +22,11 @@
  width: 8rem;
  background-color:#2EC8DC !important;
 }
+
+.submit-box{
+    height: 4rem;
+    display: flex;
+    width: 100%;
+    justify-content:center;
+    align-items: center;
+}

@@ -23,11 +23,13 @@ const Add = (props) => {
                 <input type="radio" name={name} id={value2} value={value2} />
                 <label htmlFor={value2}>{value2}</label>
             </div>
+            <div className="submit-box">
             <input 
                         type="submit" 
                         value="Agregar" 
                         className="btn-add-form"
                     />
+            </div>
         </form>
         </div>
     )
