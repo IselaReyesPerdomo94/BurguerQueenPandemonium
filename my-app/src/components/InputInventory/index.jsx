@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import InputEmpty from '../inputEmpty/index';
 import CleanInput from '../CleanInput/index';
 import Dropdown from '../Dropdown/index';
@@ -26,13 +26,13 @@ const InputInventory = (props) => {
 
     //localstorage of quantity
     localStorage.setItem('quantity', quantity2.toString())
-    const quantityInLocal =localStorage.getItem('quantity');
+    const quantityInLocal = localStorage.getItem('quantity');
     const arrayQuantity = quantityInLocal.split(',')
 
 
     const [categories, setCategories] = useState(arrayCategories);
     const [quantity, setQuantity] = useState(arrayQuantity);
-        
+
 
     const { handleChangeCategory,
         handleChangeNameProduct,
@@ -42,8 +42,12 @@ const InputInventory = (props) => {
         handleChangeWeeklyAmount,
         addNewInventoryItem,
         newThing } = props;
-        console.log(newThing);
-        
+    console.log(newThing)
+
+    const addNewThing = () => {
+        categories.push(newThing)
+    }
+
     return (
         <div className="inventory-inputs">
             <Dropdown

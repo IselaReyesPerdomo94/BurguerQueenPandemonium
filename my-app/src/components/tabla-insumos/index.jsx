@@ -5,12 +5,11 @@ import 'react-table/react-table.css';
 import './style.css';
 
 const TablaInsumos = (props) => {
-    const {info} = props; 
-    
+    const { info } = props;
+
     return (
         <ReactTable
-            defaultPageSize={8}
-            showPagination={false}
+            defaultPageSize={10}
             data={info}
             resolveData={data => data.map(row => row)}
             columns={[
