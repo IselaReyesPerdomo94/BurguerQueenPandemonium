@@ -20,9 +20,7 @@ h2 {
 }
 
 .button-add{
-    border-radius: 100%;
-    background-color: #007AFF;
-    color: white;
+    color:blue;
     border:none;
     height: 3rem;
     width: 3rem;
@@ -31,6 +29,7 @@ h2 {
     justify-content: center;
     align-items: center;
     outline: none;
+    background-color: transparent;
 }
 .add{
     width: 100%;
