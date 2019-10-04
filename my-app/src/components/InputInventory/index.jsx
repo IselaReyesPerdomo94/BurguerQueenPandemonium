@@ -19,9 +19,19 @@ const InputInventory = (props) => {
         "mamila",
         "piezas"
     ]
+    //localstorage of categories
+    localStorage.setItem('categories', categories2.toString())
+    const categoriesInLocal = localStorage.getItem('categories');
+    const arrayCategories = categoriesInLocal.split(',')
 
-    const [categories, setCategories] = useState(categories2);
-    const [quantity, setQuantity] = useState(quantity2);
+    //localstorage of quantity
+    localStorage.setItem('quantity', quantity2.toString())
+    const quantityInLocal =localStorage.getItem('quantity');
+    const arrayQuantity = quantityInLocal.split(',')
+
+
+    const [categories, setCategories] = useState(arrayCategories);
+    const [quantity, setQuantity] = useState(arrayQuantity);
         
 
     const { handleChangeCategory,
@@ -30,7 +40,8 @@ const InputInventory = (props) => {
         handleChangeMeasureActual,
         handleChangeTodayAmount,
         handleChangeWeeklyAmount,
-        addNewInventoryItem } = props;
+        addNewInventoryItem,
+        newThing } = props;
 
 
     return (

@@ -21,16 +21,18 @@ const Equipment = (props) => {
     const [info, setInfo] = useState([]);
     const [showModal, setShowModal] = useState(false);//modal to add category or measure
     const [inputModal, setInputModal] =useState('');
+    const [newThing, setNewThing] = useState('');
 
     const catchRadioButton = (e) => {
         e.preventDefault();
         const formInfo = new FormData(e.target)
-        console.log(formInfo.get('name'), formInfo.get("add-item"))
+        const newName = formInfo.get('name');
+        const newAdd = formInfo.get('add-item')
+        setNewThing(`${newName}, ${newAdd}`);
     }
 
     const handleChangeInputModal = (e) => {
         setInputModal(e.target.value)
-        console.log(inputModal)
     }
 
     const cleanInputModal = () => {
@@ -111,6 +113,7 @@ const Equipment = (props) => {
                     <h2>Local</h2>
 
                     <InputInventory
+                        newThing={newThing}
                         handleChangeMeasureActual={handleChangeMeasureActual}
                         handleChangeNameProduct={handleChangeNameProduct}
                         handleChangeCategory={handleChangeCategory}
