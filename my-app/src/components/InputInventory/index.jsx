@@ -42,8 +42,8 @@ const InputInventory = (props) => {
         handleChangeWeeklyAmount,
         addNewInventoryItem,
         newThing } = props;
-
-
+        console.log(newThing);
+        
     return (
         <div className="inventory-inputs">
             <Dropdown
