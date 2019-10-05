@@ -10,6 +10,7 @@ import './inventory.css'
 
 const Inventory = (props) => {
     const [users, setUsers] = useState([]);
+    const [lowSupplies, setLowSupplies] = useState([]);
 
     const getUserCollectionForDropdown = () => {
         db.collection('users').get().then(querySnapshot => {
@@ -37,12 +38,18 @@ const Inventory = (props) => {
     const verifyDisponibility = () => {
        const transformedSupplies = transformToNumber();
        const lowSupplies = transformedSupplies.filter(element => element.disponible < element.necesario/2)
+       const lowSuppliesReduce = lowSupplies.map(item => {
+           return {
+               name: item.nombre,
+               disponible: `${item.disponible} ${item.medida}`
+           }
+       })
+       setLowSupplies(lowSuppliesReduce)
     }
-
-    verifyDisponibility()
 
     useEffect(() => {
         getUserCollectionForDropdown();
+        verifyDisponibility()
     }, []);
 
 
@@ -71,7 +78,7 @@ const Inventory = (props) => {
                         <TabPanel>
                             <div className="first-table-view">
                                 <div className="column-view">
-                                    <TableView headerText="Insumos por agotarse" />
+                                    <TableView headerText="Insumos por agotarse" lowSupplies={lowSupplies}/>
                                     <Link to="/insumos">
                                         <FlatButton className="detail-button" text="VER DETALLE"/>
                                     </Link>

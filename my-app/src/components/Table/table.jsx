@@ -7,13 +7,15 @@ import './table.css'
 class TableView extends Component {
     
     render() {
-      const {headerText} = this.props 
+      const {headerText, lowSupplies} = this.props 
         return (
             <div className="table-products">
         <ReactTable
           defaultPageSize={10}
-          showPagination={false}
+          showPagination={true}
           noDataText={false}
+          data={lowSupplies}
+          resolveData={data => data.map(row => row)}
           columns={[
             {
               Header: headerText,
@@ -21,12 +23,12 @@ class TableView extends Component {
               columns: [
                 {
                   Header: "Producto",
-                  accessor: ""
+                  accessor: "name"
                 },
                 {
                   Header: "Disponible",
                   id: "disponible",
-                  accessor: ""
+                  accessor: "disponible"
                 }
               ]
             }
