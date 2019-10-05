@@ -8,10 +8,10 @@ h2 {
 
 .main-equipment {
     display: flex;
-    padding: 1rem;
+    padding: 0rem 0rem 2rem 0rem;
     flex-direction: column;
     width: 98%;
-    height: 500px;
+    height: fit-content;
     justify-content: space-between;
 }
 
@@ -19,27 +19,26 @@ h2 {
     padding: 0.5rem;
 }
 
-.button-add{
-    color:blue;
-    border:none;
-    height: 3rem;
-    width: 3rem;
-    font-size: 2rem;
+.button-add {
+    color: blue;
+    border: none;
+    font-size: 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
     outline: none;
     background-color: transparent;
 }
-.add{
+
+.add {
     width: 100%;
-    height: 6rem;
+    height: 2rem;
     display: flex;
     justify-content: flex-end;
     align-items: center;
 }
 
-.btn-add-form{
+.btn-add-form {
     padding: 0.5rem;
     text-align: center;
     display: flex;
@@ -49,5 +48,5 @@ h2 {
     width: 8rem;
     background-color: #2EC8DC;
     border-radius: 7px;
-    border:none;
+    border: none;
 }

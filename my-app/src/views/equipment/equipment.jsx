@@ -23,7 +23,7 @@ const Equipment = (props) => {
     const [inputModal, setInputModal] = useState('');
     const [newThing, setNewThing] = useState('');
 
-
+    const infoInLocal = JSON.parse(localStorage.getItem('tableData'));
 
     const catchRadioButton = (e) => {
         e.preventDefault();
@@ -82,7 +82,10 @@ const Equipment = (props) => {
             semanal: weeklyAmount,
             medidaSemanal: measureActual
         })
-        setInfo(newItem)
+        localStorage.setItem('tableData', JSON.stringify(newItem))
+        const infoInLocal = JSON.parse(localStorage.getItem('tableData'));
+        setInfo(infoInLocal)
+        //localStorage.removeItem('tableData')
     }
 
     const getUserCollectionForDropdown = () => {
@@ -136,6 +139,10 @@ const Equipment = (props) => {
         getUserCollectionForDropdown();
     }, []);
 
+    useEffect(()=> {
+        setInfo(infoInLocal)
+    }, [])
+
     const { menu } = props;
     const displayTabsEquipment = (
         <Tabs>
@@ -146,9 +153,12 @@ const Equipment = (props) => {
             </TabList>
             <TabPanel>
                 <div className="main-equipment">
-
                     <h2>Local</h2>
-
+                    <div className="add">
+                        <button className="button-add" onClick={showModalAdd}>
+                            AGREGAR
+                        </button>
+                    </div>
                     <InputInventory
                         newThing={newThing}
                         handleChangeMeasureActual={handleChangeMeasureActual}
@@ -162,12 +172,7 @@ const Equipment = (props) => {
                         categories={categories}
                     />
                     <div className="equipment-table">
-                        <TablaInsumos info={info} />
-                    </div>
-                    <div className="add">
-                        <button className="button-add" onClick={showModalAdd}>
-                            Agregar
-                        </button>
+                        <TablaInsumos info={info}/>
                     </div>
                 </div>
             </TabPanel>

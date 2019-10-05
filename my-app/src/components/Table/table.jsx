@@ -20,7 +20,7 @@ class TableView extends Component {
               headerClassName:"header-tab",
               columns: [
                 {
-                  Header: "Categoría",
+                  Header: "Producto",
                   accessor: ""
                 },
                 {
