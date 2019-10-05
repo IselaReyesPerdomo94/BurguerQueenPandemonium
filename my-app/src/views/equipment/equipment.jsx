@@ -95,27 +95,11 @@ const Equipment = (props) => {
         });
     }
 
-      const categories2 = [
-        "Producción",
-        "Aderezos",
-        "Desechables",
-        "Proveedores"
-    ]
-
-    const quantity2 = [
-        "kg",
-        "gramos",
-        "litros",
-        "mamila",
-        "piezas"
-    ]
     //localstorage of categories
-    localStorage.setItem('categories', categories2.toString())
     const categoriesInLocal = localStorage.getItem('categories');
     const arrayCategories = categoriesInLocal.split(',')
 
     //localstorage of quantity
-    localStorage.setItem('quantity', quantity2.toString())
     const quantityInLocal = localStorage.getItem('quantity');
     const arrayQuantity = quantityInLocal.split(',')
 
@@ -147,7 +131,6 @@ const Equipment = (props) => {
         }
         
     }
-
 
     useEffect(() => {
         getUserCollectionForDropdown();
