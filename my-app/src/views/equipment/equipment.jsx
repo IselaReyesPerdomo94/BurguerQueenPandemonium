@@ -32,13 +32,11 @@ const Equipment = (props) => {
         const newAdd = formInfo.get('add-item')
         const word = `${newName} ${newAdd}`;
         addNewThing(word);
-        console.log(word)
         setNewThing(word);
     }
 
     const handleChangeInputModal = (e) => {
         setInputModal(e.target.value)
-        console.log(e.target.value)
     }
 
     const cleanInputModal = () => {
@@ -111,28 +109,19 @@ const Equipment = (props) => {
     const [quantity, setQuantity] = useState(arrayQuantity);
 
     function addNewThing (word)  {
-        console.log(word);
-        console.log(typeof word);
         const selection = word.split(' ')
-        console.log(selection)
         if(selection [1]==='Categoria'){
-            console.log(selection[0])
             arrayCategories.push(selection[0])
-            console.log(arrayCategories)
             localStorage.setItem('categories', arrayCategories.toString())
             const categoriesLocal = localStorage.getItem('categories').split(',')
             setCategories(categoriesLocal)
-            console.log(categoriesLocal)
         }
         else {
             arrayQuantity.push(selection[0])
-            console.log(arrayQuantity)
             localStorage.setItem('quantity', arrayQuantity.toString())
             const quantityLocal = localStorage.getItem('quantity').split(',')
             setQuantity(quantityLocal)
-            console.log(quantityLocal)
         }
-        
     }
 
     useEffect(() => {
