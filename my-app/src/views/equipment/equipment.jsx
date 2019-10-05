@@ -137,11 +137,8 @@ const Equipment = (props) => {
 
     useEffect(() => {
         getUserCollectionForDropdown();
-    }, []);
-
-    useEffect(()=> {
         setInfo(infoInLocal)
-    }, [])
+    }, []);
 
     const { menu } = props;
     const displayTabsEquipment = (

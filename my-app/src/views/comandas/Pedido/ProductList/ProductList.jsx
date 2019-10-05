@@ -8,7 +8,7 @@ const ProductList = (props) => {
             <span>{amount}</span>
             <span>{itemName}</span>
             <span>{itemPrice}</span>
-            <i className="material-icons">delete</i>
+            <i className="material-icons icon-create">create</i>
         </div>
     )
 }
