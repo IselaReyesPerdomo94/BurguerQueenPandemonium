@@ -6,13 +6,11 @@ import Dropdown from '../../components/Dropdown/index';
 import TableView from '../../components/Table/table';
 import Tittle from '../../components/titles/index';
 import { db } from '../../firebase/index';
-import CleanModal from '../../components/cleanmodal/index'
-import EntryButton from '../../components/Buttons/EntryButton/index'
-import Add from '../../components/Add/index'
 import './inventory.css'
 
 const Inventory = (props) => {
     const [users, setUsers] = useState([]);
+    const [lowSupplies, setLowSupplies] = useState([]);
 
     const getUserCollectionForDropdown = () => {
         db.collection('users').get().then(querySnapshot => {
@@ -24,9 +22,34 @@ const Inventory = (props) => {
         });
     }
 
+    const supplies = JSON.parse(localStorage.getItem('tableData'));
+    console.log(supplies)
+    const transformToNumber = () => {
+        const suppliesNumber = supplies.map((element)=>{
+        return {
+            ...element,
+            disponible: parseInt(element.disponible),
+            necesario:  parseInt(element.necesario)
+        }
+        })
+        return suppliesNumber;
+    }
+
+    const verifyDisponibility = () => {
+       const transformedSupplies = transformToNumber();
+       const lowSupplies = transformedSupplies.filter(element => element.disponible < element.necesario/2)
+       const lowSuppliesReduce = lowSupplies.map(item => {
+           return {
+               name: item.nombre,
+               disponible: `${item.disponible} ${item.medida}`
+           }
+       })
+       setLowSupplies(lowSuppliesReduce)
+    }
 
     useEffect(() => {
         getUserCollectionForDropdown();
+        verifyDisponibility()
     }, []);
 
 
@@ -55,15 +78,15 @@ const Inventory = (props) => {
                         <TabPanel>
                             <div className="first-table-view">
                                 <div className="column-view">
-                                    <TableView headerText="Insumos por agotarse" />
+                                    <TableView headerText="Insumos por agotarse" lowSupplies={lowSupplies}/>
                                     <Link to="/insumos">
-                                        <FlatButton className="detail-button" text="VER DETALLE" />
+                                        <FlatButton className="detail-button" text="VER DETALLE"/>
                                     </Link>
                                 </div>
                                 <div className="column-view">
                                     <TableView headerText="Compras por agotarse" />
                                     <Link to="/compras">
-                                        <FlatButton className="detail-button" text="VER DETALLE" />
+                                        <FlatButton className="detail-button" text="VER DETALLE"/>
                                     </Link>
                                 </div>
                             </div>

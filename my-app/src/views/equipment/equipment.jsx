@@ -23,7 +23,7 @@ const Equipment = (props) => {
     const [inputModal, setInputModal] = useState('');
     const [newThing, setNewThing] = useState('');
 
-
+    const infoInLocal = JSON.parse(localStorage.getItem('tableData'));
 
     const catchRadioButton = (e) => {
         e.preventDefault();
@@ -32,13 +32,11 @@ const Equipment = (props) => {
         const newAdd = formInfo.get('add-item')
         const word = `${newName} ${newAdd}`;
         addNewThing(word);
-        console.log(word)
         setNewThing(word);
     }
 
     const handleChangeInputModal = (e) => {
         setInputModal(e.target.value)
-        console.log(e.target.value)
     }
 
     const cleanInputModal = () => {
@@ -82,7 +80,10 @@ const Equipment = (props) => {
             semanal: weeklyAmount,
             medidaSemanal: measureActual
         })
-        setInfo(newItem)
+        localStorage.setItem('tableData', JSON.stringify(newItem))
+        const infoInLocal = JSON.parse(localStorage.getItem('tableData'));
+        setInfo(infoInLocal)
+        //localStorage.removeItem('tableData')
     }
 
     const getUserCollectionForDropdown = () => {
@@ -95,27 +96,11 @@ const Equipment = (props) => {
         });
     }
 
-      const categories2 = [
-        "Producción",
-        "Aderezos",
-        "Desechables",
-        "Proveedores"
-    ]
-
-    const quantity2 = [
-        "kg",
-        "gramos",
-        "litros",
-        "mamila",
-        "piezas"
-    ]
     //localstorage of categories
-    localStorage.setItem('categories', categories2.toString())
     const categoriesInLocal = localStorage.getItem('categories');
     const arrayCategories = categoriesInLocal.split(',')
 
     //localstorage of quantity
-    localStorage.setItem('quantity', quantity2.toString())
     const quantityInLocal = localStorage.getItem('quantity');
     const arrayQuantity = quantityInLocal.split(',')
 
@@ -124,33 +109,24 @@ const Equipment = (props) => {
     const [quantity, setQuantity] = useState(arrayQuantity);
 
     function addNewThing (word)  {
-        console.log(word);
-        console.log(typeof word);
         const selection = word.split(' ')
-        console.log(selection)
         if(selection [1]==='Categoria'){
-            console.log(selection[0])
             arrayCategories.push(selection[0])
-            console.log(arrayCategories)
             localStorage.setItem('categories', arrayCategories.toString())
             const categoriesLocal = localStorage.getItem('categories').split(',')
             setCategories(categoriesLocal)
-            console.log(categoriesLocal)
         }
         else {
             arrayQuantity.push(selection[0])
-            console.log(arrayQuantity)
             localStorage.setItem('quantity', arrayQuantity.toString())
             const quantityLocal = localStorage.getItem('quantity').split(',')
             setQuantity(quantityLocal)
-            console.log(quantityLocal)
         }
-        
     }
-
 
     useEffect(() => {
         getUserCollectionForDropdown();
+        setInfo(infoInLocal)
     }, []);
 
     const { menu } = props;
@@ -163,9 +139,12 @@ const Equipment = (props) => {
             </TabList>
             <TabPanel>
                 <div className="main-equipment">
-
                     <h2>Local</h2>
-
+                    <div className="add">
+                        <button className="button-add" onClick={showModalAdd}>
+                            AGREGAR
+                        </button>
+                    </div>
                     <InputInventory
                         newThing={newThing}
                         handleChangeMeasureActual={handleChangeMeasureActual}
@@ -179,12 +158,7 @@ const Equipment = (props) => {
                         categories={categories}
                     />
                     <div className="equipment-table">
-                        <TablaInsumos info={info} />
-                    </div>
-                    <div className="add">
-                        <button className="button-add" onClick={showModalAdd}>
-                            Agregar
-                        </button>
+                        <TablaInsumos info={info}/>
                     </div>
                 </div>
             </TabPanel>
