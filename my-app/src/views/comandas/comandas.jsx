@@ -17,7 +17,10 @@ const Comandas = (props) => {
     const [nameTable, setNameTable] = useState('');
     const [table, setTable] = useState([]);
     const [tableSelect, setTableSelect] = useState({});
-    const [bill, setBill] = useState([])
+    const [bill, setBill] = useState([]);
+    const [dish, setDish] = useState([]);
+
+    const supplies = JSON.parse(localStorage.getItem('tableData'));
 
     const changeVisibility = (visibility) => {
         setVisible(visibility);
@@ -62,9 +65,14 @@ const Comandas = (props) => {
 
     const addItemToBill = (e, hamburguer) => {
         const newBill = bill.concat([{hamburguerName: hamburguer.name, price: hamburguer.priceClassic}])
-        setBill(newBill)
+        setBill(newBill);
+        const dishes = dish.concat([{hamburguer}])
+        setDish(dishes);
     }
 
+    const saveAndRestOrder = () => {
+        console.log(dish);
+    }
     
     const sucursalOptions = ["Sucursal", "Evento", "Local"];
 
@@ -134,6 +142,7 @@ const Comandas = (props) => {
                         changeVisibility={changeVisibility} 
                         bill={bill}
                         addItemToBill={addItemToBill}
+                        saveAndRestOrder = {saveAndRestOrder}
                         />
 
                     <div className={`btn-add ${visible ? "no-visible" : "visible"}`}>

@@ -6,7 +6,7 @@ import Hamburguers from './hamburguers/hamburguers';
 import '../style.css';
 
 const Pedido = (props) => {
-    const { changeVisibility, visible, tableSelect, bill, addItemToBill } = props;
+    const { changeVisibility, visible, tableSelect, bill, addItemToBill, saveAndRestOrder} = props;
 
     const displayTabsMenu = (
         <Tabs>
@@ -25,6 +25,7 @@ const Pedido = (props) => {
                     changeVisibility={changeVisibility} 
                     bill={bill}
                     addItemToBill={addItemToBill}
+                    saveAndRestOrder = {saveAndRestOrder}
                     />
             </TabPanel>
             <TabPanel>
