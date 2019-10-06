@@ -8,6 +8,12 @@ const Add = (props) => {
     return (
         <div className="add-box">
         <form name="form-data" onSubmit={onSubmit}>
+            <div className="radios">
+                <input type="radio" name={name} id={value1} value={value1} />
+                <label htmlFor={value1}>{value1}</label>
+                <input type="radio" name={name} id={value2} value={value2} />
+                <label htmlFor={value2}>{value2}</label>
+            </div>
             <CleanInput
                 label={label}
                 type="text"
@@ -17,12 +23,6 @@ const Add = (props) => {
                 className="input-add"
                 name="name" 
                 />
-            <div className="radios">
-                <input type="radio" name={name} id={value1} value={value1} />
-                <label htmlFor={value1}>{value1}</label>
-                <input type="radio" name={name} id={value2} value={value2} />
-                <label htmlFor={value2}>{value2}</label>
-            </div>
             <div className="submit-box">
             <input 
                         type="submit" 
