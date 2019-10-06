@@ -6,7 +6,7 @@ import FlatButton from '../../../../components/Buttons/flatButton/index';
 import data from '../../../../Data/data.json';
 import ProductList from '../ProductList/ProductList';
 
-const Hamburguers = ({ changeVisibility, visible, bill, addItemToBill}) => {
+const Hamburguers = ({ changeVisibility, visible, bill, addItemToBill, saveAndRestOrder}) => {
     
     const menuHamburguer = data.filter(dish => dish.type === "hamburguesas");
 
@@ -48,7 +48,7 @@ const Hamburguers = ({ changeVisibility, visible, bill, addItemToBill}) => {
                     <div className="comandas-button">
                         <EntryButton text="PAGAR" className="button-nocolor" />
                         <EntryButton text="IMPRIMIR" className="button-nocolor" />
-                        <EntryButton text="GUARDAR" />
+                        <EntryButton text="GUARDAR" onClick={saveAndRestOrder} />
                     </div>
                     <FlatButton text="REGRESAR" onClick={() => changeVisibility(false)} />
                 </div>

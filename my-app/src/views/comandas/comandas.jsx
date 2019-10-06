@@ -17,7 +17,10 @@ const Comandas = (props) => {
     const [nameTable, setNameTable] = useState('');
     const [table, setTable] = useState([]);
     const [tableSelect, setTableSelect] = useState({});
-    const [bill, setBill] = useState([])
+    const [bill, setBill] = useState([]);
+    const [dish, setDish] = useState([]);
+
+    const supplies = JSON.parse(localStorage.getItem('tableData'));
 
     const changeVisibility = (visibility) => {
         setVisible(visibility);
@@ -62,10 +65,37 @@ const Comandas = (props) => {
 
     const addItemToBill = (e, hamburguer) => {
         const newBill = bill.concat([{hamburguerName: hamburguer.name, price: hamburguer.priceClassic}])
-        setBill(newBill)
+        setBill(newBill);
+        const dishes = dish.concat([hamburguer])
+        setDish(dishes);
     }
 
-    console.log(bill)
+    const saveAndRestOrder = () => {
+        let amount = 0;
+        for(let i = 0; i < supplies.length; i++){
+            amount = parseFloat(supplies[i].disponible);
+            for(let j = 0; j < dish.length; j++){
+                if(supplies[i].nombre == dish[j].name){
+                    amount = amount - parseFloat(dish[j].weight)
+                    console.log('antes',supplies[i])
+                    supplies[i].disponible = amount.toPrecision(2)
+                    console.log(supplies[i].disponible)
+                }
+            }
+        }
+        // return {
+        //     categoria: supplies.category,
+        //     nombre: supplies.nameProduct,
+        //     disponible: amount.toPrecision(2),
+        //     medida: supplies.measureActual,
+        //     necesario: supplies.todayAmount,
+        //     medidaDelDia: supplies.measureActual,
+        //     semanal: supplies.weeklyAmount,
+        //     medidaSemanal: supplies.measureActual
+        // }
+        localStorage.setItem('tableData', JSON.stringify(supplies))
+    }
+    
     const sucursalOptions = ["Sucursal", "Evento", "Local"];
 
     useEffect(() => {
@@ -134,6 +164,7 @@ const Comandas = (props) => {
                         changeVisibility={changeVisibility} 
                         bill={bill}
                         addItemToBill={addItemToBill}
+                        saveAndRestOrder = {saveAndRestOrder}
                         />
 
                     <div className={`btn-add ${visible ? "no-visible" : "visible"}`}>
