@@ -96,6 +96,21 @@ const Equipment = (props) => {
         });
     }
 
+    const categories2 = [
+        "Producción",
+        "Aderezos",
+        "Desechables",
+        "Proveedores"
+    ]
+
+    const quantity2 = [
+        "kg",
+        "gramos",
+        "litros",
+        "mamila",
+        "piezas"
+    ]
+
     //localstorage of categories
     const categoriesInLocal = localStorage.getItem('categories');
     const arrayCategories = categoriesInLocal.split(',')
@@ -108,6 +123,15 @@ const Equipment = (props) => {
     const [categories, setCategories] = useState(arrayCategories);
     const [quantity, setQuantity] = useState(arrayQuantity);
 
+    const verifyDrops = () => {
+        if(categoriesInLocal == ""|| categoriesInLocal == null){
+            localStorage.setItem('categories', categories2.toString())
+        }
+        if(quantityInLocal == ""|| quantityInLocal == null){
+            localStorage.setItem('quantity', quantity2.toString())
+        }
+    }
+
     function addNewThing (word)  {
         const selection = word.split(' ')
         if(selection [1]==='Categoria'){
@@ -116,6 +140,7 @@ const Equipment = (props) => {
             const categoriesLocal = localStorage.getItem('categories').split(',')
             setCategories(categoriesLocal)
         }
+
         else {
             arrayQuantity.push(selection[0])
             localStorage.setItem('quantity', arrayQuantity.toString())
@@ -126,6 +151,7 @@ const Equipment = (props) => {
 
     useEffect(() => {
         getUserCollectionForDropdown();
+        verifyDrops();
         setInfo(infoInLocal)
     }, []);
 
