@@ -65,7 +65,7 @@ const Comandas = (props) => {
         setBill(newBill)
     }
 
-    console.log(bill)
+    
     const sucursalOptions = ["Sucursal", "Evento", "Local"];
 
     useEffect(() => {

@@ -23,7 +23,7 @@ const Inventory = (props) => {
     }
 
     const supplies = JSON.parse(localStorage.getItem('tableData'));
-    console.log(supplies)
+
     const transformToNumber = () => {
         const suppliesNumber = supplies.map((element)=>{
         return {
@@ -47,8 +47,25 @@ const Inventory = (props) => {
        setLowSupplies(lowSuppliesReduce)
     }
 
+    const verifyEmptyInventory = () => {
+        if(supplies === ""){
+            const emptyInventory  = [{
+                    categoria: "",
+                    nombre: "",
+                    disponible: "",
+                    medida: "",
+                    necesario: "",
+                    medidaDelDia: "",
+                    semanal: "",
+                    medidaSemanal: ""
+            }]
+            localStorage.setItem('tableData', JSON.stringify(emptyInventory))
+        }
+    }
+
     useEffect(() => {
         getUserCollectionForDropdown();
+        verifyEmptyInventory();
         verifyDisponibility()
     }, []);
 
