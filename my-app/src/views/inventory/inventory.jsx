@@ -23,13 +23,14 @@ const Inventory = (props) => {
     }
 
     const supplies = JSON.parse(localStorage.getItem('tableData'));
-
     const transformToNumber = () => {
         const suppliesNumber = supplies.map((element)=>{
+            let available = parseFloat(element.disponible);
+            let needed = parseFloat(element.necesario)
         return {
             ...element,
-            disponible: parseInt(element.disponible),
-            necesario:  parseInt(element.necesario)
+            disponible: available,
+            necesario:  needed
         }
         })
         return suppliesNumber;
@@ -37,7 +38,9 @@ const Inventory = (props) => {
 
     const verifyDisponibility = () => {
        const transformedSupplies = transformToNumber();
+       console.log('el nuevo array con numeros', transformedSupplies)
        const lowSupplies = transformedSupplies.filter(element => element.disponible < element.necesario/2)
+       console.log(lowSupplies)
        const lowSuppliesReduce = lowSupplies.map(item => {
            return {
                name: item.nombre,
@@ -48,7 +51,7 @@ const Inventory = (props) => {
     }
 
     const verifyEmptyInventory = () => {
-        if(supplies === ""){
+        if(supplies === "" || supplies == null){
             const emptyInventory  = [{
                     categoria: "",
                     nombre: "",

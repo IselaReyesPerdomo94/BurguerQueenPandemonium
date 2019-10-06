@@ -66,12 +66,34 @@ const Comandas = (props) => {
     const addItemToBill = (e, hamburguer) => {
         const newBill = bill.concat([{hamburguerName: hamburguer.name, price: hamburguer.priceClassic}])
         setBill(newBill);
-        const dishes = dish.concat([{hamburguer}])
+        const dishes = dish.concat([hamburguer])
         setDish(dishes);
     }
 
     const saveAndRestOrder = () => {
-        console.log(dish);
+        let amount = 0;
+        for(let i = 0; i < supplies.length; i++){
+            amount = parseFloat(supplies[i].disponible);
+            for(let j = 0; j < dish.length; j++){
+                if(supplies[i].nombre == dish[j].name){
+                    amount = amount - parseFloat(dish[j].weight)
+                    console.log('antes',supplies[i])
+                    supplies[i].disponible = amount.toPrecision(2)
+                    console.log(supplies[i].disponible)
+                }
+            }
+        }
+        // return {
+        //     categoria: supplies.category,
+        //     nombre: supplies.nameProduct,
+        //     disponible: amount.toPrecision(2),
+        //     medida: supplies.measureActual,
+        //     necesario: supplies.todayAmount,
+        //     medidaDelDia: supplies.measureActual,
+        //     semanal: supplies.weeklyAmount,
+        //     medidaSemanal: supplies.measureActual
+        // }
+        localStorage.setItem('tableData', JSON.stringify(supplies))
     }
     
     const sucursalOptions = ["Sucursal", "Evento", "Local"];
