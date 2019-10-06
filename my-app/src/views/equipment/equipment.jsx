@@ -141,7 +141,7 @@ const Equipment = (props) => {
                 <div className="main-equipment">
                     <h2>Local</h2>
                     <div className="add">
-                        <button className="button-add" onClick={showModalAdd}>
+                        <button className="button-add-inventory" onClick={showModalAdd}>
                             AGREGAR
                         </button>
                     </div>
