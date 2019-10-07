@@ -33,8 +33,6 @@ class Login extends React.Component {
         const { 
             user,
             signInWithEmailAndPassword,
-            text,
-            textColor,
             error
           } = this.props;
 

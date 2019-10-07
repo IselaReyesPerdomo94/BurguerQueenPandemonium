@@ -2,7 +2,7 @@ import React, { Fragment, useState, useEffect } from 'react';
 import { Tab, Tabs, TabList,TabPanel } from 'react-tabs';
 import Tittle from '../../components/titles/index';
 import Dropdown from '../../components/Dropdown/index';
-import UserTabs from '../settings/settingsUser/index';
+// import UserTabs from '../settings/settingsUser/index';
 import {db} from '../../firebase/index';
 import './cortedecajas.css';
 

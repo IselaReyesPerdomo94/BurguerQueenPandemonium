@@ -1,0 +1,32 @@
+.radios {
+    display: flex;
+    margin-bottom: 1rem;
+    height: 2rem;
+    justify-content: space-between;
+}
+
+.input-add {
+    width: 100%;
+}
+
+.add-box {
+    display: flex;
+    flex-direction: column;
+    height: 8rem;
+    justify-content: space-between;
+}
+
+.btn-add {
+    display: flex;
+    align-self: center;
+    width: 8rem;
+    background-color: #2EC8DC !important;
+}
+
+.submit-box {
+    height: 4rem;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}

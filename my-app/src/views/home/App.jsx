@@ -20,7 +20,9 @@ class Home extends Component {
   handleOnClick(e){
     this.setState({isLogged:false});
   }
+
   render() {
+ 
     return (
       <div className="App">
         <Logo/>
