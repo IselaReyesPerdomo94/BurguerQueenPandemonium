@@ -114,7 +114,7 @@ const Equipment = (props) => {
 
     const verifyDrops = () => {
         const categoriesInLocal = localStorage.getItem('categories')
-        const quantityInLocal = localStorage.getItem('quantity')
+        const quantityInLocal = localStorage.getItem('quantity') 
         if(categoriesInLocal == ""|| categoriesInLocal == null){
             localStorage.setItem('categories', categories2.toString())
             const arrayCategories = localStorage.getItem('categories').split(',')
