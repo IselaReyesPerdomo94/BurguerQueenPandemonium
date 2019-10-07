@@ -29,6 +29,11 @@ class TableView extends Component {
                   Header: "Disponible",
                   id: "disponible",
                   accessor: "disponible"
+                },
+                {
+                  Header: "Semanal",
+                  id: "semanal",
+                  accesor: "semanal"
                 }
               ]
             }

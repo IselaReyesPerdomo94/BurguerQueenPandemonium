@@ -5,10 +5,12 @@ import Dropdown from '../../components/Dropdown/index';
 import {db} from '../../firebase/index';
 import TableShopping from '../../components/table-shopping/index.jsx';
 import InputInventory from '../../components/InputInventory/index';
+import DownloadExcel from '../../components/ExcelTable/index'
 import './shopping.css'
 
 const Shopping = (props) =>  {
     const [users, setUsers] = useState([]);
+    const [exportShopping, setExportShopping] = useState(false);
     
     const getUserCollectionForDropdown = () => {
         db.collection('users').get().then(querySnapshot => {
@@ -20,12 +22,17 @@ const Shopping = (props) =>  {
         });
     }
 
+    const handleExportShopping = (e) => {
+        setExportShopping(true)
+    }
+
     useEffect(() => {
         getUserCollectionForDropdown();
     }, []);
 
  
     const {menu}= props;
+
     const displayTabsEquipment = (
         <Tabs>
         <TabList className="tab-list">
@@ -63,6 +70,7 @@ const Shopping = (props) =>  {
                             } optionDefault="USUARIO" />
                         </div>
                         {displayTabsEquipment}
+                        <DownloadExcel onClick={handleExportShopping}/>
                         
                     </main>
                 </div>

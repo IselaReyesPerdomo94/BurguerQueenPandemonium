@@ -15,7 +15,7 @@ const InputInventory = (props) => {
         addNewInventoryItem,
         categories,
         quantity} = props;
-
+        console.log(categories);
     return (
         <div className="inventory-inputs">
             <Dropdown
