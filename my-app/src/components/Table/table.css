@@ -1,0 +1,51 @@
+.header-tab {
+    background-color: #D53124;
+    border-radius: 15px 15px 0px 0px;
+    -moz-border-radius: 15px 15px 0px 0px;
+    -webkit-border-radius: 15px 15px 0px 0px;
+    color: white;
+}
+
+.table-products {
+    margin: 1rem;
+    width: 40%;
+    overflow: auto;
+}
+
+
+/* Tamaño del scroll */
+
+.table-products::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+
+/* Estilos barra (thumb) de scroll */
+
+.table-products::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 4px;
+}
+
+.table-products::-webkit-scrollbar-thumb:active {
+    background-color: #999999;
+}
+
+.table-products::-webkit-scrollbar-thumb:hover {
+    background: #b3b3b3;
+    box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Estilos track de scroll */
+
+.table-products::-webkit-scrollbar-track {
+    background: #e1e1e1;
+    border-radius: 4px;
+}
+
+.table-products::-webkit-scrollbar-track:hover,
+.table-products::-webkit-scrollbar-track:active {
+    background: #d4d4d4;
+}

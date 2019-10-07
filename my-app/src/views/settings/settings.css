@@ -1,0 +1,28 @@
+.wrapper {
+    display: flex;
+}
+
+.main {
+    display: flex;
+    padding: 1rem;
+    flex-direction: column;
+    width: 89%;
+    height: 100vh;
+}
+
+.aside {
+    display: flex;
+    width: 10%;
+    background-color: blue;
+    height: 100vh;
+}
+
+.tab-list{
+    font-size:2rem;
+}
+
+.create-user-button, .change-pin-button{
+    align-self: center;
+    background-color:#00BCD4 !important;
+}
+

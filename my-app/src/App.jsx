@@ -1,0 +1,63 @@
+
+import React, {Component} from 'react';
+import './index.css'
+import Home from './views/home/App.jsx';
+import Settings from './views/settings/settings';
+import Login from './views/login/login';
+import Register from './views/register/index';
+import Comandas from './views/comandas/comandas';
+import SideDrawer from './components/sidebarNav/sideDrawer/sideDrawer';
+import Menu from './components/sidebarNav/index';
+import CorteCaja from './views/CorteDeCajas/cortedecajas';
+import Inventory from './views/inventory/inventory'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Equipment from './views/equipment/equipment';
+import Shopping from './views/shopping/shopping';
+
+
+class App extends Component {
+    constructor() {
+        super()
+        this.state = {modalOpen: true, sideDrawerOpen: false};
+        this.closeModal = this.closeModal.bind(this);
+        this.setToOpen = this.setToOpen.bind(this);
+        this.drawerToogleClickHandler = this.drawerToogleClickHandler.bind(this);   
+    }
+
+    closeModal() {
+        this.setState({ modalOpen: false });
+    }
+
+    setToOpen() {
+        this.setState({modalOpen: true});
+    }
+
+    drawerToogleClickHandler(){
+        this.setState((prevState) => {
+            return {sideDrawerOpen: !prevState.sideDrawerOpen};
+        });
+    };
+
+    render() {
+        const { modalOpen, sideDrawerOpen } = this.state;
+        const menu = sideDrawerOpen ? <SideDrawer open={sideDrawerOpen} handleSide={this.drawerToogleClickHandler}/> : <Menu open={sideDrawerOpen} handleSide={this.drawerToogleClickHandler}/>
+        return (
+            <Router basename={window.location.pathname || ''} >
+                <Switch >
+                    <Route exact path="/" render={props => < Login />}></Route>
+                    <Route exact path="/Home" render={props => <Home />}></Route >
+                    <Route exact path="/configuracion" render={props => < Settings modalOpen={modalOpen} menu={menu} closeModal={this.closeModal}  setToOpen={this.setToOpen} sideBar={sideDrawerOpen} handleSide={this.drawerToogleClickHandler}/>} ></Route>
+                    <Route exact path="/registro" render={props => < Register />}></Route>
+                    <Route exact path="/comandas" render={props => < Comandas menu={menu} sideBar={sideDrawerOpen} handleSide={this.drawerToogleClickHandler}/>}></Route>
+                    <Route exact path="/corte-de-caja" render={props => < CorteCaja menu={menu} sideBar={sideDrawerOpen}/>}></Route>
+                    <Route exact path="/inventario" render={props => <Inventory menu={menu} sideBar={sideDrawerOpen}/>}></Route>
+                    <Route exact path="/insumos" render={props => <Equipment menu={menu} sideBar={sideDrawerOpen}/>}></Route>
+                    <Route exact path="/compras" render={props => <Shopping menu={menu} sideBar={sideDrawerOpen}/>}></Route>
+                </Switch>
+            </Router>
+        )
+    }
+}
+
+export default App;
+

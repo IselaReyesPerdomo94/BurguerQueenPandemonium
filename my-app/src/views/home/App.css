@@ -1,0 +1,54 @@
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    width: 70vw;
+    justify-content: center;
+}
+
+.App {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.homeButtons {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    width: 45%;
+    border-radius: 10px;
+    color: white;
+    height: 20vw;
+    margin: 1rem;
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+
+.sign-out-button{
+    text-decoration: none;
+}
+
+.cashOut {
+    background-color: #0097A7;
+}
+
+.settings {
+    background-color: #303F9F;
+}
+
+.commands {
+    background-color: #0288D1;
+}
+
+.inventory {
+    background-color: #512DA8;
+}
+
+.icons {
+    font-size: 6rem;
+}

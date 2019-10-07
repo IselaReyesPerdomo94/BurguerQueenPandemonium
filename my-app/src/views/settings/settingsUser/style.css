@@ -1,0 +1,32 @@
+.wrapper {
+    display: flex;
+}
+
+.main {
+    display: flex;
+    padding: 1rem;
+    flex-direction: column;
+    width: 85%;
+    height: 100vh;
+}
+
+.button-settings {
+    background-color: #00BCD4 !important;
+    color: white !important;
+    align-self: center;
+}
+
+.button-add {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 5%;
+    margin-right: 2rem;
+}
+
+.users-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    height: 500px;
+    overflow: scroll;
+    justify-content: space-evenly;
+}

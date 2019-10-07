@@ -1,0 +1,61 @@
+.wrapper{
+    display: flex;
+}
+
+.main-comandas{
+    display: flex;
+    padding: 1rem;
+    flex-direction: column;
+    width: 89%;
+}
+
+.options-select{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding-right: 3rem;
+}
+
+.user-comandas-main{
+    height: 100%;
+}
+
+.btn-add{
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+/* .visible{
+    display: block;
+} */
+
+.table-box{
+    height: 75%;
+    display: flex;
+    flex-wrap: wrap;
+    height: 60%;
+}
+
+.no-visible{
+    display: none;
+}
+
+.table-text{
+    margin : 1rem 20rem 0rem 0rem;
+    width: 10rem;
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+.confirm-table{
+    align-self: center;
+    background-color: #00BCD4 !important
+}
+
+.visible{
+    display: block;
+}
+.no-visible{
+    display: none;
+}

@@ -1,0 +1,27 @@
+.options-select{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding-right: 3rem;
+}
+
+.btn-add{
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 2rem;
+}
+
+.user-comandas-main{
+    height: 100%;
+}
+
+.table-box{
+    height: 75%;
+}
+
+.table-text{
+    margin : 1rem 20rem 0rem 0rem;
+    width: 10rem;
+    font-weight: bold;
+    font-size: 2rem;
+}

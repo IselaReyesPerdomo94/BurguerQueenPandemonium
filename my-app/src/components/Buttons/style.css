@@ -1,0 +1,19 @@
+.button {
+    width: 17rem;
+    height: 7rem;
+    background-color: lightgray;
+    padding: 0.5rem;
+    border-radius: 10px;
+    margin: 0.5rem;
+    border: none;
+    color: #1D1D1D;
+    font-size: 1.5rem;
+    font-weight: bold;
+    justify-content: center;
+    align-items: center;
+}
+
+.comandas-box{
+    display: flex;
+    flex-direction: column;
+}

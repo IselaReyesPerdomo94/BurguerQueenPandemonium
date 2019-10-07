@@ -1,0 +1,55 @@
+select {
+    text-transform: uppercase;
+    appearance: none;
+    background: transparent;
+    border: none;
+    font-size: .9em;
+    height: 2rem;
+    width: 7rem;
+    outline: none;
+    padding-left: .5em;
+    color: #797474;
+    font-weight: bold;
+}
+
+.drop-box {
+    height: 3rem;
+    display: flex;
+    width: fit-content;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.caja {
+    border: 1px solid #d9d9d9;
+    height: 2rem;
+    width: 8.5rem;
+    overflow: hidden;
+    position: relative;
+    background: #dadada;
+    border-radius: 3.5px;
+}
+
+.caja::after {
+    content: "\025be";
+    text-align: center;
+    padding-top: 7px;
+    width: 2em;
+    height: 30px;
+    background-color: #d9d9d9;
+    position: absolute;
+    top: 0;
+    right: 0;
+    pointer-events: none;
+    border: 1.3px solid #c0bcbc;
+    color: #797474;
+}
+
+.label {
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    margin-left: 1em;
+    margin-right: 1em;
+}
