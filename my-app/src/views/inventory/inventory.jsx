@@ -38,9 +38,7 @@ const Inventory = (props) => {
 
     const verifyDisponibility = () => {
        const transformedSupplies = transformToNumber();
-       console.log('el nuevo array con numeros', transformedSupplies)
        const lowSupplies = transformedSupplies.filter(element => element.disponible < element.necesario/2)
-       console.log(lowSupplies)
        const lowSuppliesReduce = lowSupplies.map(item => {
            return {
                name: item.nombre,

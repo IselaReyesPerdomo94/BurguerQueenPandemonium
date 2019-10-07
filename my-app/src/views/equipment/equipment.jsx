@@ -26,8 +26,6 @@ const Equipment = (props) => {
     const [quantity, setQuantity] = useState([]);
 
     const infoInLocal = JSON.parse(localStorage.getItem('tableData'));
-    console.log(categories)
-    console.log(quantity)
     const catchRadioButton = (e) => {
         e.preventDefault();
         const formInfo = new FormData(e.target)
@@ -115,10 +113,8 @@ const Equipment = (props) => {
     ]
 
     const verifyDrops = () => {
-        const categoriesInLocal = localStorage.getItem('categories').split(',');
-        const quantityInLocal = localStorage.getItem('quantity').split(',');
-        setCategories(categoriesInLocal)
-        setQuantity(quantityInLocal)
+        const categoriesInLocal = localStorage.getItem('categories')
+        const quantityInLocal = localStorage.getItem('quantity')
         if(categoriesInLocal == ""|| categoriesInLocal == null){
             localStorage.setItem('categories', categories2.toString())
             const arrayCategories = localStorage.getItem('categories').split(',')
@@ -126,6 +122,12 @@ const Equipment = (props) => {
         }
         if(quantityInLocal == ""|| quantityInLocal == null){
             localStorage.setItem('quantity', quantity2.toString())
+            const arrayQuantity = localStorage.getItem('quantity').split(',')
+            setQuantity(arrayQuantity)
+        }if(categoriesInLocal !== ""){
+            const arrayCategories = localStorage.getItem('categories').split(',')
+            setCategories(arrayCategories)
+        }if(quantityInLocal !== ""){
             const arrayQuantity = localStorage.getItem('quantity').split(',')
             setQuantity(arrayQuantity)
         }
