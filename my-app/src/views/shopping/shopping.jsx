@@ -12,6 +12,66 @@ const Shopping = (props) =>  {
     const [users, setUsers] = useState([]);
     const [exportShopping, setExportShopping] = useState(false);
     
+    const [categories, setCategories] = useState([]);
+    const [quantity, setQuantity]= useState([]);
+
+    const categories2 = [
+        "Producción",
+        "Aderezos",
+        "Desechables",
+        "Proveedores"
+    ]
+
+    const quantity2 = [
+        "kg",
+        "gramos",
+        "litros",
+        "mamila",
+        "piezas"
+    ]
+
+    const verifyDrops = () => {
+        const categoriesInLocal = localStorage.getItem('categories')
+        const quantityInLocal = localStorage.getItem('quantity') 
+        if(categoriesInLocal == ""|| categoriesInLocal == null){
+            localStorage.setItem('categories', categories2.toString())
+            const arrayCategories = localStorage.getItem('categories').split(',')
+            setCategories(arrayCategories)
+        }
+        if(quantityInLocal == ""|| quantityInLocal == null){
+            localStorage.setItem('quantity', quantity2.toString())
+            const arrayQuantity = localStorage.getItem('quantity').split(',')
+            setQuantity(arrayQuantity)
+        }if(categoriesInLocal !== ""){
+            const arrayCategories = localStorage.getItem('categories').split(',')
+            setCategories(arrayCategories)
+        }if(quantityInLocal !== ""){
+            const arrayQuantity = localStorage.getItem('quantity').split(',')
+            setQuantity(arrayQuantity)
+        }
+    }
+
+    //localstorage of quantity
+
+    function addNewThing (word)  {
+        const selection = word.split(' ')
+        const arrayCategories = localStorage.getItem('categories').split(',')
+        const arrayQuantity = localStorage.getItem('quantity').split(',')
+        if(selection [1]==='Categoria'){
+            arrayCategories.push(selection[0])
+            localStorage.setItem('categories', arrayCategories.toString())
+            const categoriesLocal = localStorage.getItem('categories').split(',')
+            setCategories(categoriesLocal)
+        }
+
+        else {
+            arrayQuantity.push(selection[0])
+            localStorage.setItem('quantity', arrayQuantity.toString())
+            const quantityLocal = localStorage.getItem('quantity').split(',')
+            setQuantity(quantityLocal)
+        }
+    }
+
     const getUserCollectionForDropdown = () => {
         db.collection('users').get().then(querySnapshot => {
             let elements = [];
@@ -28,6 +88,7 @@ const Shopping = (props) =>  {
 
     useEffect(() => {
         getUserCollectionForDropdown();
+        verifyDrops();
     }, []);
 
  
@@ -43,7 +104,10 @@ const Shopping = (props) =>  {
         <TabPanel>
             <div className="main-equipment">
                 <h2>Compras</h2>
-                <InputInventory/>
+                <InputInventory 
+                    categories={categories}
+                    quantity={quantity}
+                    />
                 <TableShopping/>
             </div>
         </TabPanel>

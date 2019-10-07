@@ -65,9 +65,9 @@ const DownloadExcel = (props) => {
     return(
         <ExcelFile element={<FlatButton text="Exportar" className="export-button" onClick={handleExportShopping} />}>
             <ExcelSheet lowSupplies={lowSupplies} name="Compras Semanales">
-                <ExcelColumn label="Nombre de Producto" value={lowSupplies.name}/>
-                <ExcelColumn label="Cantidad Semanal" value={lowSupplies.semanal} />
-                <ExcelColumn label="Cantidad Disponible" value={lowSupplies.disponible} />
+                <ExcelColumn label="Nombre de Producto" value={name}/>
+                <ExcelColumn label="Cantidad Semanal" value={semanal} />
+                <ExcelColumn label="Cantidad Disponible" value={disponible} />
             </ExcelSheet>
         </ExcelFile>
     )
