@@ -22,6 +22,8 @@ const Equipment = (props) => {
     const [showModal, setShowModal] = useState(false);//modal to add category or measure
     const [inputModal, setInputModal] = useState('');
     const [newThing, setNewThing] = useState('');
+    const [categories, setCategories] = useState([]);
+    const [quantity, setQuantity] = useState([]);
 
     const infoInLocal = JSON.parse(localStorage.getItem('tableData'));
 
@@ -111,29 +113,27 @@ const Equipment = (props) => {
         "piezas"
     ]
 
-    //localstorage of categories
-    const categoriesInLocal = localStorage.getItem('categories');
-    const arrayCategories = categoriesInLocal.split(',')
-
-    //localstorage of quantity
-    const quantityInLocal = localStorage.getItem('quantity');
-    const arrayQuantity = quantityInLocal.split(',')
-
-
-    const [categories, setCategories] = useState(arrayCategories);
-    const [quantity, setQuantity] = useState(arrayQuantity);
-
     const verifyDrops = () => {
+        const categoriesInLocal = localStorage.getItem('categories');
+        const quantityInLocal = localStorage.getItem('quantity');
         if(categoriesInLocal == ""|| categoriesInLocal == null){
             localStorage.setItem('categories', categories2.toString())
+            const arrayCategories = localStorage.getItem('categories').split(',')
+            setCategories(arrayCategories)
         }
         if(quantityInLocal == ""|| quantityInLocal == null){
             localStorage.setItem('quantity', quantity2.toString())
+            const arrayQuantity = localStorage.getItem('quantity').split(',')
+            setQuantity(arrayQuantity)
         }
     }
 
+    //localstorage of quantity
+
     function addNewThing (word)  {
         const selection = word.split(' ')
+        const arrayCategories = localStorage.getItem('categories').split(',')
+        const arrayQuantity = localStorage.getItem('quantity').split(',')
         if(selection [1]==='Categoria'){
             arrayCategories.push(selection[0])
             localStorage.setItem('categories', arrayCategories.toString())
