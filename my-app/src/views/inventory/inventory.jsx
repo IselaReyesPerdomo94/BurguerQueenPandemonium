@@ -22,7 +22,8 @@ const Inventory = (props) => {
         });
     }
 
-    const supplies = JSON.parse(localStorage.getItem('tableData'));
+    const supplies = localStorage.getItem('tableData') ? JSON.parse(localStorage.getItem('tableData')) : []
+    
     const transformToNumber = () => {
         const suppliesNumber = supplies.map((element)=>{
             let available = parseFloat(element.disponible);
@@ -49,7 +50,7 @@ const Inventory = (props) => {
     }
 
     const verifyEmptyInventory = () => {
-        if(supplies === "" || supplies == null){
+        if(!supplies.length || supplies == null){
             const emptyInventory  = [{
                     categoria: "",
                     nombre: "",
