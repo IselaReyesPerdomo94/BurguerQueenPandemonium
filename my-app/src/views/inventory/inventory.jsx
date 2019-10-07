@@ -103,7 +103,7 @@ const Inventory = (props) => {
                                     </Link>
                                 </div>
                                 <div className="column-view">
-                                    <TableView headerText="Compras por agotarse" />
+                                    <TableView headerText="Compras por agotarse" lowSupplies={lowSupplies}/>
                                     <Link to="/compras">
                                         <FlatButton className="detail-button" text="VER DETALLE"/>
                                     </Link>
