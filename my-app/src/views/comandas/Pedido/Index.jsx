@@ -55,7 +55,7 @@ const Pedido = (props) => {
         // <div className={`${visible ? "visible" : "no-visible"}`}>
         //     {displayTabsMenu}
         // </div>
-        <main className={`${visible ? 'visible' : 'no-visible'}`}>
+        <main className={`${visible ? 'visible-table' : 'no-visible-table'}`}>
             <label className="table-text">{`Mesa ${tableSelect.number}/ ${tableSelect.name}`}</label>
             {displayTabsMenu}
         </main>

@@ -1,4 +1,54 @@
 .header-tab2 {
     background-color: #512DA8;
     color: white;
+    font-size: 2rem;
+}
+
+.header-categories {
+    font-size: 1.2rem;
+}
+
+.table-products-equipment {
+    font-size: 1.5rem;
+    margin: 1rem;
+    width: 100%;
+    overflow: auto;
+}
+
+
+/* Tamaño del scroll */
+
+.table-products-equipment::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+
+/* Estilos barra (thumb) de scroll */
+
+.table-products::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 4px;
+}
+
+.table-products::-webkit-scrollbar-thumb:active {
+    background-color: #999999;
+}
+
+.table-products::-webkit-scrollbar-thumb:hover {
+    background: #b3b3b3;
+    box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Estilos track de scroll */
+
+.table-products::-webkit-scrollbar-track {
+    background: #e1e1e1;
+    border-radius: 4px;
+}
+
+.table-products::-webkit-scrollbar-track:hover,
+.table-products::-webkit-scrollbar-track:active {
+    background: #d4d4d4;
 }

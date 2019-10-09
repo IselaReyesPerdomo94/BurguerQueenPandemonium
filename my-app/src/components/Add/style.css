@@ -16,7 +16,7 @@
     justify-content: space-between;
 }
 
-.btn-add {
+.btn-add-form {
     display: flex;
     align-self: center;
     width: 8rem;
