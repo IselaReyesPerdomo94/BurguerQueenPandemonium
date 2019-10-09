@@ -4,9 +4,15 @@
     -moz-border-radius: 15px 15px 0px 0px;
     -webkit-border-radius: 15px 15px 0px 0px;
     color: white;
+    font-size: 2rem;
+}
+
+.header-categories{
+    font-size: 1.5rem;
 }
 
 .table-products {
+    font-size: 1.5rem;
     margin: 1rem;
     width: 40%;
     overflow: auto;

@@ -26,7 +26,7 @@ class Home extends Component {
     return (
       <div className="App">
         <Logo/>
-        <nav>
+        <nav className="home-nav">
           <Link to="/corte-de-caja" className="homeButtons cashOut">
           <i className="material-icons icons">attach_money</i>
             Corte de Caja

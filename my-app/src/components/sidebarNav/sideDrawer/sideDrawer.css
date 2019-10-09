@@ -9,7 +9,7 @@ span {
     display: flex;
     width: 15%;
     background-color: #F3F3F3;
-    height: 100vh;
+    height: 95vh;
     padding: .5rem;
     margin-top: 1rem;
     border-radius: 10px;
@@ -17,6 +17,8 @@ span {
 
 .side-drawer-navigation {
     display: flex;
+   flex-direction: column;
+   width: 200px;
 }
 
 .toolbar-icon {

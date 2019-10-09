@@ -83,16 +83,6 @@ const Comandas = (props) => {
                 }
             }
         }
-        // return {
-        //     categoria: supplies.category,
-        //     nombre: supplies.nameProduct,
-        //     disponible: amount.toPrecision(2),
-        //     medida: supplies.measureActual,
-        //     necesario: supplies.todayAmount,
-        //     medidaDelDia: supplies.measureActual,
-        //     semanal: supplies.weeklyAmount,
-        //     medidaSemanal: supplies.measureActual
-        // }
         localStorage.setItem('tableData', JSON.stringify(supplies))
     }
     

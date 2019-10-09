@@ -170,7 +170,7 @@ const Equipment = (props) => {
             </TabList>
             <TabPanel>
                 <div className="main-equipment">
-                    <h2>Local</h2>
+                    <h2>Insumos/Local</h2>
                     <div className="add">
                         <button className="button-add-inventory" onClick={showModalAdd}>
                             AGREGAR
