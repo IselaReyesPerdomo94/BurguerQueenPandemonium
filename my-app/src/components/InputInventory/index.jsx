@@ -14,7 +14,13 @@ const InputInventory = (props) => {
         handleChangeWeeklyAmount,
         addNewInventoryItem,
         categories,
-        quantity} = props;
+        quantity,
+        clearInputsInventory,
+        nameProduct,
+        currentAmount,
+        todayAmount,
+        weeklyAmount
+    } = props;
 
     return (
         <div className="inventory-inputs">
@@ -34,21 +40,25 @@ const InputInventory = (props) => {
                 type="text"
                 className="input-box"
                 variant="outlined"
+                value={nameProduct}
             />
             <InputEmpty
                 text="Cantidad actual"
                 className="input-box-empty"
                 onChange={handleChangeCurrentAmount}
+                value={currentAmount}
             />
             <InputEmpty
                 text="Cantidad diaria"
                 className="input-box-empty"
                 onChange={handleChangeTodayAmount}
+                value={todayAmount}
             />
             <InputEmpty
                 text="Cantidad semanal"
                 className="input-box-empty"
                 onChange={handleChangeWeeklyAmount}
+                value={weeklyAmount}
             />
             <Dropdown
                 optionDefault="Medida"
@@ -59,7 +69,10 @@ const InputInventory = (props) => {
                     )
                 } onChange={handleChangeMeasureActual} />
 
-            <span onClick={addNewInventoryItem}>
+            <span onClick={
+                ()=> {
+                    addNewInventoryItem()
+                    clearInputsInventory()}}>
                 <i className="material-icons done">done</i>
             </span>
         </div>

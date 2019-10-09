@@ -36,6 +36,13 @@ const Equipment = (props) => {
         setNewThing(word);
     }
 
+    const clearInputsInventory = () => {
+        console.log('vengo de equipment, funcion que borra salu2')
+        setNameProduct('');
+        setCurrentAmount('');
+        setTodayAmount('');
+        setWeeklyAmount('');
+    }
     const handleChangeInputModal = (e) => {
         setInputModal(e.target.value)
     }
@@ -187,6 +194,11 @@ const Equipment = (props) => {
                         addNewInventoryItem={addNewInventoryItem}
                         quantity={quantity}
                         categories={categories}
+                        clearInputsInventory={clearInputsInventory}
+                        nameProduct={nameProduct}
+                        currentAmount={currentAmount}
+                        todayAmount={todayAmount}
+                        weeklyAmount={weeklyAmount}
                     />
                     <div className="equipment-table">
                         <TablaInsumos info={info}/>
