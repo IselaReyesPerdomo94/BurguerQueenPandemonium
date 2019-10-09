@@ -37,7 +37,6 @@ const Equipment = (props) => {
     }
 
     const clearInputsInventory = () => {
-        console.log('vengo de equipment, funcion que borra salu2')
         setNameProduct('');
         setCurrentAmount('');
         setTodayAmount('');

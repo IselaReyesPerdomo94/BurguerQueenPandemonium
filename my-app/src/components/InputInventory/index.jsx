@@ -25,7 +25,7 @@ const InputInventory = (props) => {
     return (
         <div className="inventory-inputs">
             <Dropdown
-                optionDefault="Categoria"
+                optionDefault="CATEGORIAS"
                 className="drop"
                 options={
                     categories.map(opt =>
