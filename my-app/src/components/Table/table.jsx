@@ -11,7 +11,7 @@ class TableView extends Component {
         return (
             <div className="table-products">
         <ReactTable
-          defaultPageSize={10}
+          defaultPageSize={8}
           showPagination={true}
           noDataText={false}
           data={lowSupplies}
@@ -22,10 +22,12 @@ class TableView extends Component {
               headerClassName:"header-tab",
               columns: [
                 {
+                  headerClassName:"header-categories",
                   Header: "Producto",
                   accessor: "name"
                 },
                 {
+                  headerClassName:"header-categories",
                   Header: "Disponible",
                   id: "disponible",
                   accessor: "disponible"
